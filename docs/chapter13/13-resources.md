@@ -4,20 +4,21 @@
 
 ## 工具导航站
 
-- **[AI 工具导航](https://www.ai-all.info/)**
-- **[Product Hunt AI](https://www.producthunt.com/categories/ai)**
+- **[AI 工具导航](https://www.ai-all.info/)**：工具聚合、分类导航、中文友好、快速发现
+- **[Product Hunt AI](https://www.producthunt.com/categories/ai)**：新品发布、热度排行、真实评论、发现趋势
 
 ## 评测与榜单
 
-- **[Artificial Analysis](https://artificialanalysis.ai/)**
-- **[OpenRouter 模型排行](https://openrouter.ai/rankings)**
+- **[Artificial Analysis](https://artificialanalysis.ai/)**：模型评测、价格/性能对比、延迟/吞吐、趋势追踪
+- **[OpenRouter](https://openrouter.ai/rankings)**：模型热度榜、调用占比、生态风向、选型参考
+- **[LMArena](https://lmarena.ai/)**：LLM 对战榜、偏好投票、Elo 排名、实时排行
 
 ## 社区与资源
 
-- **[GitHub Trending](https://github.com/trending)**
-- **[Hugging Face](https://huggingface.co/)**
-- **[ModelScope 魔搭社区](https://modelscope.cn/)**
-- **[Datawhale 专注于AI领域的开源组织](https://github.com/datawhalechina)**
+- **[GitHub Trending](https://github.com/trending)**：开源趋势、热门项目、新框架/工具发现
+- **[Hugging Face](https://huggingface.co/)**：模型/数据集/空间、开源生态、推理与微调入口
+- **[ModelScope 魔搭社区](https://modelscope.cn/)**：国产模型生态、在线体验、模型与数据集
+- **[Datawhale 专注于AI领域的开源组织](https://github.com/datawhalechina)**：教程共建、学习社群、开源项目矩阵
 
 ## 建议持续关注方向
 

@@ -6,11 +6,11 @@
 
 ## 国际主流模型 API
 
-| 模型                                                                                            | 厂商        | 特点                                     |
-| --------------------------------------------------------------------------------------------- | --------- | -------------------------------------- |
-| **[Claude API (Sonnet/Opus/Haiku)](https://docs.anthropic.com/zh-CN/docs/claude/claude-api)** | Anthropic | 代码理解能力强，Claude 4.5 Sonnet 在代码生成评测中表现突出 |
-| **[GPT-5](https://developers.openai.com/api/docs)**                                           | OpenAI    | 全能型基准，代码生成能力强，GPT-5.2 在代码质量评测中领先       |
-| **[Gemini 系列](https://ai.google.dev/gemini-api)**                                             | Google    | 多模态能力，Gemini 3 在代码评测中表现优异              |
+| 模型                                                         | 厂商      | 特点                                                         |
+| ------------------------------------------------------------ | --------- | ------------------------------------------------------------ |
+| **[Claude API (Opus 4.7)](https://docs.anthropic.com/zh-CN/docs/claude/claude-api)** | Anthropic | 最新为 **Claude Opus 4.7**（2026年4月发布），还有4.6版本（2026年2月发布） |
+| **[GPT-5.4](https://developers.openai.com/api/docs)**        | OpenAI    | GPT-5.4（2026年3月6日发布），分Pro和Thinking两个版本，新增原生Computer Use能力 |
+| **[Gemini 系列](https://ai.google.dev/gemini-api)**          | Google    | 多模态能力，Gemini 3 在代码评测中表现优异                    |
 
 ## 国产主流模型 API
 
