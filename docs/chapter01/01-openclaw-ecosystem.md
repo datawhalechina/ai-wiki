@@ -1,6 +1,6 @@
 # 一、龙虾 Claw 产品系列
 
-[← 返回总览](../index.md) | [下一章：二、Coding Plan →](../chapter02/02_coding-plan.md)
+[← 返回总览](../index.md) | [下一章：二、Coding Plan →](../chapter02/02-coding-plan.md)
 
 "龙虾"是对开源 AI 智能体 **[OpenClaw](https://openclaw.ai/)**（原名 Clawdbot/Moltbot）的昵称，因其红色机械龙虾图标而得名。它能理解自然语言指令，自主调用电脑工具完成任务，真正实现从"意图"到"执行"的闭环。
 

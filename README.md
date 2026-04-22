@@ -31,19 +31,19 @@
 
 | 章节 | 文件 |
 | --- | --- |
-| 一、龙虾 Claw 产品系列 | [`docs/chapter01/01-openclaw-ecosystem.md`](docs/chapter01/01-openclaw-ecosystem.md) |
-| 二、Coding Plan | [`docs/chapter02/02_coding-plan.md`](docs/chapter02/02_coding-plan.md) |
-| 三、三方模型（API） | [`docs/chapter03/03-model-api.md`](docs/chapter03/03-model-api.md) |
-| 四、CLI 种类 | [`docs/chapter04/04-cli-tools.md`](docs/chapter04/04-cli-tools.md) |
-| 五、好用的 Skill | [`docs/chapter05/05-skills.md`](docs/chapter05/05-skills.md) |
-| 六、MCP | [`docs/chapter06/06-mcp.md`](docs/chapter06/06-mcp.md) |
-| 七、编程工具 IDE | [`docs/chapter07/07-ide-tools.md`](docs/chapter07/07-ide-tools.md) |
-| 八、Agent 框架 | [`docs/chapter08/08-agent-frameworks.md`](docs/chapter08/08-agent-frameworks.md) |
-| 九、RAG 框架 | [`docs/chapter09/09-rag-frameworks.md`](docs/chapter09/09-rag-frameworks.md) |
-| 十、向量知识库 | [`docs/chapter10/10-vector-databases.md`](docs/chapter10/10-vector-databases.md) |
-| 十一、Embedding 模型 | [`docs/chapter11/11-embedding-models.md`](docs/chapter11/11-embedding-models.md) |
-| 十二、Vibe Coding 四种 | [`docs/chapter12/12-vibe-coding.md`](docs/chapter12/12-vibe-coding.md) |
-| 十三、资源导航 | [`docs/chapter13/13-resources.md`](docs/chapter13/13-resources.md) |
+| 一、龙虾 Claw 产品系列 | [`01-openclaw-ecosystem.md`](docs/chapter01/01-openclaw-ecosystem.md) |
+| 二、Coding Plan | [`02-coding-plan.md`](docs/chapter02/02-coding-plan.md) |
+| 三、三方模型（API） | [`03-model-api.md`](docs/chapter03/03-model-api.md) |
+| 四、CLI 种类 | [`04-cli-tools.md`](docs/chapter04/04-cli-tools.md) |
+| 五、好用的 Skill | [`05-skills.md`](docs/chapter05/05-skills.md) |
+| 六、MCP | [`06-mcp.md`](docs/chapter06/06-mcp.md) |
+| 七、编程工具 IDE | [`07-ide-tools.md`](docs/chapter07/07-ide-tools.md) |
+| 八、Agent 框架 | [`08-agent-frameworks.md`](docs/chapter08/08-agent-frameworks.md) |
+| 九、RAG 框架 | [`09-rag-frameworks.md`](docs/chapter09/09-rag-frameworks.md) |
+| 十、向量知识库 | [`10-vector-databases.md`](docs/chapter10/10-vector-databases.md) |
+| 十一、Embedding 模型 | [`11-embedding-models.md`](docs/chapter11/11-embedding-models.md) |
+| 十二、Vibe Coding 四种 | [`12-vibe-coding.md`](docs/chapter12/12-vibe-coding.md) |
+| 十三、资源导航 | [`13-resources.md`](docs/chapter13/13-resources.md) |
 
 ## 参与贡献
 

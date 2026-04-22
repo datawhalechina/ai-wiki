@@ -1,6 +1,6 @@
 # 三、三方模型（API）
 
-[← 上一章：二、Coding Plan](../chapter02/02_coding-plan.md) | [返回总览](../index.md) | [下一章：四、CLI 种类 →](../chapter04/04-cli-tools.md)
+[← 上一章：二、Coding Plan](../chapter02/02-coding-plan.md) | [返回总览](../index.md) | [下一章：四、CLI 种类 →](../chapter04/04-cli-tools.md)
 
 三方模型指通过 API 调用的第三方大语言模型服务，涵盖国际主流和国产模型。
 
