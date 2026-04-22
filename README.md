@@ -1,81 +1,55 @@
-<h1 align="center"> 项目名称（⚠️ Alpha内测版） </h1>
+# AI-Wiki：AI开发者全景式工具与资源导航
 
 > [!CAUTION]
-> ⚠️ Alpha内测版本警告：此为早期内部构建版本，尚不完整且可能存在错误，欢迎大家提Issue反馈问题或建议。
+> ⚠️ Alpha 内测版本：内容持续更新中，欢迎通过 Issue / PR 提交建议与修订。
 
-### **AI-Practice-Wiki: AI开发者全景式工具与资源导航**
+`ai-wiki` 是一个开源、社区驱动的 AI 开发知识导航项目，聚焦工具链、模型服务、框架选型与实践范式，帮助开发者降低学习与决策成本。
 
-**一个为AI开发者、研究者与学习者打造的，持续更新、系统化整理的AI工具、框架、模型与实践范式全景导航与知识库。**
+## 项目受众
 
-## **项目简介**
+面向三类人群：
 
-`AI-Practice-Wiki`是一个开源的、社区驱动的Wiki知识库项目，旨在系统化地梳理和呈现 AI 领域的**开发工具链、主流模型服务、核心框架与新兴编程范式**。
+1. **开发者**：快速做框架/模型/工具选型，跟进前沿动态。
+2. **学习者**：按结构化路径建立 AI 生态认知，直达优质资源。
+3. **贡献者**：通过补充内容和修正信息共建开放知识库。
 
-## **项目背景与动机**
+**欢迎使用、参与并共同建设 ai-wiki，让 AI 开发更简单、更高效。**
 
-在AI技术日新月异的今天，新的模型、框架、工具和概念层出不穷。开发者们面临着“选择困难”和“信息过载”的双重挑战：
+## 快速入口
 
-1. **碎片化严重**：优质资源散落在博客、论文、GitHub和各大厂商的文档中，难以形成体系化的认知。
+- 在线阅读：[https://datawhalechina.github.io/ai-wiki](https://datawhalechina.github.io/ai-wiki)
+- 正文总览：[`docs/index.md`](docs/index.md)
+- 章节正文：`docs/chapterXX/XX-*.md`
 
-2. **迭代速度极快**：今天的主流工具，明天可能就被更好的方案替代；新的概念（如MCP, Agentic RAG, Vibe Coding）不断涌现，理解与跟进成本高。
+## 内容结构
 
-3. **决策缺乏参考**：面对功能相似的多个产品或套餐（如多家厂商的Coding Plan，多种Agent框架），缺乏横向对比与选型指南。
+- `README.md`：项目介绍、导航入口、贡献说明
+- `docs/index.md`：正文总览目录页
+- `docs/chapter01` ~ `docs/chapter13`：按主题介绍；每章支持前后章与总览互链
 
-**这份文档最初的诞生，正是为了对抗这种信息熵增，为我个人建立一个私人版的“AI开发装备库”。** 然而，个人的视野和精力终究有限。我们相信：
+## 章节目录
 
-- **集体的智慧远胜于个体**：开源协作能让这份清单更全面、更及时、更准确。
-- **知识应当流动与共享**：一个结构清晰、持续更新的导航，能显著降低所有AI实践者的入门与探索门槛。
-
-因此，我们决定开源此项目，邀请所有社区伙伴一起，共同构建这份属于AI开发者的“生存地图”。
-
-## **项目目标**
-
-- **成为AI开发者的必备手册**：提供一份结构化的工具与资源清单，覆盖从想法到落地的关键环节。
-- **降低学习与决策成本**：通过清晰的分类、对比表格和背景解读，帮助开发者快速理解技术选项并做出合理选择。
-- **孵化实践指南与深度内容**：未来不仅止于列表，更希望沉淀出基于这些工具的最佳实践、架构解析与实战教程。
-
-## **项目受众**
-
-本项目主要面向以下几类人群，致力于成为他们在AI技术探索与实践道路上的得力助手：
-
-1. **开发者**：正在或计划构建AI应用的工程师。本项目提供**横向对比**（如框架、模型API、工具选型）和**前沿动态**（如MCP、Agentic RAG），助力技术决策与效率提升。
-2. **学习者**：AI领域的初学者或学生。本项目可作为**结构化学习地图**，帮助快速建立对生态的整体认知，并直达优质学习资源。
-3. **贡献者**：开源爱好者与技术布道师。本项目是一个开放的**知识协作WIKI**，欢迎通过补充内容、修正信息或分享实践来共同维护这份社区资产。
-
-**总而言之，无论你是正在为下一个AI应用寻找合适框架的工程师，还是刚刚对Agent产生好奇的学生，都欢迎你使用、参与并共同建设这个项目。让我们一起，让AI开发变得更简单、更高效。**
-
-## 在线阅读
-[https://datawhalechina.github.io/ai-practice-wiki](https://datawhalechina.github.io/ai-practice-wiki)
-
-## 目录
-
-|  章节名   | 简介 | 状态 |
-|  ----  | ---- | ---- |
-| [一、龙虾 Claw 产品系列](docs/index.md) | "龙虾"是对开源 AI 智能体 **[OpenClaw](https://openclaw.ai/)**的昵称。它能理解自然语言指令，自主调用电脑工具完成任务，真正实现从"意图"到"执行"的闭环。 | ✅ |
-| 二、Coding Plan | Coding Plan 是各 AI 平台推出的编程模型订阅套餐，以低价月费提供高质量代码生成能力。 | ✅ |
-| 三、三方模型（API） | 通过 API 调用的第三方大语言模型服务，涵盖国际主流和国产模型。 | ✅ |
-| 四、CLI 种类 | CLI（命令行界面）AI 工具是终端中的 AI 编程助手，支持自然语言驱动开发全流程。 | ✅ |
-| 五、好用的 Skill | Skills（技能） 是一种为 AI 预定义可复用的专业能力的机制。 | ✅ |
-| 六、MCP | MCP（模型上下文协议）是 Anthropic 提出的开放协议，为 LLM 应用与外部数据源、工具之间提供标准化集成方式，被形象地称为"AI 应用的 USB-C 接口"。 | ✅ |
-| 七、编程工具 IDE | 专为AI协同编程设计，深度融合大模型的集成开发环境与Web工具。 | ✅ |
-| 八、Agent 框架 | AI Agent 框架提供构建自主推理、规划和执行任务的智能体系统的基础设施。 | ✅ |
-| 九、RAG 框架 | RAG（检索增强生成）框架。2026 年的趋势是向 Agentic RAG 和上下文工程演进。 | ✅ |
-| 十、向量知识库 | 向量数据库（Vector Database）是一种专门用于存储、索引和检索**高维向量数据**的数据库系统。 | ✅ |
-| 十一、Embedding 模型 | Embedding 模型将文本转换为向量表示，是 RAG 和语义搜索的核心组件。 | ✅ |
-| 十二、Vibe Coding | Vibe Coding 由 AI 研究员 Andrej Karpathy 于 2025 年 2 月提出，指通过自然语言描述需求让 AI 生成代码，而非手动编写。 | ✅ |
-| 十三、资源导航 | 工具导航站、评测与榜单、社区与资源等 | ✅ |
-
-## 贡献者名单
-
-| 姓名 | 职责 | 简介 |
-| :----| :---- | :---- |
-| 崔腾松 | 项目负责人 | Datawhale成员 |
+| 章节 | 文件 |
+| --- | --- |
+| 一、龙虾 Claw 产品系列 | [`docs/chapter01/01-openclaw-ecosystem.md`](docs/chapter01/01-openclaw-ecosystem.md) |
+| 二、Coding Plan | [`docs/chapter02/02_coding-plan.md`](docs/chapter02/02_coding-plan.md) |
+| 三、三方模型（API） | [`docs/chapter03/03-model-api.md`](docs/chapter03/03-model-api.md) |
+| 四、CLI 种类 | [`docs/chapter04/04-cli-tools.md`](docs/chapter04/04-cli-tools.md) |
+| 五、好用的 Skill | [`docs/chapter05/05-skills.md`](docs/chapter05/05-skills.md) |
+| 六、MCP | [`docs/chapter06/06-mcp.md`](docs/chapter06/06-mcp.md) |
+| 七、编程工具 IDE | [`docs/chapter07/07-ide-tools.md`](docs/chapter07/07-ide-tools.md) |
+| 八、Agent 框架 | [`docs/chapter08/08-agent-frameworks.md`](docs/chapter08/08-agent-frameworks.md) |
+| 九、RAG 框架 | [`docs/chapter09/09-rag-frameworks.md`](docs/chapter09/09-rag-frameworks.md) |
+| 十、向量知识库 | [`docs/chapter10/10-vector-databases.md`](docs/chapter10/10-vector-databases.md) |
+| 十一、Embedding 模型 | [`docs/chapter11/11-embedding-models.md`](docs/chapter11/11-embedding-models.md) |
+| 十二、Vibe Coding 四种 | [`docs/chapter12/12-vibe-coding.md`](docs/chapter12/12-vibe-coding.md) |
+| 十三、资源导航 | [`docs/chapter13/13-resources.md`](docs/chapter13/13-resources.md) |
 
 ## 参与贡献
 
-- 如果你发现了一些问题，可以提Issue进行反馈，如果提完没有人回复你可以联系[保姆团队](https://github.com/datawhalechina/DOPMC/blob/main/OP.md)的同学进行反馈跟进~
-- 如果你想参与贡献本项目，可以提Pull Request，如果提完没有人回复你可以联系[保姆团队](https://github.com/datawhalechina/DOPMC/blob/main/OP.md)的同学进行反馈跟进~
-- 如果你对 Datawhale 很感兴趣并想要发起一个新的项目，请按照[Datawhale开源项目指南](https://github.com/datawhalechina/DOPMC/blob/main/GUIDE.md)进行操作即可~
+- 发现问题欢迎提 [Issue](https://github.com/datawhalechina/ai-wiki/issues)
+- 欢迎通过 PR 完善内容、修复链接、补充新工具
+- 如需参与 Datawhale 项目协作，可参考 [Datawhale 开源项目指南](https://github.com/datawhalechina/DOPMC/blob/main/GUIDE.md)
 
 ## 关注我们
 
@@ -86,6 +60,4 @@
 
 ## LICENSE
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-lightgrey" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。
-
-*注：默认使用CC 4.0协议，也可根据自身项目情况选用其他协议*
+本作品采用 [知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议](http://creativecommons.org/licenses/by-nc-sa/4.0/) 进行许可。
