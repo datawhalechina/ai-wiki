@@ -3,6 +3,8 @@
 > [!CAUTION]
 > ⚠️ Alpha 内测版本：内容持续更新中，欢迎通过 Issue / PR 提交建议与修订。
 
+![AI-Wiki 项目封面](docs/public/ai-wiki-project.png)
+
 `ai-wiki` 是一个开源、社区驱动的 AI 开发知识导航项目，聚焦工具链、模型服务、框架选型与实践范式，帮助开发者降低学习与决策成本。
 
 ## 项目受众

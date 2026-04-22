@@ -1,6 +1,8 @@
 # AI-Wiki：总览目录
 
-> ⭐ 如果觉得有用，欢迎 Star！[→ GitHub 仓库](https://github.com/2951121599/ai-wiki)
+> ⭐ 如果觉得有用，欢迎 Star！[→ GitHub 仓库](https://github.com/datawhalechina/ai-wiki)
+
+![AI-Wiki 项目封面](public/ai-wiki-project.png)
 
 **更新时间**：2026-04-22  
 **贡献入口**：[提交 Issue](https://github.com/datawhalechina/ai-wiki/issues) / [提交 Pull Request](https://github.com/datawhalechina/ai-wiki/pulls)
