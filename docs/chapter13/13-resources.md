@@ -11,7 +11,7 @@
 
 - **[Artificial Analysis](https://artificialanalysis.ai/)**：模型评测、价格/性能对比、延迟/吞吐、趋势追踪
 - **[OpenRouter](https://openrouter.ai/rankings)**：模型热度榜、调用占比、生态风向、选型参考
-- **[LMArena](https://lmarena.ai/)**：LLM 对战榜、偏好投票、Elo 排名、实时排行
+- **[LMArena](https://arena.ai/)**：LLM 对战榜、偏好投票、Elo 排名、实时排行
 
 ## 社区与资源
 
@@ -25,5 +25,5 @@
 - **龙虾生态**：国内 Claw 产品百花齐放，安全机制和 Skills 市场是关注重点
 - **Coding Plan 竞争**：各厂商 Coding Plan 定价和模型覆盖范围快速变化
 - **MCP、Skill 生态**：正在快速演进，每周都有新的 MCP Server、Skill 发布
-- **Agent 框架融合**：AutoGen 与 Semantic Kernel 合并为 Microsoft Agent Framework，行业正从分散走向统一
+- **Agent 框架融合**：微软推出 [Microsoft Agent Framework](https://github.com/microsoft/agent-framework)，统一 AutoGen 与 Semantic Kernel 的多 Agent 模式，行业正从分散走向统一
 - **GraphRAG 与 Agentic RAG**：下一代 RAG 架构正在成为企业知识管理新标准

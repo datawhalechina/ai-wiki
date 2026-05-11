@@ -8,7 +8,7 @@
 
 | 模型                                                         | 厂商      | 特点                                                         |
 | ------------------------------------------------------------ | --------- | ------------------------------------------------------------ |
-| **[Claude API (Opus 4.7)](https://docs.anthropic.com/zh-CN/docs/claude/claude-api)** | Anthropic | 最新为 **Claude Opus 4.7**（2026年4月发布），还有4.6版本（2026年2月发布） |
+| **[Claude API (Opus 4.7)](https://platform.claude.com/docs/zh-CN/claude/claude-api)** | Anthropic | 最新为 **Claude Opus 4.7**（2026年4月发布），还有4.6版本（2026年2月发布） |
 | **[GPT-5.4](https://developers.openai.com/api/docs)**        | OpenAI    | GPT-5.4（2026年3月6日发布），分Pro和Thinking两个版本，新增原生Computer Use能力 |
 | **[Gemini 系列](https://ai.google.dev/gemini-api)**          | Google    | 多模态能力，Gemini 3 在代码评测中表现优异                    |
 

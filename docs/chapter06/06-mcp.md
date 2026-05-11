@@ -4,6 +4,8 @@
 
 MCP（模型上下文协议）是 Anthropic 提出的开放协议，为 LLM 应用与外部数据源、工具之间提供标准化集成方式，被形象地称为"AI 应用的 USB-C 接口"。
 
+MCP 协议已支持 **Streamable HTTP** 传输方式（替代早期的 stdio/SSE），提升了远程 MCP Server 的稳定性和可扩展性。
+
 ## 热门 MCP 服务器
 
 | MCP Server                                                         | 功能领域                         |
@@ -22,7 +24,7 @@ MCP（模型上下文协议）是 Anthropic 提出的开放协议，为 LLM 应�
 | MCP Client                                                                    | 简介                    |
 | ----------------------------------------------------------------------------- | --------------------- |
 | **[Claude Desktop](https://claude.ai/)**                                      | Anthropic 官方桌面客户端     |
-| **[Claude Code](https://docs.anthropic.com/zh-CN/docs/claude-code/overview)** | Anthropic 终端级 AI 编程助手 |
+| **[Claude Code](https://code.claude.com/docs/zh-CN/overview)** | Anthropic 终端级 AI 编程助手 |
 | **[Cursor](https://www.cursor.com/)**                                         | AI 原生 IDE（基于 VSCode）  |
 | **[Windsurf](https://www.windsurf.com/)**                                     | Codeium 出品 AI IDE     |
 | **[Trae](https://www.trae.cn/)**                                              | 字节 出品 AI IDE          |

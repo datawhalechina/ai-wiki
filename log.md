@@ -4,6 +4,23 @@
 
 ---
 
+## 2026-05-11
+
+### 修复
+
+- **章节七**：移除 Cursor 条目中 SpaceX 收购的虚假信息
+- **章节十三**：修正 AutoGen 与 Semantic Kernel 合并为 Microsoft Agent Framework 的不准确表述
+- **全局**：更新所有 Anthropic 文档链接（`docs.anthropic.com` → `platform.claude.com` / `code.claude.com`）
+- **章节十三**：更新 LMArena URL（`lmarena.ai` → `arena.ai`）
+
+### 变更
+
+- **章节八**：Hermes Agent 星标数更新（109K → 142K），新增 Microsoft Agent Framework 条目
+- **章节四**：OpenCode 星标数更新（147K → 158K），Claude Code 补充星标数
+- **章节六**：补充 MCP Streamable HTTP 协议说明
+
+---
+
 ## 2026-04-22
 
 ### 新增

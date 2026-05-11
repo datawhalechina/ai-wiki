@@ -11,9 +11,10 @@ AI Agent 框架提供构建自主推理、规划和执行任务的智能体系�
 | **[LangChain / LangGraph](https://www.langchain.com/)**      | 最成熟的生态，LangGraph 专注状态图多 Agent 编排，生产验证最充分 |
 | **[AutoGen](https://microsoft.github.io/autogen/)**          | 微软出品，多 Agent 对话协作                                  |
 | **[CrewAI](https://crewai.com/)**                            | 角色化多 Agent 协作                                          |
-| **[Claude Code](https://docs.anthropic.com/zh-CN/docs/claude-code/overview)** | Anthropic 的 Agent 能力封装                                  |
+| **[Claude Code](https://code.claude.com/docs/zh-CN/overview)** | Anthropic 的 Agent 能力封装，122K+ GitHub 星标               |
 | **[OpenClaw](https://openclaw.ai/)**                         | 开源本地 AI 智能体，强调"动手执行"，可 7×24 小时自动化       |
-| **[Hermes Agent](https://github.com/nousresearch/hermes-agent)** | 开源新星 109K star；Hermes Agent 是由 Nous Research 开发的开源、自托管自主 AI 智能体框架，专注于持久记忆、自我进化和跨平台工具使用，常被称为“会随着使用不断成长的数字员工”。它能持久化记忆，在跨会话中沉淀技能，并支持飞书、Telegram 等多平台接入。 |
+| **[Hermes Agent](https://github.com/nousresearch/hermes-agent)** | 开源新星 142K star；Hermes Agent 是由 Nous Research 开发的开源、自托管自主 AI 智能体框架，专注于持久记忆、自我进化和跨平台工具使用，常被称为”会随着使用不断成长的数字员工”。它能持久化记忆，在跨会话中沉淀技能，并支持飞书、Telegram 等多平台接入。 |
+| **[Microsoft Agent Framework](https://github.com/microsoft/agent-framework)** | 微软推出的统一 Agent 框架，融合 AutoGen 和 Semantic Kernel 的多 Agent 模式，支持 Python 和 .NET |
 
 ## 低代码智能体平台
 
