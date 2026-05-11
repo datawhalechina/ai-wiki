@@ -28,7 +28,7 @@
 - **章节四**：OpenCode 星标数更新（147K → 158K），Claude Code 补充星标数
 - **章节六**：补充 MCP Streamable HTTP 协议说明
 - **章节二**：完整刷新 Coding Plan 价格表——腾讯云拆分为 Hy/通用两条线（最低 28 元起），阿里云改为 Lite/Pro 两档并扩充模型与工具列表，Kimi 更新至 K2.6，刷新趋势分析
-- **章节五**：Skill 类型补充具体链接和开发工具类
+- **章节五**：重构改写——新增 Skill 项目文件构成（SKILL.md/references/scripts/assets 四层结构），补全全部 17 个官方技能，新增分类导航和选型建议，新增延伸学习视频
 - **章节九**：RAG 框架新增 Haystack
 - **章节十一**：Embedding 模型新增 Cohere Embed，KaLM-Embedding 分数表述修正为历史数据
 
