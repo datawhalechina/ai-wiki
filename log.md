@@ -15,7 +15,7 @@
 
 ### 新增
 
-- **章节一**：更新 OpenClaw 至最新状态（370K star/76K fork/每日发版），新增最新动态时间线（创始人加入 OpenAI / ClawCon / Moltbook），新增 6 款 Claw 产品 8 维对比矩阵和选型建议
+- **章节一**：更新 OpenClaw 至最新状态（370K star/76K fork/每日发版），新增最新动态时间线（创始人加入 OpenAI / ClawCon / Moltbook），新增 6 款 Claw 产品 8 维对比矩阵，新增 OpenClaw 周边生态（8 个精选项目）
 - **章节三**：模型选型对比矩阵（编程 8 维对比 + 非编程 6 场景推荐）+ 选型建议
 - **章节四**：CLI 工具选型对比矩阵 + 场景化选型建议
 - **章节六**：MCP Server 列表扩展至 12 个（补充 Chrome DevTools/Serena/FastMCP/n8n），新增场景分类表和选型建议
