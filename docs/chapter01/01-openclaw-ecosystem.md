@@ -52,12 +52,29 @@
 | 社区规模 | 370K star | — | — | — | — | — |
 | 发版节奏 | 每日 | — | — | — | — | — |
 
+## OpenClaw 周边生态
+
+除 6 款厂商产品外，社区还涌现了丰富的周边工具：
+
+| 项目 | 领域 | 亮点 |
+|------|------|------|
+| **[claw-code](https://github.com/ultraworkers/claw-code)**（191K star） | Rust 重写 | "史上最快突破 100K star"，Rust 高性能版本 |
+| **[NVIDIA NemoClaw](https://github.com/NVIDIA/NemoClaw)**（20K star） | 安全沙盒 | NVIDIA OpenShell 安全容器运行 OpenClaw |
+| **[ClawX](https://github.com/ValueCell-ai/ClawX)**（7K star） | 桌面 GUI | 图形界面版，[中文站 clawx.com.cn](https://clawx.com.cn) |
+| **[AutoResearchClaw](https://github.com/aiming-lab/AutoResearchClaw)**（12K star） | 科研自动化 | 从想法到论文全自动 |
+| **[ClawWork](https://github.com/HKUDS/ClawWork)**（8K star） | 自动化工作 | "11 小时赚 $15K" |
+| **[ClawTeam](https://github.com/HKUDS/ClawTeam)**（5K star） | 群体智能 | 多 Agent 集群全自动协作 |
+| **[clawpanel](https://github.com/qingchencloud/clawpanel)**（2.7K star） | 管理面板 | 多引擎管理，Tauri 桌面应用，11 种语言 |
+| **[汉化版](https://github.com/1186258278/OpenClawChineseTranslation)**（3.8K star） | 中文本地化 | CLI + Dashboard 全中文，含搭建教程 |
+
 ## 选型建议
 
 - **追求最大自由度 + 社区生态** → **OpenClaw**：开源、370K star、每日迭代、任意模型、5400+ Skills
 - **智谱生态用户** → **AutoClaw**：与 GLM 模型深度绑定，一键安装，预置技能
 - **Kimi/MiniMax/豆包/混元深度用户** → 对应厂商的 Claw 产品，模型绑定但集成度高
 - **企业办公场景** → **QClaw**：腾讯生态，面向企业内部协作
+- **需要高性能** → **claw-code**（Rust 版）
+- **需要桌面体验** → **ClawX** / **clawpanel**
 
 ## 相关文章
 
