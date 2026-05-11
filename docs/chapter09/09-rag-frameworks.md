@@ -11,6 +11,7 @@ RAG（检索增强生成）框架。2026 年的趋势是向 Agentic RAG 和上�
 | **[RAGFlow](https://ragflow.io/)**                         | 企业级知识处理引擎，深度文档解析，表格识别能力强  |
 | **[LlamaIndex](https://github.com/run-llama/llama_index)** | 数据框架，RAG 核心工具，支持 Agent 集成 |
 | **[LangChain](https://www.langchain.com/)**                | RAG 基础组件丰富，生态最大           |
+| **[Haystack](https://haystack.deepset.ai/)**               | deepset 出品，模块化 RAG 管线，支持主流向量库和 LLM |
 | **[FastGPT](https://fastgpt.cn/)**                         | 高速内容生成专家，轻量易用             |
 
 ## RAG 演进方向

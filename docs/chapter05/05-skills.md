@@ -22,7 +22,8 @@ Skills（技能）是一种为 AI 预定义可复用的专业能力的机制。
 
 ## 值得关注的 Skill 类型
 
-- 代码生成类：REST API 生成、单元测试编写、数据库 Schema 设计
+- 代码生成类：[REST API 生成](https://github.com/anthropics/skills/tree/main/skills/rest-api)、[单元测试编写](https://github.com/anthropics/skills/tree/main/skills/test-driven-development)、数据库 Schema 设计
 - 办公自动化类：文件整理、邮件处理、Excel 报表生成
-- 内容创作类：营销文案生成、短视频脚本、社交媒体排版发布
+- 内容创作类：[前端界面设计](https://github.com/anthropics/skills/tree/main/skills/frontend-design)、营销文案生成、社交媒体排版发布
 - 金融投研类：股票行情监控、财报分析、信号触发
+- 开发工具类：PDF 处理、MCP Server 生成、[Skill 创建](https://github.com/anthropics/skills/tree/main/skills/skill-creator)

@@ -12,7 +12,8 @@ Embedding 模型将文本转换为向量表示，是 RAG 和语义搜索的核�
 | --------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
 | **[Qwen3-Embedding-4B/8B](https://qwen.ai/blog?id=qwen3-embedding)**                                                  | 阿里开源，MTEB 榜单领先，4B 版性价比高，8B 版精度优                |
 | **[Gemini Embedding 2](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-embedding-2/)** | 跨模态、跨语言、关键词检索综合最强                              |
-| **[KaLM-Embedding](https://huggingface.co/tencent/KaLM-Embedding-Gemma3-12B-2511)**                                   | 腾讯开源百亿参数模型，MTEB 多语言榜单全球第一（72.32 分），覆盖 1038 种语言 |
+| **[KaLM-Embedding](https://huggingface.co/tencent/KaLM-Embedding-Gemma3-12B-2511)**                                   | 腾讯开源百亿参数模型，曾登顶 MTEB 多语言榜单（72.32 分），覆盖 1038 种语言 |
 | **[OpenAI text-embedding-3](https://platform.openai.com/docs/guides/embeddings/)**                                    | RAG 原型最常用，易于集成，但生产 RAG 中可能不够用                  |
 | **[Jina Embeddings](https://jina.ai/)**                                                                               | 多语言支持，擅长长文档                                    |
 | **[BGE 系列](https://github.com/FlagOpen/FlagEmbedding)**                                                               | BAAI 出品，中英文双语强，开源社区广泛使用                        |
+| **[Cohere Embed](https://cohere.com/embed)**                                                                          | 企业级 Embedding，多语言支持，RAG 场景优化                   |
