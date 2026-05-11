@@ -29,7 +29,7 @@
 - **章节六**：补充 MCP Streamable HTTP 协议说明
 - **章节二**：完整刷新 Coding Plan 价格表——腾讯云拆分为 Hy/通用两条线（最低 28 元起），阿里云改为 Lite/Pro 两档并扩充模型与工具列表，Kimi 更新至 K2.6，刷新趋势分析
 - **章节五**：重构改写——新增 Skill 项目文件构成（SKILL.md/references/scripts/assets 四层结构），补全全部 17 个官方技能，新增分类导航和选型建议，新增延伸学习视频
-- **章节九**：RAG 框架新增 Haystack
+- **章节九**：RAG 框架新增 Haystack；GraphRAG 和 Agentic RAG 方向补充核心流程、代表项目、4 个典型实践案例和落地建议；新增多模态 RAG 和上下文工程方向
 - **章节十一**：Embedding 模型新增 Cohere Embed，KaLM-Embedding 分数表述修正为历史数据
 
 ---
