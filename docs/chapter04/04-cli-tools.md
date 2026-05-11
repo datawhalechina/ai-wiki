@@ -36,3 +36,9 @@ CLI（命令行界面）AI 工具是终端中的 AI 编程助手，支持自然�
 - **国内生态优先** → **Qoder CLI**（阿里）/ **CodeBuddy**（腾讯）：中文优化好，国产模型集成
 - **Google 全家桶用户** → **Gemini CLI**：与 Gemini 3 模型和 Google Cloud 深度集成
 
+## 辅助工具
+
+| 工具 | 特点 |
+|------|------|
+| **[cc-switch](https://github.com/farion1231/cc-switch)**（66K star） | 跨平台桌面应用，一键切换 Claude Code / Codex / OpenCode / OpenClaw / Gemini CLI，免去终端手动切换的繁琐 |
+
