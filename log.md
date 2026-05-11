@@ -13,6 +13,15 @@
 - **全局**：更新所有 Anthropic 文档链接（`docs.anthropic.com` → `platform.claude.com` / `code.claude.com`）
 - **章节十三**：更新 LMArena URL（`lmarena.ai` → `arena.ai`）
 
+### 新增
+
+- **章节四**：CLI 工具选型对比矩阵 + 场景化选型建议
+- **章节七**：IDE 选型对比矩阵 + 场景化选型建议
+- **章节八**：Agent 框架选型对比矩阵 + 决策树
+- **章节九**：RAG 框架选型对比矩阵 + 选型路径
+- **章节十**：向量数据库选型对比矩阵 + 规模/场景选型指南
+- **章节十一**：Embedding 模型选型对比矩阵 + 场景化选型建议
+
 ### 变更
 
 - **章节八**：Hermes Agent 星标数更新（109K → 142K），新增 Microsoft Agent Framework 条目

@@ -20,3 +20,23 @@
 | **[Bolt.new](https://bolt.new/)**   | 浏览器中构建全栈应用，StackBlitz 出品 |
 | **[V0 by Vercel](https://v0.dev/)** | 从文本描述生成 React 组件/UI      |
 | **[Replit](https://replit.com/)**   | 浏览器端编码、运行、部署一体化          |
+
+## IDE 选型对比
+
+| 工具 | 类型 | 免费 | 核心模型 | Agent 能力 | MCP 支持 | 中文体验 | 适用场景 |
+|------|------|------|---------|-----------|---------|---------|---------|
+| Cursor | AI IDE | 付费 | 多模型可选 | Composer+Agent | 支持 | 良 | 专业开发，大型项目 |
+| Windsurf | AI IDE | 付费 | 多模型可选 | Cascade 模式 | 支持 | 良 | 流畅协作体验 |
+| Antigravity | AI IDE | — | Gemini 3 | 自主开发+项目管理 | — | — | Google 生态 |
+| Trae | AI IDE | 基础版免费 | 豆包大模型 | 支持 | 支持 | 优 | 中文优先，零成本入门 |
+| Copilot | IDE 插件 | 付费 | GPT-5/Claude | Agent 模式 | 支持 | 良 | VS Code/JetBrains 用户 |
+| CodeBuddy | 全栈 IDE | — | 混元+DeepSeek | Plan-Code-Deploy | 支持 | 优 | 腾讯生态，全流程 |
+
+## 选型建议
+
+- **主力开发工具** → **Cursor** 或 **Windsurf**：成熟 AI IDE，Agent 能力强，适合日常开发
+- **零成本入门** → **Trae**（基础免费）+ **CodeBuddy**：中文体验好，适合学习和小项目
+- **已有 IDE 不想换** → **GitHub Copilot**：插件形式，无缝集成现有工作流
+- **Web 快速原型** → **Bolt.new** / **V0**：浏览器端零配置，秒出原型
+- **全栈部署** → **Replit**：编码+运行+部署一体化
+

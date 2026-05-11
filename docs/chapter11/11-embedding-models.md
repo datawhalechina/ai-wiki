@@ -4,7 +4,27 @@
 
 Embedding 模型将文本转换为向量表示，是 RAG 和语义搜索的核心组件。
 
-**[MTEB Leaderboardb：embedding 模型的“标准化能力排行榜”](https://huggingface.co/spaces/mteb/leaderboard)**
+## Embedding 模型选型对比
+
+| 模型 | 维度 | 开源 | 中文优化 | 多语言 | MTEB 表现 | 适用场景 |
+|------|------|------|---------|--------|----------|---------|
+| Qwen3-Embedding-4B/8B | 可变 | 开源 | 优 | 强 | 榜单领先 | 中文 RAG 首选 |
+| Gemini Embedding 2 | — | API | 良 | 极强 | 关键词检索最强 | 跨模态、跨语言搜索 |
+| KaLM-Embedding (12B) | — | 开源 | 优 | 极强（1038 语言） | 曾登顶多语言榜首 | 多语言 RAG |
+| OpenAI text-embedding-3 | 256-3072 | API | 中 | 良 | 中上 | 快速原型，与 OpenAI 生态集成 |
+| Jina Embeddings | — | 开源 | 中 | 强 | — | 长文档嵌入 |
+| BGE 系列 | — | 开源 | 优 | 强（中英双语） | 高 | 开源社区首选，成熟稳定 |
+| Cohere Embed | — | API | 中 | 强 | — | 企业级 RAG |
+
+## 选型建议
+
+- **中文 RAG 首选** → **BGE 系列**（开源成熟）/ **Qwen3-Embedding**（榜单领先）
+- **多语言场景** → **KaLM-Embedding**（1038 语言覆盖）/ **Gemini Embedding 2**
+- **快速开始** → **OpenAI text-embedding-3**（API 调用，零配置）
+- **长文档处理** → **Jina Embeddings**（擅长长文本）
+- **企业级** → **Cohere Embed**（企业级 SLA）
+
+> 实时排名请查看 **[MTEB Leaderboard](https://huggingface.co/spaces/mteb/leaderboard)**
 
 ## 主流 Embedding 模型
 
