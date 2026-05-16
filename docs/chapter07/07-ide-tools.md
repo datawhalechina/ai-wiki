@@ -8,8 +8,8 @@
 | --------------------------------------------------------- | ------------- | ------------------------------------------------------ | ------------------------------------------------------------ |
 | **[Cursor](https://www.cursor.com/)**                     | AI 原生 IDE   | 基于 VSCode，AI 编程新宠儿，Composer 模式、Agent 模式  | **Cursor已更新至3.1.x版本**，持续强化 Agent 模式和 MCP 集成能力 |
 | **[Windsurf](https://www.windsurf.com/)**                 | AI 原生 IDE   | Codeium 出品，流畅的 AI 协作体验                       |                                                              |
-| **[Antigravity](https://antigravity.google/)**            | AI 原生 IDE   | Google出品                                             | 它基于 VS Code 构建，采用“智能体优先”的设计理念，并使用了 Google 自研的 Gemini 3 模型。Antigravity 的功能从“代码辅助”转向“自主开发和项目管理”。 |
-| **[Trae](https://www.trae.ai/)**                          | 字节 AI IDE   | 基础版免费，中文指令理解精准度高                       |                                                              |
+| **[Antigravity](https://antigravity.google/)**            | AI 原生 IDE   | Google出品                                             | 基于 VS Code 构建，Agent-first 设计，使用 Gemini 3 模型；已有社区 Skills 生态（[antigravity-skills](https://github.com/rmyndharis/antigravity-skills)）和配额监控插件（[vscode-antigravity-cockpit](https://github.com/jlcodes99/vscode-antigravity-cockpit)） |
+| **[Trae](https://www.trae.ai/)**                          | 字节 AI IDE   | 基础版免费，中文指令理解精准度高                       | 已升级为 **TRAE SOLO**，定位从 AI IDE 扩展为"More Than Coding"跨平台 AI 协作平台（Desktop + App + Web） |
 | **[GitHub Copilot](https://github.com/features/copilot)** | 微软 IDE 插件 | 微软生态的智能编码标配                                 |                                                              |
 | **[CodeBuddy](https://codebuddy.cn/)**                    | 腾讯 全栈 IDE | 混元+DeepSeek 双引擎，Plan-Coding-Deploy 三 Agent 协同 |                                                              |
 
@@ -27,8 +27,8 @@
 |------|------|------|---------|-----------|---------|---------|---------|
 | Cursor | AI IDE | 付费 | 多模型可选 | Composer+Agent | 支持 | 良 | 专业开发，大型项目 |
 | Windsurf | AI IDE | 付费 | 多模型可选 | Cascade 模式 | 支持 | 良 | 流畅协作体验 |
-| Antigravity | AI IDE | — | Gemini 3 | 自主开发+项目管理 | — | — | Google 生态 |
-| Trae | AI IDE | 基础版免费 | 豆包大模型 | 支持 | 支持 | 优 | 中文优先，零成本入门 |
+| Antigravity | AI IDE | — | Gemini 3 | Agent-first | 社区支持 | — | Google 生态，社区 Skills |
+| Trae (SOLO) | AI IDE | 基础版免费 | 豆包大模型 | SOLO 模式 | 支持 | 优 | 中文优先，零成本入门，跨平台 |
 | Copilot | IDE 插件 | 付费 | GPT-5/Claude | Agent 模式 | 支持 | 良 | VS Code/JetBrains 用户 |
 | CodeBuddy | 全栈 IDE | — | 混元+DeepSeek | Plan-Code-Deploy | 支持 | 优 | 腾讯生态，全流程 |
 

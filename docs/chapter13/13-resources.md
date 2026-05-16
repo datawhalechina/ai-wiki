@@ -6,12 +6,14 @@
 
 - **[AI 工具导航](https://www.ai-all.info/)**：工具聚合、分类导航、中文友好、快速发现
 - **[Product Hunt AI](https://www.producthunt.com/categories/ai)**：新品发布、热度排行、真实评论、发现趋势
+- **[MCP Server 市场](https://mcp.so/zh)**：MCP 服务器聚合搜索，按场景分类，中文友好
 
 ## 评测与榜单
 
 - **[Artificial Analysis](https://artificialanalysis.ai/)**：模型评测、价格/性能对比、延迟/吞吐、趋势追踪
 - **[OpenRouter](https://openrouter.ai/rankings)**：模型热度榜、调用占比、生态风向、选型参考
 - **[LMArena](https://arena.ai/)**：LLM 对战榜、偏好投票、Elo 排名、实时排行
+- **[MTEB Leaderboard](https://huggingface.co/spaces/mteb/leaderboard)**：Embedding 模型实时排名，覆盖多语言、多任务评测
 
 ## 社区与资源
 

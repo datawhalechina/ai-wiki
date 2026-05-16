@@ -4,6 +4,21 @@
 
 ---
 
+## 2026-05-16
+
+### 修复
+
+- **章节四**：修正 Qoder CLI 厂商归属（非阿里出品，为独立组织 Qoder-AI）和产品定位（Agentic Coding Platform，非纯 CLI）
+- **章节七**：更新 Trae 条目，产品已升级为 TRAE SOLO，定位从 AI IDE 扩展为跨平台 AI 协作平台
+
+### 新增
+
+- **章节七**：Antigravity 补充社区生态信息（antigravity-skills、vscode-antigravity-cockpit 插件）
+- **章节十二**：新增"范式与工具映射"表（4 种范式 × CLI/IDE/Skill 推荐）和"实操建议"（4 条实践路径）
+- **章节十三**：新增 MTEB Leaderboard（Embedding 排行榜）和 MCP Server 市场（mcp.so）资源
+
+---
+
 ## 2026-05-11
 
 ### 修复

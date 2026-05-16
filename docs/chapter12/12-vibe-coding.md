@@ -20,7 +20,25 @@ Vibe Coding 由 AI 研究员 Andrej Karpathy 于 2025 年 2 月提出，指通�
 | **Vibe Coding**         | 灵感驱动，边做边改 | 很少，快速启动 | 创意探索、原型验证   | 最快出结果，抓住灵感   |
 | **Spec Coding**         | 先定义，再开发   | 完整规格说明  | 需求明确、模块交付   | AI 容易执行，结果可控 |
 | **Glue Coding**         | 复用整合，拼装交付 | 梳理已有模块  | MVP 开发、应用整合 | 最快交付，效率最高    |
-| **Harness Engineering** | 质检门禁，返工迭代 | 定义质检标准  | 生产环境、大型项目   | 质量可控，可维护性好   |
+| **Harness Engineering** | 质检门禁，返工迭代 | 定义质检标准  | 生产环境、大型项目   | 质量可控，可维护性好  |
+
+## 范式与工具映射
+
+不同范式适合不同的工具组合：
+
+| 范式 | 推荐 CLI | 推荐 IDE | 推荐 Skill/工作流 |
+|------|---------|---------|----------------|
+| Vibe Coding | Claude Code / OpenClaw | Cursor Agent 模式 / Bolt.new | 前端设计、创意生成类 Skill |
+| Spec Coding | Claude Code（Plan 模式）| Cursor / Windsurf | skill-creator（生成规格）、doc-coauthoring（文档协作） |
+| Glue Coding | OpenClaw（Skills 驱动）| Trae / Replit | mcp-builder（集成外部工具）、API 对接 Skill |
+| Harness Engineering | Claude Code（TDD 模式）| Cursor + Copilot | webapp-testing（E2E 测试）、CodeReview Skill |
+
+## 实操建议
+
+- **从 Vibe Coding 入门**：先用 Bolt.new 或 Cursor Agent 模式快速出原型，感受 AI 编程的效率
+- **项目变大时切换 Spec Coding**：当 Vibe Coding 产出难以维护时，用 PRD 或规格文档约束 AI 输出
+- **生产环境必须上 Harness**：无论哪种范式，上线前都需要测试门禁和 CodeReview
+- **混合使用**：同一项目中，核心模块用 Spec/Harness，探索性功能用 Vibe，不必拘泥于单一范式
 
 ## 相关文章
 
