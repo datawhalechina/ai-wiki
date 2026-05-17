@@ -46,6 +46,8 @@
 | 十一、Embedding 模型 | [`11-embedding-models.md`](docs/chapter11/11-embedding-models.md) |
 | 十二、Vibe Coding 四种 | [`12-vibe-coding.md`](docs/chapter12/12-vibe-coding.md) |
 | 十三、资源导航 | [`13-resources.md`](docs/chapter13/13-resources.md) |
+| 十四、Prompt Engineering | [`14-prompt-engineering.md`](docs/chapter14/14-prompt-engineering.md) |
+| 十五、端到端实战项目 | [`15-hands-on-projects.md`](docs/chapter15/15-hands-on-projects.md) |
 
 ## 参与贡献
 

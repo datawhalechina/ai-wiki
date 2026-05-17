@@ -61,6 +61,46 @@ MCP 协议已支持 **Streamable HTTP** 传输方式（替代早期的 stdio/SSE
 | **[Trae](https://www.trae.cn/)**                                              | 字节 出品 AI IDE          |
 | **[Cherry Studio](https://www.cherry-ai.com/)**                               | 支持多模型并行对话的跨平台AI桌面客户端  |
 
+## 5 分钟快速上手：用 FastMCP 创建你的第一个 MCP Server
+
+```bash
+# 1. 安装
+pip install fastmcp
+
+# 2. 创建 server.py
+cat > server.py << 'EOF'
+from fastmcp import FastMCP
+
+mcp = FastMCP("my-first-server")
+
+@mcp.tool()
+def hello(name: str) -> str:
+    """向用户打招呼"""
+    return f"你好，{name}！这是你的第一个 MCP 工具。"
+
+if __name__ == "__main__":
+    mcp.run()
+EOF
+
+# 3. 运行
+fastmcp run server.py
+```
+
+在 Claude Code 中配置：编辑 `.claude/settings.json`，在 `mcpServers` 中添加：
+
+```json
+{
+  "mcpServers": {
+    "my-server": {
+      "command": "python",
+      "args": ["server.py"]
+    }
+  }
+}
+```
+
+重启 Claude Code 后，输入"用 hello 工具打个招呼"即可测试。
+
 ## 相关文章
 
 - **MCP 官方规范**：[modelcontextprotocol.io](https://modelcontextprotocol.io)

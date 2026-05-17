@@ -1,6 +1,6 @@
 # 十三、资源导航
 
-[← 上一章：十二、Vibe Coding 四种](../chapter12/12-vibe-coding.md) | [返回总览](../index.md)
+[← 上一章：十二、Vibe Coding 四种](../chapter12/12-vibe-coding.md) | [返回总览](../index.md) | [下一章：十四、Prompt Engineering →](../chapter14/14-prompt-engineering.md)
 
 ## 工具导航站
 

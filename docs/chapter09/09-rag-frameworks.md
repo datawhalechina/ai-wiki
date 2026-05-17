@@ -24,6 +24,40 @@ RAG（检索增强生成）框架。2026 年的趋势是向 Agentic RAG 和上�
 | Haystack | 强（模块化管线） | 是 | 自托管 | 中 | 中-大 | 模块化 RAG 管线，向量库自由切换 |
 | FastGPT | 中 | 否 | 自托管 | 低 | 中小 | 快速搭建知识库问答 |
 
+## 5 分钟快速上手：用 LlamaIndex 搭建最简 RAG
+
+```bash
+# 1. 安装
+pip install llama-index llama-index-embeddings-huggingface chromadb
+
+# 2. 创建 test_rag.py
+cat > test_rag.py << 'EOF'
+from llama_index.core import VectorStoreIndex, SimpleDirectoryReader, Settings
+from llama_index.embeddings.huggingface import HuggingFaceEmbedding
+
+# 设置中文 Embedding 模型
+Settings.embed_model = HuggingFaceEmbedding("BAAI/bge-small-zh-v1.5")
+
+# 加载文档（放入 data/ 目录）
+documents = SimpleDirectoryReader("data/").load_data()
+
+# 构建索引并查询
+index = VectorStoreIndex.from_documents(documents)
+query_engine = index.as_query_engine(similarity_top_k=3)
+response = query_engine.query("文档的核心内容是什么？")
+print(response)
+EOF
+
+# 3. 准备文档
+mkdir -p data
+echo "AI Wiki 是一个开源的 AI 开发知识导航项目..." > data/intro.txt
+
+# 4. 运行
+python test_rag.py
+```
+
+**关键参数**：`similarity_top_k` 控制检索文档数量，`chunk_size` 控制切分粒度（默认 1024，中文建议 256-512）。
+
 ## 选型路径
 
 - **快速验证** → **FastGPT**：小时级上线知识库问答

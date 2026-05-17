@@ -36,6 +36,27 @@ CLI（命令行界面）AI 工具是终端中的 AI 编程助手，支持自然�
 - **国内生态优先** → **Qoder CLI**（Agentic Coding）/ **CodeBuddy**（腾讯）：中文优化好，自主编程模式
 - **Google 全家桶用户** → **Gemini CLI**：与 Gemini 3 模型和 Google Cloud 深度集成
 
+## 5 分钟快速上手：Claude Code
+
+```bash
+# 1. 安装
+npm install -g @anthropic-ai/claude-code
+
+# 2. 启动（首次运行需登录 Anthropic 账号）
+claude
+
+# 3. 第一个命令：让 AI 帮你创建项目
+> 帮我创建一个 Python FastAPI 项目，包含健康检查接口
+
+# 4. 常用操作
+> 读取 main.py 并解释它的功能       # 理解代码
+> 给这个项目加一个用户登录接口       # 增加功能
+> 运行测试并修复所有失败的用例       # 调试修复
+> 帮我做一次 CodeReview              # 代码审查
+```
+
+**国内用户**：可通过 Coding Plan（章节二）使用阿里云/腾讯云 Token Plan 接入，降低成本。
+
 ## 辅助工具
 
 | 工具 | 特点 |
