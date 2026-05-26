@@ -4,7 +4,6 @@
 
 ![AI-Wiki 项目封面](public/ai-wiki-project.png)
 
-**更新时间**：2026-05-17
 **贡献入口**：[提交 Issue](https://github.com/datawhalechina/ai-wiki/issues) / [提交 Pull Request](https://github.com/datawhalechina/ai-wiki/pulls)
 
 本文档是 `ai-wiki` 的正文总览页。完整内容已按章节拆分在 `docs/chapterXX/` 目录下，便于持续维护与扩展图片等资源文件。
