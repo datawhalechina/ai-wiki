@@ -1,0 +1,42 @@
+name: Link Check
+
+on:
+  schedule:
+    - cron: '7 3 * * 1'
+  workflow_dispatch:
+
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Restore lychee cache
+        uses: actions/cache@v4
+        with:
+          path: .lycheecache
+          key: lychee-${{ github.sha }}
+          restore-keys: lychee-
+
+      - name: Run lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >
+            --cache
+            --max-cache-age 1d
+            --retry-wait-time 5
+            --max-retries 2
+            --timeout 15
+            --no-progress
+            './docs/**/*.md'
+            'README.md'
+          output: lychee-report.md
+          fail: false
+
+      - name: Create issue on failure
+        if: env.LYCHEE_EXIT_CODE != '0'
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: 'Dead links detected'
+          content-filepath: lychee-report.md
+          labels: broken-link
