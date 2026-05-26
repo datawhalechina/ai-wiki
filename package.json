@@ -1,0 +1,17 @@
+{
+  "name": "ai-wiki",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "AI开发者全景式工具与资源导航",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.4",
+    "vue": "^3.5.13"
+  },
+  "license": "CC-BY-NC-SA-4.0"
+}

@@ -27,7 +27,7 @@
 
 - `README.md`：项目介绍、导航入口、贡献说明
 - `docs/index.md`：正文总览目录页
-- `docs/chapter01` ~ `docs/chapter13`：按主题介绍；每章支持前后章与总览互链
+- `docs/chapter01` ~ `docs/chapter15`：按主题介绍；每章支持前后章与总览互链
 
 ## 章节目录
 
