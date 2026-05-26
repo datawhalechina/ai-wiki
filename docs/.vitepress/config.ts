@@ -3,6 +3,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: 'AI-Wiki',
   description: 'AI开发者全景式工具与资源导航',
+  base: '/ai-wiki/',
 
   head: [['link', { rel: 'icon', href: '/datawhale-logo.png' }]],
 
