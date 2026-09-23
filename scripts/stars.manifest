@@ -36,6 +36,10 @@ anthropics/claude-code::docs/chapter04/04-cli-tools.md::Claude 系列::CLI 选�
 anomalyco/opencode::docs/chapter04/04-cli-tools.md::opencode.ai::主流 CLI 表格
 anomalyco/opencode::docs/chapter04/04-cli-tools.md::多模型自由::CLI 选型对比矩阵
 farion1231/cc-switch::docs/chapter04/04-cli-tools.md::farion1231/cc-switch::辅助工具
+deepseek-ai/deepseek-harness::docs/chapter04/04-cli-tools.md::deepseek-ai/deepseek-harness::主流 CLI 表格
+deepseek-ai/deepseek-harness::docs/chapter04/04-cli-tools.md::插件化改造::CLI 选型对比矩阵
+earendil-works/pi::docs/chapter04/04-cli-tools.md::earendil-works/pi::主流 CLI 表格
+earendil-works/pi::docs/chapter04/04-cli-tools.md::极简底座、自建工作流::CLI 选型对比矩阵
 
 # ── 章节五：好用的 Skill ────────────────────────────────────────────────────
 anthropics/skills::docs/chapter05/05-skills.md::Anthropic 官方 Skills::Skill 生态表
@@ -71,3 +75,7 @@ chroma-core/chroma::docs/chapter10/10-vector-databases.md::trychroma.com::主流
 lancedb/lancedb::docs/chapter10/10-vector-databases.md::lancedb.com::主流向量库表
 pgvector/pgvector::docs/chapter10/10-vector-databases.md::pgvector/pgvector::主流向量库表
 timescale/pgvectorscale::docs/chapter10/10-vector-databases.md::timescale/pgvectorscale::主流向量库表
+
+# ── 章节十二：Vibe Coding / 范式 ────────────────────────────────────────────
+# Loop Engineering 的社区参考实现（该行同时含链接文字与 URL，片段命中行即可）
+cobusgreyling/loop-engineering::docs/chapter12/12-vibe-coding.md::cobusgreyling/loop-engineering::Loop Engineering 小节
