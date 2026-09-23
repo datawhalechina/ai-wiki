@@ -28,7 +28,7 @@
 - `README.md`：项目介绍、导航入口、贡献说明
 - `docs/index.md`：正文总览目录页
 - `docs/chapter01` ~ `docs/chapter16`：按主题介绍；每章支持前后章与总览互链
-- `scripts/`：维护工具（star 数批量刷新）
+- `scripts/`：维护工具（star 数批量刷新、章节配图生成）
 
 ## 章节目录
 
@@ -60,7 +60,7 @@
 
 ## 维护
 
-本项目的时效性内容（模型版本、订阅价格、GitHub 星标）会持续过期，约**每季度**做一次核查。其中星标数据已脚本化，无需手工核对：
+本项目的时效性内容（模型版本、订阅价格、GitHub 星标）会持续过期，约**每季度**做一次核查。其中星标数据与部分配图已脚本化，无需手工核对：
 
 ```bash
 scripts/update_stars.sh                    # 预演：只输出差异表，不写盘
@@ -70,6 +70,14 @@ scripts/update_stars.sh --repo owner/name  # 单仓库快查
 ```
 
 脚本用 `gh api` 取实测值（需先 `gh auth login`），目标行由 [`scripts/stars.manifest`](scripts/stars.manifest) 按「行级唯一片段」定位。新增条目时请先跑预演——若出现"命中片段但该行没有 star 数字"的警告，说明片段不够唯一，需据其收紧。
+
+章节配图同理，不要用第三方截图（会迅速过期且难以维护），改为脚本生成：
+
+```bash
+python3 scripts/gen_coding_plan_charts.py  # 重新生成「二、Coding Plan」的两张对比图
+```
+
+脚本依赖 `matplotlib` 与中文字体；价格数据集中在脚本顶部的 `ENTRY_PRICING` / `PRICE_BANDS`，改价只改这两处即可。
 
 ## 关注我们
 

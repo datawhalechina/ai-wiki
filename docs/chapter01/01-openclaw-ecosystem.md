@@ -33,31 +33,66 @@
 
 ## 国内"龙虾"产品矩阵
 
-| 产品 | 厂商 | 部署 | 生态绑定 | 定位 |
-|------|------|------|---------|------|
-| **[OpenClaw](https://openclaw.ai/)** | 开源社区 | 本地/云端 | 模型自由 | 开源旗舰，390.3K star，"海纳百川" |
-| **[AutoClaw](https://autoglm.z.ai/autoclaw/)** | 智谱 AI | 本地（一键安装） | GLM 系列 | 预置 50+ Skills，内置 Pony-Alpha-2，支持飞书 |
-| **[KimiClaw](https://kimi-claw.com/)** | 月之暗面 | 云端 | Kimi 系列 | 调用 Kimi 自有模型（K2.6） |
-| **[MaxClaw](https://agent.minimaxi.com/activity/max-claw)** | MiniMax | 云端 | MiniMax 系列 | 调用 MiniMax 自有模型，语音/音乐能力强 |
-| **[ArkClaw](https://console.volcengine.com/ark/region:ark+cn-beijing/experience/claw)** | 字节跳动 | 云端 | 豆包系列 | 火山引擎旗下，深度集成豆包大模型 |
-| **[QClaw](https://qclaw.qq.com/)** | 腾讯 | 本地 | 混元系列 | 面向企业办公场景 |
+2026 年 3 月起，国内厂商密集推出 Claw 类产品，从最初的 6 款扩至 12 款以上。纳入本表的**必须是能给出厂商官方入口的产品**：
 
-## 六款 Claw 产品对比
+| 产品 | 厂商 | 端形态 | 模型 | 定位 |
+|------|------|--------|------|------|
+| **[OpenClaw](https://openclaw.ai/)** | 开源社区 | 本地/云端 | 任意模型 | 开源旗舰，390.3K star，"海纳百川" |
+| **[AutoClaw（澳龙）](https://autoglm.z.ai/autoclaw/)** | 智谱 AI | **本地**（Win/macOS 一键安装，约 1 分钟） | **完全开放**（推荐 DeepSeek/Kimi/MiniMax/GLM） | 2026-03-10 上线，国内首个真·一键安装本地版；预置 50+ Skills；内置 Pony-Alpha-2（内测代号）；一键接入飞书 |
+| **[KimiClaw](https://www.kimi.com/bot)** | 月之暗面 | 云端（另有桌面版 / 安卓托管） | Kimi 系（默认 K2.6，可切 K3） | 一键云部署，40GB 云存储；一键部署需 **Allegretto 及以上**会员 |
+| **[MaxClaw](https://agent.minimaxi.com/activity/max-claw)** | MiniMax | 云端 | MiniMax 系（M3 / M2.7） | 10 秒部署、50GB 云存储；语音/音乐能力强 |
+| **[ArkClaw](https://console.volcengine.com/ark/region:ark+cn-beijing/experience/claw)** | 火山引擎（字节） | 云端 SaaS | 豆包系 + 多家第三方 | 已推出**企业版**（席位制，单次 ≥5 席、最多 1000 席） |
+| **[QClaw](https://qclaw.qq.com/)** | 腾讯（电脑管家团队） | **本地**（PC） | 混元系 | **V2 已支持最多 3 个 Agent 并行** + 智能连接器（腾讯文档/腾讯会议/金山文档/Notion/邮箱）+ 龙虾管家安全沙箱 |
+| **[小艺Claw](https://xiaoyi.huawei.com/)** | 华为 | **手机 / 平板 / PC** | openPangu-2.0-Pro、DeepSeek V4、MiniMax M3 可切换 | 2026-06-25 起对 **HarmonyOS 5.0+ 全机型开放**；500+ Skills；套餐 49 元（1000 点）/ 199 元（6000 点） |
+| **[JVSClaw](https://jvs.wuying.aliyun.com/)** | 阿里云（无影团队） | 云端（Web / iOS） | 多模型 | 2026-03 品牌独立，运行在 **ClawSpace 沙箱**；另有 JVS Computer / JVS Mobile 两条 B 端线 |
+| **[DuMate（搭子）](https://dumate.baidu.com/)** | 百度智能云 | **PC + 移动端** | 文心系 | 2026-03-17 AI DAY 发布、03-22 全量上线；已发布 15 个行业套件；本地沙箱 + 权限分级 |
+| **Xiaomi miclaw** | 小米 | **手机**（另有手表版） | MiMo | 2026-03 起**邀请制封测**，仅小米 17 系列等机型，走 OTA 推送，**无公开下载页**（入口在小米社区 miclaw 圈子）；官方自述为国内首个手机端类 OpenClaw 应用 |
+| **[LobsterAI（有道龙虾）](https://lobsterai.youdao.com/)** | 网易有道 | **PC 桌面**（可 NAS 部署） | 模型自由 | 国内首个 **100% 开源**桌面级办公 Agent；2026-09-16 发布 **2.0**，兼容 OpenClaw 2.0，新增 Sites / Teams |
+| **[AstronClaw](https://agent.xfyun.cn/astron-claw)** | 科大讯飞 | 云端 SaaS | 星火 X2 + MiniMax / Kimi / GLM 可切换 | 2026-03-12 上线；10000+ skills；沙箱隔离；支持企微/钉钉/飞书 |
+
+**同样值得关注但未列入主表**：
+
+| 产品 | 厂商 | 说明 |
+|------|------|------|
+| **HiClaw** | 阿里云（Higress 团队） | **Apache 2.0 开源的团队版**，Manager–Worker 架构 + Matrix 通信，与 JVSClaw **分属不同团队** |
+| **纳米Work**（原 360 安全龙虾） | 360 | 2026-07-28 由「360 安全龙虾」整体升级而来，PC 客户端 + 硬件 Box，主打安全与多智能体 |
+| **UniClaw** | 中国联通 | 2026-04-28 发布，含 UniClaw Box / U 盘随身版；**注意是联通，不是腾讯** |
+| **Mavis** | MiniMax | **不是 MaxClaw 改名**——它是 MiniMax Agent 于 2026-05 升级并更名而来，主打 Agent Teams（Leader/Worker/Verifier 三角色协作），与 MaxClaw 并列存在 |
+
+> ⚠️ **厂商标注易错点**（社区文章常见错误，引用前请核对）
+> 1. **AutoClaw = 智谱 AI**（不是字节跳动），中文名「澳龙」。
+> 2. **UniClaw = 中国联通**（不是腾讯）。
+> 3. **JVSClaw / HiClaw / CoPaw 同属阿里云但分属不同团队**（无影 / Higress / 通义），不要笼统写成「阿里云 JVSClaw」。
+> 4. **MaxClaw ≠ Mavis**：前者是云端 Claw 托管服务，后者是 MiniMax Agent 更名后的多智能体平台，同名混淆极常见。
+> 5. **AutoClaw 的模型是完全开放的**，支持接入任意模型的 Coding Plan 或 API，并非只能跑 GLM（早期资料常见此误）。
+> 6. **KimiClaw 的官方入口是 `kimi.com/bot`**，而非各种第三方「kimi-claw.com」类站点。
+
+## 按端形态选型
+
+| 端形态 | 代表产品 | 适合谁 |
+|--------|---------|--------|
+| **本地（PC）** | OpenClaw、AutoClaw、QClaw、LobsterAI | 在意数据不出本机、要操控本地文件与软件 |
+| **云端** | KimiClaw、MaxClaw、ArkClaw、JVSClaw、AstronClaw | 想零部署开箱即用、要 7×24 常驻 |
+| **手机 / 平板** | 小艺Claw、Xiaomi miclaw | 随时随地下派任务，受机型限制较多 |
+| **跨端** | DuMate（PC + 移动）、小艺Claw（三端） | 桌面与移动都要覆盖 |
+
+## 重点产品能力对照
 
 | 维度 | OpenClaw | AutoClaw | KimiClaw | MaxClaw | ArkClaw | QClaw |
 |------|---------|---------|---------|---------|---------|------|
 | 开源 | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
-| 模型自由度 | 任意模型 | GLM 系列 | Kimi 系列 | MiniMax 系列 | 豆包系列 | 混元系列 |
-| Skills 市场 | ClawHub + 5400+ | 50+ 预置 | — | — | — | — |
+| 模型自由度 | 任意模型 | **任意模型的 Coding Plan / API** | Kimi 系列 | MiniMax 系列 | 豆包系 | 混元系列 |
+| Skills 市场 | ClawHub + 5400+ | 50+ 预置 | ClawHub 可用 | — | — | — |
 | 本地部署 | ✅ | ✅ | ❌ | ❌ | ❌ | ✅ |
-| 多 IM 支持 | 10+ | 飞书等 | — | — | — | 企业 IM |
+| 多 IM 支持 | 10+ | 飞书等 | 多通道 | — | — | 企业 IM |
 | 语音 | ElevenLabs | — | — | 原生语音 | — | — |
+| 企业版 | — | — | — | — | ✅ 席位制 | — |
 | 社区规模 | 390.3K star | — | — | — | — | — |
 | 发版节奏 | 每日 | — | — | — | — | — |
 
 ## OpenClaw 周边生态
 
-除 6 款厂商产品外，社区还涌现了丰富的周边工具：
+除上述厂商产品外，社区还涌现了丰富的周边工具：
 
 | 项目 | 领域 | 亮点 |
 |------|------|------|
@@ -73,9 +108,12 @@
 ## 选型建议
 
 - **追求最大自由度 + 社区生态** → **OpenClaw**：开源、390.3K star、每日迭代、任意模型、5400+ Skills
-- **智谱生态用户** → **AutoClaw**：与 GLM 模型深度绑定，一键安装，预置技能
-- **Kimi/MiniMax/豆包/混元深度用户** → 对应厂商的 Claw 产品，模型绑定但集成度高
-- **企业办公场景** → **QClaw**：腾讯生态，面向企业内部协作
+- **想低门槛在本地跑起来** → **AutoClaw（澳龙）**：一键安装、预置 50+ Skills、**模型完全开放**（可接任意模型的 Coding Plan，不绑定 GLM）
+- **数据不出本机、要开源可控** → **LobsterAI（有道龙虾）**：100% 开源桌面 Agent，可 NAS 部署
+- **不想装东西，开箱即用** → **KimiClaw**（`kimi.com/bot`）/ **MaxClaw** / **JVSClaw**：云端一键部署
+- **手机上下派任务** → **小艺Claw**（HarmonyOS 全机型）/ **Xiaomi miclaw**（小米机型且为邀请制）
+- **企业采购、要席位管理** → **ArkClaw 企业版**（火山引擎）/ **HiClaw**（阿里云开源团队版）
+- **模型绑定但集成度高** → 对应厂商的 Claw 产品：KimiClaw / MaxClaw / ArkClaw / QClaw / AstronClaw
 - **需要高性能** → **claw-code**（Rust 版）
 - **需要桌面体验** → **ClawX** / **clawpanel**
 

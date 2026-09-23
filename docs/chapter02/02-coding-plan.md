@@ -2,86 +2,133 @@
 
 [← 上一章：一、龙虾 Claw 产品系列](../chapter01/01-openclaw-ecosystem.md) | [返回总览](../index.md) | [下一章：三、三方模型（API） →](../chapter03/03-model-api.md)
 
-Coding Plan 是各 AI 平台推出的编程模型订阅套餐，以低价月费提供高质量代码生成能力。
+Coding Plan 是各 AI 平台推出的编程订阅套餐，以固定月费提供模型调用能力。它和按量计费的 API 是两条并行的路：**订阅制适合高频、交互式编程，API 适合低频或批量调用。**
 
-> ⚠️ 各厂商 Coding Plan 价格和模型覆盖范围变化极快，以下信息为 2026 年 5 月整理，仅供参考。建议点击链接查看最新定价。
+> ⚠️ **本章价格核查于 2026-09-23**。订阅套餐的价格、档位与模型覆盖变动极快，下表为核查当日的官方刊例价（未计限时折扣）。**下单前务必以官方购买页为准。**
+
+## 先搞清楚：三种订阅形态
+
+2026 年这一品类最大的变化不是价格，而是**计费逻辑和产品名都在重构**。同一家厂商的自有模型套餐，可能同时存在三种形态：
+
+| 形态 | 计费单位 | 代表 | 你要注意什么 |
+| --- | --- | --- | --- |
+| **Coding Plan**（按次） | 每 5 小时 / 每周 / 每月的**请求次数** | 阿里云 | 额度直观，但**一次复杂任务可能吃掉 5-30 次**，实际可用轮数远低于次数表面值 |
+| **Token Plan**（按额度） | **积分 / Credits**，按 token 折算 | 腾讯云、智谱、小米、MiniMax | 2026 年新主流。同一份额度通常**既能跑编程工具、也能跑 Claw** |
+| **会员订阅**（共享池） | 会员功能**共享一个额度池** | Kimi | 编程只是权益之一，与办公、Agent 功能**抢同一份额度** |
+
+> 💡 命名的迁移正在发生：腾讯云已把「通用 Token Plan」定为正式名（原「Token Plan」），百度千帆、讯飞的产品也统一并入 Token Plan。**看到「Coding Plan」不要默认它还是按请求次数计费的**，先确认计费单位。
 
 ## 主流 Coding Plan
 
-| 套餐                                                                              | 厂商        | 价格               | 特点                                                                                                                  |
-| ------------------------------------------------------------------------------- | --------- | ---------------- | ------------------------------------------------------------------------------------------------------------------- |
-| **[方舟 Coding Plan](https://www.volcengine.com/activity/codingplan)**            | 字节 火山引擎   | 月费 40 元起         | 模型自由、工具不限；升级可解锁 [ArkClaw](https://console.volcengine.com/ark/region:ark+cn-beijing/experience/claw)，7×24 小时在线专属智能伙伴 |
-| **[GLM Coding Plan](https://bigmodel.cn/glm-coding)**                           | 智谱 AI     | 月费 49 元起         | 3x Claude Pro 用量额度起，支持月/季/年订阅                                                                                       |
-| **[Kimi Code Plan](https://www.kimi.com/code)**                                 | 月之暗面 Kimi | 月费 49 元起         | 仅限 Kimi 系列模型（最新 K2.6，CLI 中标识为 kimi-for-coding）                                                                     |
-| **[MiniMax Token Plan](https://platform.minimax.io/subscribe/token-plan)**      | MiniMax   | 月费 10 美元起        | 仅限MiniMax系列模型（M2、M2.1、M2.5、最新M2.7等）                                                                                 |
-| **[阿里云 Coding Plan](https://www.alibabacloud.com/zh/campaign/ai-scene-coding)** | 阿里云       | Lite / Pro 两档       | 支持 qwen3.5-plus、qwen3-max、qwen3-coder-plus、qwen3-coder-next，以及 kimi-k2.5、glm-5、MiniMax-M2.5 等第三方模型；兼容 Claude Code、Cursor、Cline、Codex、OpenClaw、OpenCode、Qwen Code、Kilo CLI 等 |
-| **[腾讯云 Token Plan](https://cloud.tencent.com/act/pro/tokenplan)**              | 腾讯云       | 月费 28 元起          | 分 **Hy Token Plan**（混元专属，28 元起）和**通用 Token Plan**（39 元起）两条线，各分 Lite/Standard/Pro/Max 四档；覆盖 Tencent HY 2.0、Hy3 preview、Kimi-K2.5、GLM-5.1、MiniMax-M2.7 等，兼容 Claude Code、CodeBuddy、OpenCode、Cursor、Codex、OpenClaw 等 |
+| 套餐 | 厂商 | 价格（2026-09 刊例价） | 覆盖模型 | 特点 |
+| --- | --- | --- | --- | --- |
+| **[方舟 Coding Plan](https://www.volcengine.com/activity/codingplan)** | 字节 火山引擎 | Lite **40 元/月**<br>Pro **200 元/月** | 豆包、GLM、Kimi、DeepSeek、MiniMax 等多模型 + Auto 路由 | 模型自由、工具不限；另有平行的 **Agent Plan** 线（Small 40 / Medium 200，**Large、Max 未公布**）。2026-06-08 至 11-08 首两个月 2.5 折（Lite 9.9 / Pro 49.9），优惠资格新购、续费、升配**共享**，用掉不再获得 |
+| **[GLM Coding Plan](https://bigmodel.cn/glm-coding)** | 智谱 AI | Lite **118 元/月**<br>Pro **538 元/月**<br>Max **1078 元/月** | **GLM-5.3**、GLM-5.3-Flash（内测代号 OX Alpha） | 连续包季 8 折、包年 7 折（年付 Lite 折合 94.4 元/月）；**积分制**（Lite 每周 10,000 积分，Pro 6 倍、Max 14 倍）；支持 ZCode、Claude Code 等 20+ 工具 |
+| **[Kimi 会员](https://www.kimi.com/code)** | 月之暗面 | Andante **49 元/月**<br>Moderato **99 元/月**<br>Allegretto **199 元/月**<br>Allegro **699 元/月** | Kimi K3 / K2.7 Code 等（会话入口默认 K2.6，可切换） | **已不是独立套餐**：Kimi Code 是会员权益之一，四档**全部可调用**；所有会员功能共享一个额度池，Kimi Code 另有独立的 5 小时/周限额；一键云部署 Kimi Claw 需 **Allegretto 及以上** |
+| **[MiniMax Token Plan](https://platform.minimaxi.com/subscribe/token-plan)** | MiniMax | Plus **49 元/月**<br>Max **119 元/月**<br>Ultra **469 元/月** | 仅 MiniMax 系列（**M3**、M2.7、图像、语音） | 国际站 $22 / $55 / $132；年付立省 2 个月；全模态共享同一份额度；M3 支持 1M 上下文与原生多模态；音乐模型自 2026-08-20 起移出套餐 |
+| **[阿里云 Coding Plan](https://help.aliyun.com/zh/model-studio/coding-plan)** | 阿里云百炼 | **Pro 一档 200 元/月** | qwen3.7-plus、qwen3.6-plus、kimi-k2.5、glm-5、MiniMax-M2.5 等 | ⚠️ **Lite 已停售**（2026-03-20 停新购、04-13 停续费）；新客首月 **¥39.90**，每日 09:30 限量补货；按**请求次数**计（5 小时 6,000 / 周 45,000 / 月 90,000 次）；兼容工具最广 |
+| **[腾讯云 Token Plan](https://cloud.tencent.com/act/pro/tokenplan)** | 腾讯云 | **Hy 线**：28 / 78 / 238 / 468 元<br>**通用线**：39 / 99 / 299 / 599 元 | 通用线：DeepSeek-V4 原厂直供、GLM-5.3、Kimi K3、MiniMax-M3 等<br>Hy 线：Hy3、Hy4 preview | 分 **Hy Token Plan**（混元专属）与**通用 Token Plan**（多模型）两条独立线，各四档；平台已迁至 **TokenHub**；自 2026-08-31 起改为**积分抵扣**；**不支持退款、不支持降配、到期无法续费** |
+
+## 其他值得关注的厂商
+
+除上面六家，2026 年还有一批性价比取向的套餐，适合预算敏感或团队采购：
+
+| 套餐 | 厂商 | 入门价 | 亮点 |
+| --- | --- | --- | --- |
+| **MiMo Token Plan** | 小米 | **39 元/月**（Lite） | 四档 39 / 99 / 329 / 659 元，覆盖 mimo-v2.6-pro / v2.6-flash；首购 88 折；非高峰时段（00:00-08:00）**消耗系数 0.8x** |
+| **元景 Token Plan / 星罗 Token 服务** | 联通云 | **15 元/月** | 个人版 15 / 30 / 45 元，团队版 198 / 698 / 1398 元；注意联通云另有独立的 Coding Plan（40 / 200 元），**两者不是同一产品** |
+| **码道代码智能体** | 华为云 | **0 元永久免费**（体验版，每月 500 积分） | 目前少见的**长期免费档**；付费标准版 98 元、高级版 198 元、旗舰版 498 元 |
+| **AI Coding Plan** | 摩尔线程 | 免费试用档（30 天） | 按季订阅：Lite 120 元/季、Pro 600 元/季、Max 1200 元/季；免费试用**限 30 天、每日限量** |
+| **Astron Coding Plan** | 科大讯飞 | **199 元/月**（高效版） | ⚠️ 曾经的 **19 元「无忧版」已下线**（2026-07），现役只有 199 元（高效版）与 999 元（速通版）；覆盖 Spark X2、GLM、DeepSeek、Kimi 等多模型 |
+| **OpenCode Go** | Anomaly（国际） | **$10/月** | 聚合 30 款开源模型（GLM-5.3、Kimi K3、DeepSeek V4.1、MiMo、Qwen3.8 等）；**不属于国产套餐**，单列备查 |
+
+> ⚠️ **已停售 / 已迁移，不要按旧价找**：百度千帆 Coding Plan（2026-06-25 停续费、07-13 停新购，并入 Token Plan 个人版）；阿里云 Lite；讯飞星辰「无忧版」「专业版」；腾讯云旧混元大模型平台（已迁 TokenHub，旧接口 2026-09-30 终止服务）。
 
 ## Coding Plan 对比图
 
-![Coding Plan 对比图](./CodingPlan_Compare.png)
-![Coding Plan 对比图](./CodingPlan_Compare2.png)
+**① 入门档价格对比**（各厂商最低价档位，¥/月）
+
+![Coding Plan 入门档价格对比](./CodingPlan_Compare.png)
+
+**② 各档位价格带对比**（对数刻度，看单家套餐的价格跨度）
+
+![Coding Plan 档位价格阶梯对比](./CodingPlan_Compare2.png)
+
+> 两图由 `scripts/gen_coding_plan_charts.py` 依据本章数据生成，修改价格后重跑脚本即可刷新。
 
 ## Coding Plan 多维对比
 
 | 维度 | 方舟 | GLM | Kimi | MiniMax | 阿里云 | 腾讯云 |
 |------|------|-----|------|---------|--------|--------|
-| 入门价格 | 40 元/月 | 49 元/月 | 49 元/月 | 10 美元/月 | Lite 档 | 28 元/月 |
-| 模型自由度 | 多模型可选 | Claude + GLM | 仅 Kimi | 仅 MiniMax | 多模型 + 第三方 | 混元 + 第三方 |
-| 工具兼容性 | 不限 | 主流 CLI/IDE | 主流 CLI/IDE | 主流 CLI/IDE | 最广（8+ 工具） | 广（6+ 工具） |
-| 自有模型 | 豆包系列 | GLM 系列 | Kimi 系列 | MiniMax 系列 | Qwen 系列 | 混元系列 |
-| 第三方模型 | 支持 | Claude Pro 额度 | 不支持 | 不支持 | kimi/glm/MiniMax | kimi/glm/MiniMax |
-| 订阅灵活性 | 月付 | 月/季/年 | 月付 | 月付 | Lite/Pro 两档 | 4 档可选 |
-| 中文优化 | 优 | 优 | 优 | 良 | 优 | 优 |
-| 企业功能 | ArkClaw 7×24 | — | — | — | — | 企业 IM 集成 |
+| 入门价格 | 40 元/月 | 118 元/月 | 49 元/月 | 49 元/月 | 200 元/月（仅 Pro） | 28 元/月（Hy 线） |
+| 计费单位 | 两档制 | 积分（周度） | 会员共享额度池 | token 额度 | 请求次数 | 积分 |
+| 模型自由度 | 多模型 + Auto 路由 | 仅 GLM 系 | 仅 Kimi 系 | 仅 MiniMax 系 | 千问 + 第三方 | 混元线 / 多模型线**二选一** |
+| 第三方模型 | 支持 | 不支持 | 不支持 | 不支持 | kimi / glm / MiniMax | 通用线支持 DeepSeek / GLM / Kimi / MiniMax |
+| 工具兼容性 | 不限 | 20+ 工具 | 主流 CLI/IDE | 主流 CLI/IDE | 最广（15+ 工具） | 广（含 Claw 类工具） |
+| 订阅灵活性 | 月付 | 月/季/年 | 月/年 | 月/年 | 月付 | 月付，可升配不可降配 |
+| 退款政策 | — | — | — | — | 不支持退款 | 不支持退款 |
+| 企业功能 | ArkClaw 企业版（席位制） | 团队席位 | — | — | — | 企业 IM 集成 |
 
 ## 用户画像与选型
 
 | 你是谁 | 推荐方案 | 理由 |
 |--------|---------|------|
-| **个人开发者，想最低成本入门** | 腾讯云 Hy Token Plan（28 元/月） | 国内最低价，混元模型中文能力扎实 |
-| **Claude 生态用户** | GLM Coding Plan | 含 Claude Pro 额度，同时可用 GLM |
-| **只用 Kimi / 坚持单模型** | Kimi Code Plan | 深度绑定 Kimi K2.6，体验一致 |
-| **需要模型自由 + 工具不限** | 方舟 Coding Plan | 模型自由、工具不限，灵活性最高 |
-| **多工具切换、追求兼容性** | 阿里云 Coding Plan Pro | 兼容 8+ 编程工具，第三方模型最全 |
-| **预算充足，想要全覆盖** | 阿里云 Pro + 腾讯云通用 | 双平台互补，模型覆盖最广 |
+| **个人开发者，想最低成本入门** | 联通云元景（15 元/月）或腾讯云 Hy（28 元/月） | 国内最低价档位；华为云码道体验版可先零成本试 |
+| **日常编程，要主流国产模型全** | 腾讯云通用 Token Plan（39 元/月起） | 一份额度同时覆盖 DeepSeek-V4、GLM-5.3、Kimi K3、MiniMax-M3 |
+| **习惯 Claude 系工具链** | GLM Coding Plan 或腾讯云通用线 | ⚠️ 注意：**本章的国产套餐都不提供 Claude 模型**，只是让你在 Claude Code 这个工具里跑国产模型。想用 Claude 模型本身，仍需 Anthropic 官方订阅或 API（另有一个例外见 ch04：Antigravity CLI 免费档可选 Claude Sonnet / Opus 4.6） |
+| **只用 Kimi / 坚持单模型** | Kimi 会员 Andante（49 元/月） | 四档全部可调用 Kimi Code，还能顺带用上 Kimi 全家桶功能 |
+| **需要模型自由 + 工具不限** | 方舟 Coding Plan | 模型自由、工具不限，灵活性最高；抓住 2.5 折窗口更划算 |
+| **重度使用、有并发需求** | MiniMax Max / Ultra 或智谱 Pro | MiniMax 明确标注并发 Agent 数（3-7 个）；智谱 Pro 给 6 倍 Lite 额度 |
+| **预算充足，想要全覆盖** | 阿里云 Pro + 腾讯云通用 | 双平台互补，模型覆盖最广（注意合起来已是 239 元/月） |
 
 ## 选型路径
 
 ```
-第一步：你主要用什么编程工具？
- ├── Claude Code / Cursor → 确认工具兼容性（阿里云、腾讯云最广）
- └── OpenClaw / 其他 → 大部分 Coding Plan 都兼容
+第一步：你的产物是代码还是文档/自动化？
+ ├── 纯编程 → Coding Plan / Token Plan 都合适
+ ├── 还要跑 Claw、批量处理文档 → 优先 Token Plan（额度通用）
+ └── 想一份会员用全家桶 → Kimi 会员（额度共享，但要接受功能互相抢额度）
 
-第二步：你对模型有什么要求？
- ├── 必须用 Claude → GLM Coding Plan（含 Claude Pro 额度）
- ├── 只用国产模型 → 腾讯云 / 阿里云（第三方模型多）
- └── 单一模型够用 → Kimi / MiniMax / 方舟
+第二步：你主要用什么工具？
+ ├── Claude Code / Cursor / Cline → 确认工具在官方兼容列表内
+ └── OpenClaw / Codex / OpenCode → 腾讯云、阿里云、方舟覆盖最全
 
-第三步：预算？
- ├── < 40 元/月 → 腾讯云 Hy Token Plan（28 元起）
- ├── 40-50 元/月 → 方舟（40 元）/ GLM（49 元）/ Kimi（49 元）
- └── 不限 → 阿里云 Pro + 腾讯云通用双订阅
+第三步：你对模型的要求？
+ ├── 只用某一家的模型 → Kimi / MiniMax / 小米 / 智谱（自有模型为主）
+ ├── 要随时切换多家模型 → 腾讯云通用线 / 方舟 / 阿里云
+ └── 必须用 Claude 模型 → ❌ 没有套餐能给你，需单独订阅 Claude
+
+第四步：预算与用量形态？
+ ├── < 40 元/月 → 联通云元景（15）/ 腾讯云 Hy（28）/ 小米 MiMo（39）
+ ├── 40-120 元/月 → 方舟（40）/ Kimi、MiniMax（49）/ 腾讯云通用（39-99）/ 智谱 Lite（118）
+ └── 不限 → 阿里云 Pro（200）+ 腾讯云通用，或智谱 Pro / MiniMax Max
 ```
 
 ## Coding Plan 趋势
 
-- 各家 Coding Plan 正从单一模型走向多模型聚合，阿里云、腾讯云已全面支持第三方模型
-- 腾讯云率先拆分为"混元专属 + 通用多模型"两条 Token Plan 线，阿里云保留 Lite/Pro 分层
-- 字节方舟、智谱、Kimi 仍以自有模型为主
-- Coding Plan → Token Plan 的品牌过渡正在发生，腾讯云已全面使用 Token Plan 名称
-- 价格持续下探：入门门槛已降至 28 元/月，预计下半年可能出现免费基础档
+- **主流形态从「单一模型」转向「多模型聚合」**。腾讯云、阿里云已全面支持第三方模型（DeepSeek、GLM、Kimi、MiniMax），**方舟**在同一套餐里提供豆包 + 多家第三方模型，**智谱和 Kimi 仍坚持自有模型**，MiniMax、小米同属自有模型阵营。
+- **「Coding Plan」这个品牌名正在被「Token Plan」取代**。腾讯云已把通用线与混元线统一到 Token Plan 名下并迁至 TokenHub；百度千帆 Coding Plan 停售并入 Token Plan 个人版；讯飞、联通则直接用 Token Plan / Token 服务命名。**按请求次数计费的旧形态正在退场**（阿里云是仍在坚持的代表）。
+- **积分制成为统一度量**。腾讯云（2026-08-31 起）、智谱、华为云码道均改为积分抵扣，好处是同一份额度可以在文本、图像、语音、Agent 任务之间通兑。
+- **价格分层而不是普涨**。入门价持续下探（联通云 15 元、腾讯云 Hy 28 元、小米 39 元），但**头部档位显著上移**——智谱 Max 已达 1078 元/月，联通云团队旗舰 1398 元。**「入门便宜、重度变贵」是这一轮调价的主旋律**，智谱从 49 元起涨到 118 元起是最典型的例子。
+- **免费档没有如期普及**。此前「下半年可能出现免费基础档」的预测**只部分应验**：目前**可确证的长期免费档只有华为云码道体验版**（每月 500 积分）；摩尔线程是 30 天限时试用；火山方舟的「安心体验模式」是每模型 50 万 tokens 的**平台免费推理额度，不是 0 元订阅档**。
+- **出现「企业版 + 席位制」**。方舟 ArkClaw 已推企业版（单次 ≥5 席、最多 1000 席），智谱提供团队席位，小米有团队版。**个人套餐与团队采购开始分轨**。
 
 ## 常见问题
 
 **Q：Coding Plan 和直接调用 API 有什么区别？**
-A：Coding Plan 是订阅制，月费固定，适合日常编程高频使用；API 按量计费，适合低频或批量调用。日常编程选 Coding Plan 更划算。
+A：Coding Plan 是订阅制，月费固定，适合日常高频交互式编程；API 按量计费，适合低频、批量或需要把模型嵌进自己程序的场景。注意：**几乎所有套餐都在协议里禁止把套餐 Key 用于 API 自动化调用**，违规可能导致封禁。
 
 **Q：可以同时订阅多个 Coding Plan 吗？**
-A：可以，但通常没必要。建议先选一个主力，需要特定模型时再补充。双订阅成本 80-100 元/月，与直接用 Claude Pro（20 美元/月）相当。
+A：可以，但通常没必要。腾讯云明确限制每个主账号最多同时持有 **2 个** Token Plan（通用线 1 个 + Hy 线 1 个），且同一系列只能买一个档位。建议先选一个主力，缺特定模型时再补充。
 
-**Q：Coding Plan 的额度用完了怎么办？**
-A：各厂商处理方式不同——有的自动降速，有的按量计费续用，有的直接停用。订阅前确认额度用尽后的策略。
+**Q：额度用完了怎么办？**
+A：各厂商处理方式不同，且差异很大——有的自动降速、有的可购买加油包按量续用（如 Kimi）、有的直接停服（如小米 MiMo，额度耗尽即停止服务，不消耗账户余额）。**部分套餐到期后无法续费、余额不结转**（腾讯云 Token Plan 明确如此），订阅前务必确认。
+
+**Q：为什么套餐价格和我在网上看到的不一样？**
+A：三种常见原因：① **限时活动价**（如方舟 2.5 折，仅首两个月）；② **新客首月优惠**（如阿里云首月 ¥39.90，次月起恢复 ¥200）；③ 二手比价站数据过期——这一品类第三方数据往往滞后数月，**以官方购买页为准**。
+
+**Q：套餐里的「Claude」是指 Claude 模型吗？**
+A：不是。很多套餐标注「支持 Claude Code」，指的是**支持在 Claude Code 这个工具里使用**，模型仍是套餐自己的（如 GLM-5.3）。**本章这六家国产套餐都不提供 Anthropic 的 Claude 模型**——这一条是过去文档里最容易误读的地方。（海外的 Antigravity CLI 免费档是少数能选 Claude 模型的工具，见第四章。）
 
 ## 相关文章
 
