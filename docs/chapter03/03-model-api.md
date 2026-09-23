@@ -8,23 +8,25 @@
 
 | 模型                                                         | 厂商      | 特点                                                         |
 | ------------------------------------------------------------ | --------- | ------------------------------------------------------------ |
-| **[Claude API (Opus 4.7)](https://platform.claude.com/docs/en/models/overview)** | Anthropic | 最新为 **Claude Opus 4.7**（2026年4月发布），还有4.6版本（2026年2月发布） |
-| **[GPT-5.4](https://developers.openai.com/api/docs)**        | OpenAI    | GPT-5.4（2026年3月6日发布），分Pro和Thinking两个版本，新增原生Computer Use能力 |
-| **[Gemini 系列](https://ai.google.dev/gemini-api)**          | Google    | 多模态能力，Gemini 3 在代码评测中表现优异                    |
+| **[Claude API (Opus 5.5)](https://platform.claude.com/docs/en/models/overview)** | Anthropic | 主力 **Claude Opus 5.5**（2026-09-22，`claude-opus-5-5`，$4/$20），**1M 上下文**。同期另有 **Fable 5.1 / Mythos 5.1**（2026-09-01）：**同权重、防护等级不同**——Fable 为通用可用版，Mythos 为邀请制的可信访问版（面向网络安全与生命科学） |
+| **[GPT-6 系列](https://developers.openai.com/api/docs)**     | OpenAI    | **GPT-6 Astra**（2026-09-03，**1.05M 上下文**）、**GPT-6 Sol / Luna**（2026-09-22，分旗舰与低成本档）。上一代 GPT-5.6 的 Sol / Terra / Luna 三档仍在役 |
+| **[Gemini 系列](https://ai.google.dev/gemini-api)**          | Google    | **Gemini 3.8 Flash / 3.8 Live** 于 2026-09 发布；Pro 档仍为 **Gemini 3.1 Pro**；约 **1M 上下文**，多模态能力突出。Gemini 4 官方确认已进入预训练，**尚未发布** |
+
+> ⚠️ **上下文窗口的口径**：表中的数值是厂商规格书里的**上限**，实际可用量受输出预留、计费方式与接入渠道影响。同一模型在不同云渠道（如 AWS Bedrock）的标注可能不一致，选型前请以你**实际接入的那个渠道**的文档为准。
 
 ## 国产主流模型 API
 
 | 模型                                                | 厂商      | 特点                      |
 | ------------------------------------------------- | ------- | ----------------------- |
-| **[DeepSeek 系列](https://platform.deepseek.com/)** | 深度求索    | 开源强推理模型，成本低，编码能力强       |
-| **[Qwen3 系列](https://qwen.ai/apiplatform)**       | 阿里      | 多尺寸可选（32B/235B等），中文理解精准 |
-| **[Kimi-K2](https://platform.moonshot.ai/)**      | 月之暗面    | 长上下文，中文场景优势             |
-| **[GLM-5.x 系列](https://bigmodel.cn/console/)**    | 智谱 AI   | 国内老牌模型，编码场景持续优化         |
-| **[MiniMax M2](https://www.minimaxi.com/)**       | MiniMax | 开源模型，音乐、语音、视频模型         |
+| **[DeepSeek-V4.1-Flash](https://platform.deepseek.com/)** | 深度求索    | 2026-09-10 发布（API 名 `deepseek-flash`）：552B MoE、**原生多模态**、**1M 上下文**；开源强推理，成本低，编码能力强 |
+| **[Qwen3.8 系列](https://qwen.ai/apiplatform)**     | 阿里      | 旗舰 **Qwen3.8-Max**（2026-08-03）：总参 2.4T / 激活 95B，**1M 上下文**；另有 3.7-Max / 3.7-Plus / 3.6-Plus 等档位。中文理解精准 |
+| **[Kimi K3](https://platform.moonshot.ai/)**      | 月之暗面    | **Kimi K3**（2026-07）：2.8T 参数、原生视觉理解、**1M 上下文**；K2.8 Preview 于 2026-09-11 全量上线 Kimi Code，全档位 1M 上下文 |
+| **[GLM-5.3](https://bigmodel.cn/console/)**         | 智谱 AI   | 2026-08-14 上线，MoE **744B 总参 / 40B 激活**；文本输入 1M、输出 128K。国内老牌模型，编码场景持续优化 |
+| **[MiniMax M3](https://www.minimaxi.com/)**       | MiniMax | 2026-06-01 发布：**428B 总参 / 23B 激活**、**1M 上下文**、原生多模态；另有音乐、语音、视频模型 |
 
 ## 模型聚合平台
 
-- **[OpenRouter](https://openrouter.ai/)**：统一 API 网关，支持 500+ 模型、60+ 提供商，OpenAI 兼容接口
+- **[OpenRouter](https://openrouter.ai/)**：统一 API 网关，支持 500+ 模型、**80+ 提供商**，OpenAI 兼容接口
 - **[Hugging Face](https://huggingface.co/)**：提供开源模型托管和推理服务
 
 ## 模型选型对比
@@ -33,33 +35,33 @@
 
 | 模型 | 编码能力 | 价格 | 上下文 | 速度 | 中文代码注释 |
 |------|---------|------|--------|------|------------|
-| Claude Opus 4.7 | ⭐⭐⭐⭐⭐ | 高 | 200K | 中 | ⭐⭐⭐⭐ |
-| GPT-5.4 | ⭐⭐⭐⭐⭐ | 高 | 256K | 中 | ⭐⭐⭐ |
-| Gemini 3 | ⭐⭐⭐⭐ | 中 | 1M+ | 快 | ⭐⭐⭐ |
-| DeepSeek 系列 | ⭐⭐⭐⭐ | 低 | 128K | 快 | ⭐⭐⭐⭐⭐ |
-| Qwen3 (235B) | ⭐⭐⭐⭐ | 中 | 128K | 快 | ⭐⭐⭐⭐⭐ |
-| Kimi-K2.6 | ⭐⭐⭐⭐ | 中 | 长上下文 | 快 | ⭐⭐⭐⭐⭐ |
-| GLM-5.x | ⭐⭐⭐ | 中 | 128K | 快 | ⭐⭐⭐⭐⭐ |
-| MiniMax M2 | ⭐⭐⭐ | 中 | 128K | 快 | ⭐⭐⭐⭐ |
+| Claude Opus 5.5 | ⭐⭐⭐⭐⭐ | 高 | 1M | 中 | ⭐⭐⭐⭐ |
+| GPT-6 Astra | ⭐⭐⭐⭐⭐ | 高 | 1.05M | 中 | ⭐⭐⭐ |
+| Gemini 3.8 Flash | ⭐⭐⭐⭐ | 中 | 1M | 快 | ⭐⭐⭐ |
+| DeepSeek-V4.1-Flash | ⭐⭐⭐⭐ | 低 | 1M | 快 | ⭐⭐⭐⭐⭐ |
+| Qwen3.8-Max | ⭐⭐⭐⭐ | 中 | 1M | 快 | ⭐⭐⭐⭐⭐ |
+| Kimi K3 | ⭐⭐⭐⭐ | 中 | 1M | 快 | ⭐⭐⭐⭐⭐ |
+| GLM-5.3 | ⭐⭐⭐ | 中 | 1M | 快 | ⭐⭐⭐⭐⭐ |
+| MiniMax M3 | ⭐⭐⭐ | 中 | 1M | 快 | ⭐⭐⭐⭐ |
 
 ### 非编程场景
 
 | 场景 | 首选 | 次选 | 理由 |
 |------|------|------|------|
-| 长文档分析 | Gemini 3 / Kimi-K2 | Claude Opus | 1M+ 上下文，原生多模态 |
-| 中文写作 | Qwen3 / Kimi-K2 | DeepSeek | 中文理解精准，文风自然 |
-| 多轮对话 | Claude Opus 4.7 | GPT-5.4 | 指令遵循强，逻辑一致 |
-| 多模态理解 | Gemini 3 | GPT-5.4 | 原生多模态，图文理解强 |
-| 低成本大批量 | DeepSeek | Qwen3-32B | 开源+低价，推理成本极低 |
-| 语音/音乐生成 | MiniMax M2 | — | 原生语音和音乐模型 |
+| 长文档分析 | Gemini 3.8 / GPT-6 Astra | Claude Opus 5.5 / Kimi K3 | 1M+ 上下文，原生多模态 |
+| 中文写作 | Qwen3.8-Max / Kimi K3 | DeepSeek-V4.1-Flash | 中文理解精准，文风自然 |
+| 多轮对话 | Claude Opus 5.5 | GPT-6 Astra | 指令遵循强，逻辑一致 |
+| 多模态理解 | Gemini 3.8 | GPT-6 Astra | 原生多模态，图文理解强 |
+| 低成本大批量 | DeepSeek-V4.1-Flash | GPT-6 Luna / Qwen3.7-Plus | 开源+低价，推理成本极低 |
+| 语音/音乐生成 | MiniMax M3 | — | 原生语音和音乐模型 |
 
 ## 选型建议
 
-- **日常编码** → **Claude Opus 4.7** 或 **DeepSeek**（前者质量最高，后者性价比最佳）
-- **中文项目优先** → **Qwen3** / **DeepSeek** / **Kimi-K2**：中文理解和生成最自然
-- **长文档/多模态** → **Gemini 3**：1M+ 上下文窗口，原生多模态
-- **低成本试验** → **DeepSeek**：开源模型中编码能力最强，API 价格最低档
-- **不想分别对接** → **OpenRouter**：一个 API 调 500+ 模型，按需切换
+- **日常编码** → **Claude Opus 5.5** 或 **DeepSeek-V4.1-Flash**（前者质量最高，后者性价比最佳）
+- **中文项目优先** → **Qwen3.8-Max** / **Kimi K3** / **DeepSeek-V4.1-Flash**：中文理解和生成最自然
+- **长文档/多模态** → **Gemini 3.8** 或 **GPT-6 Astra**：1M+ 上下文窗口，原生多模态
+- **低成本试验** → **DeepSeek-V4.1-Flash** / **GPT-6 Luna**：开源模型中编码能力最强，或大厂里最便宜的一档
+- **不想分别对接** → **OpenRouter**：一个 API 调 500+ 模型、80+ 提供商，按需切换
 
 ## 延伸：三种不是「LLM」的模型形态
 

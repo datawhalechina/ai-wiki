@@ -26,7 +26,7 @@ AI Agent 框架提供构建自主推理、规划和执行任务的智能体系�
 
 | 框架                                                         | 特点                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| **[LangChain / LangGraph](https://www.langchain.com/)**      | 最成熟的生态，LangGraph 专注状态图多 Agent 编排，生产验证最充分 |
+| **[LangChain / LangGraph](https://www.langchain.com/)**      | 最成熟的生态。**LangChain 1.0 于 2025-10-23 GA、LangGraph 1.0 于 2025-10-24 GA**，核心新抽象为 `create_agent`（已废弃 `create_react_agent`）；LangGraph 专注状态图多 Agent 编排，生产验证最充分 |
 | **[AutoGen](https://microsoft.github.io/autogen/)**          | 微软出品，多 Agent 对话协作。**已进入维护模式**（仅安全补丁与关键修复，不再有新功能），新项目建议改用 Microsoft Agent Framework；社区分支 AG2 继续独立演进 |
 | **[CrewAI](https://crewai.com/)**                            | 角色化多 Agent 协作                                          |
 | **[Claude Code](https://code.claude.com/docs/zh-CN/overview)** | Anthropic 的 Agent 能力封装，147.8K GitHub 星标               |

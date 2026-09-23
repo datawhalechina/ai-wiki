@@ -64,6 +64,7 @@ microsoft/agent-framework::docs/chapter08/08-agent-frameworks.md::microsoft/agen
 
 # ── 章节九：RAG 框架 ────────────────────────────────────────────────────────
 microsoft/graphrag::docs/chapter09/09-rag-frameworks.md::microsoft/graphrag::GraphRAG 方向
+HKUDS/LightRAG::docs/chapter09/09-rag-frameworks.md::HKUDS/LightRAG::GraphRAG 方向
 
 # ── 章节十：向量知识库 ──────────────────────────────────────────────────────
 # 注意：匹配片段用「链接 URL」而非产品名 —— 产品名 pgvector 同时出现在

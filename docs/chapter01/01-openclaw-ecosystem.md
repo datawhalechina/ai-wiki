@@ -12,7 +12,7 @@
 - **系统操控**：读写文件、运行代码/脚本（可沙盒）、模拟键鼠、操控浏览器
 - **多 IM 接入**：WhatsApp、Telegram、Discord、Slack、Signal、iMessage、微信、飞书、QQ
 - **持久记忆**：记住用户偏好和上下文，跨会话形成个性化 AI
-- **技能系统**：[ClawHub](https://openclaw.ai/) 技能市场 + 社区 [5400+ Skills](https://github.com/VoltAgent/awesome-openclaw-skills)（52.7K star）
+- **技能系统**：[ClawHub](https://openclaw.ai/) 技能市场（已拆为 **Skills + Plugins** 双结构，并设有[中国官方镜像 mirror-cn.clawhub.com](https://mirror-cn.clawhub.com/)，2026-04 由火山引擎共建）+ 社区 [5400+ Skills](https://github.com/VoltAgent/awesome-openclaw-skills)（52.7K star）
 - **多智能体**：可同时运行多个实例协同工作
 - **后台自动化**：cron 任务、定时提醒、后台常驻
 - **语音能力**：集成 ElevenLabs TTS，支持语音通话
@@ -22,6 +22,9 @@
 
 | 时间 | 事件 |
 |------|------|
+| 2026-09-19 | 发版 **v2026.9.5**（最新正式版）；另有 extended-stable 渠道 v2026.7.35（09-21），面向求稳的生产用户 |
+| 2026-08-31 | 发布 **OpenClaw 2.0**（v2026.8.1）：官方口径 **987 位贡献者、16,977 个 PR**，约合项目历史 PR 总量的一半 |
+| 2026-07-08 | 项目转入 **[OpenClaw Foundation](https://openclaw.ai/blog/introducing-openclaw-foundation)**，成为美国 501(c)(3) 非营利组织，**协议保持 MIT**；OpenAI 为主要捐赠方 |
 | 2026-05-10 | 发版 v2026.5.10-beta.2，保持每日发版节奏 |
 | 2026-03-07 | **ClawCon** 线下聚会在纽约举办，社区展示开放生态 |
 | 2026-02-15 | 创始人 **Peter Steinberger 加入 OpenAI**，项目仍以开源形式继续 |

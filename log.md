@@ -6,7 +6,7 @@
 
 ## 2026-09-23
 
-> 本节对应内容时效性审计（内部报告 `AUDIT-2026-09.md`）。截至目前已完成：**批次 1**（P0 硬错误修复）、**批次 2 的 star 数部分**、**批次 4 的 IDE/ADE 部分与向量知识库部分**。全部外部事实均经实测或官方来源核验。
+> 本节对应内容时效性审计（内部报告 `AUDIT-2026-09.md`）。截至目前已完成：**批次 1**（P0 硬错误修复）、**批次 2 全部**（star 数 + 模型版本 / 上下文窗口 / 零散数据）、**批次 4 的 IDE/ADE 部分与向量知识库部分**，以及**术语落位**（新增章节十六）。全部外部事实均经实测或官方来源核验。
 
 ### 修复
 
@@ -66,6 +66,7 @@
 - 链接体检经验：**CSDN 对脚本请求返回 521 属反爬，并非死链**（同一 URL 用带浏览器标识的抓取工具可正常读取）。判定死链前先做站点对照测试，避免误删有效链接
 - 仓库卫生：VitePress 构建期会向 `docs/.vitepress/` 泄漏 `config.ts.timestamp-*.mjs` 临时文件，已加入 `.gitignore`
 - **README 同步与「维护」小节**：内容结构范围更新为 `chapter01 ~ chapter16`、章节目录表补第十六章；新增「维护」一节说明 `scripts/update_stars.sh` 的用法与清单定位约定；「参与贡献」补一条「内容变更请同步更新 log.md」
+- **star 清单扩至 47 条 / 37 个仓库**（本批新增 LightRAG）；脚本预演 0 歧义警告
 
 ### 新增（批次 4 · IDE / ADE 部分）
 
@@ -136,6 +137,29 @@
 >
 > 1. **Pi 的作者归属**：中文文章普遍写作「Mario Zechner（@mitsuhiko）」，实为**把两人混写**。实测 `@mitsuhiko` 是 **Armin Ronacher**（Flask / Rye 作者、Earendil Works 创始人），`@badlogic` 才是 Mario Zechner（libGDX 作者）。Pi 的规范仓库为 `earendil-works/pi`（旧路径 `badlogic/pi-mono` 会重定向至此），其 README 自称「**Pi Agent Harness**」。
 > 2. **Jev 的官方定名是 `Jev`**（首字母大写，非全大写 JEV），取自 Jevons / 杰文斯悖论。
+
+### 变更（批次 2 · 模型版本与上下文窗口）
+
+- **章节三**：两张模型表按现役版本重写
+  - **国际**：Claude 主力 → **Opus 5.5**（2026-09-22，`claude-opus-5-5`，$4/$20），并说明 **Fable 5.1 / Mythos 5.1**（2026-09-01）是「同权重、防护等级不同」的两个可用面（Fable 通用可用，Mythos 为邀请制可信访问）；GPT → **GPT-6 Astra / Sol / Luna**，上一代 GPT-5.6 的 Sol/Terra/Luna 仍在役；Gemini → **3.8 Flash / 3.8 Live**，Pro 档仍为 3.1 Pro，并注明 Gemini 4 已进入预训练但未发布
+  - **国产**：DeepSeek → **V4.1-Flash**（552B MoE、原生多模态）；Qwen → **Qwen3.8-Max**（2.4T 总参 / 95B 激活）；Kimi → **K3**（2.8T）；GLM → **5.3**（744B 总参 / 40B 激活）；MiniMax → **M3**（428B / 23B 激活）
+  - **上下文窗口**：200K / 256K / 128K → 普遍 **1M 级**（GPT-6 Astra 1.05M；GLM-5.3 输入 1M / 输出 128K），编程与非编程两张对比表同步
+  - 新增一条**口径提示**：上下文窗口是厂商规格书上限，实际可用量受输出预留、计费与接入渠道影响，跨云（如 AWS Bedrock）标注可能不一致
+- **章节三**：OpenRouter 提供商数 **60+ → 80+**（模型数 500+ 不变）
+- **章节一**：最新动态补三条——**OpenClaw 2.0**（2026-08-31，官方口径 987 位贡献者 / 16,977 PR）、**2026-07-08 转入 OpenClaw Foundation**（美国 501(c)(3) 非营利组织，协议保持 MIT，OpenAI 为主要捐赠方）、最新发版 **v2026.9.5**（2026-09-19），并说明另有 extended-stable 渠道 v2026.7.35；技能系统补 **ClawHub 已拆为 Skills + Plugins 双结构** 与中国官方镜像 mirror-cn.clawhub.com
+- **章节八**：LangChain / LangGraph 补 **1.0 GA**（LangChain 2025-10-23、LangGraph 2025-10-24）与核心新抽象 `create_agent`（`create_react_agent` 已废弃）
+- **章节九**：LightRAG 补实测 star（39.8K），并登记进 star 清单
+- **章节十一**：**MTEB 表述纠正**——原文「Qwen3-Embedding 榜单领先」已不准确，现为 MTEB(eng,v1) 第 2；多语言榜首已换为微软 **Harrier-OSS-v1-27B**（74.27），KaLM 退居第 2（72.32 分数字属实）。新增 Conan-embedding-v2（eng,v1 第 1，74.22）与 Harrier-OSS-v1 两条目；榜单链接改官方 `leaderboard.mteb.org`，并**加注 v1/v2 分数不可横比**的警示与「认准榜单名」的选型提示
+
+> **与内部审计报告的偏差（批次 2，5 处，已按实测修正）**
+>
+> 1. **GPT-6 没有 Terra**。报告把 Terra 列入 GPT-6 世代；实测 Terra 属 **GPT-5.6** 一代，GPT-6 只有 Astra / Sol / Luna。
+> 2. **Qwen 的「主力」判断过时**。报告称 3.7-Max / 3.7-Plus 等为主力；实测这些型号在售但**已非旗舰**，旗舰是 Qwen3.8-Max。
+> 3. **OpenClaw 2.0 的贡献者数**。报告沿用第三方转载口径「933 位贡献者」；官方 release notes 为 **987 contributors / 16,977 PR**，已改用官方数字。另报告写「2026-08-31/09-01」，实际是 8 月 30 日宣布、**8 月 31 日以 v2026.8.1 发布**。
+> 4. **ClawHub 技能数不可确证**。报告记「可确证至 19,000+（2026-08 口径）」；实测官方从不公布总数，第三方给出 3,286 / 5,705 / 13,000 / 19,000 / 43,000 五个互相冲突的数字（多为 SEO 内容站）。**故正文不写任何 ClawHub 技能数**，只写已确证的结构性变化。
+> 5. **LangChain 1.0 GA 日期**。报告写 2025-10-22（博客发稿日），官方 changelog 为 **10-23**（LangGraph 为 10-24），已按官方口径写。
+>
+> 另：MTEB 多语言榜首的更替（KaLM → Harrier）报告亦未提及，仅要求「加注口径说明」，本次一并修正了名次表述。
 
 ---
 

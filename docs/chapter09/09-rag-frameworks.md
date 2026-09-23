@@ -80,7 +80,7 @@ GraphRAG 在传统向量检索之上叠加知识图谱层，通过实体-关系�
 **代表项目：**
 - **[Microsoft GraphRAG](https://github.com/microsoft/graphrag)**（36.1K star）：微软开源，自动构建实体知识图谱，支持全局摘要（Global Search）和局部检索（Local Search）两种模式
 - **[Neo4j + LLM](https://neo4j.com/)**：图数据库原生集成，适合已有 Neo4j 基础设施的企业
-- **[LightRAG](https://github.com/HKUDS/LightRAG)**：港大出品，轻量级 GraphRAG，成本更低
+- **[LightRAG](https://github.com/HKUDS/LightRAG)**（39.8K star）：港大出品，轻量级 GraphRAG，成本更低
 
 **典型实践案例：**
 
