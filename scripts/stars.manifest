@@ -1,0 +1,73 @@
+# stars.manifest — ai-wiki 文档 star 数刷新清单
+#
+# 格式：<owner/repo>::<文档相对路径>::<该行唯一匹配片段>::<说明>
+# 由 scripts/update_stars.sh 读取。新增/删除条目直接改本文件即可，无需动脚本。
+#
+# ── 使用约定 ────────────────────────────────────────────────────────────────
+# 1) 「匹配片段」必须能唯一定位到「那一行」，不要用仓库名泛匹配。
+#    反例：用 `anthropics/skills` 会同时命中技能一览里 17 条 skills/xxx 子链接。
+# 2) 每个匹配片段只替换它命中行里的**第一个** star 数字。若某行有多个
+#    star 数字，第一个之后的不动（见 ch01 claw-code 那条的注释）。
+# 3) 「历史快照」不要写进来。例：ch01 时间线
+#    `| 2025-11-24 | 项目创建，仅 6 个月达到 370K star |`
+#    描述的是当时节点，不应随最新值变动，故有意排除在本清单外。
+# 4) 仓库改名后请同步改第一列（例如 OpenCode 已从 sst/opencode 迁至 anomalyco/opencode）。
+
+# ── 章节一：OpenClaw 生态 ───────────────────────────────────────────────────
+openclaw/openclaw::docs/chapter01/01-openclaw-ecosystem.md::openclaw/openclaw::README 头部行
+openclaw/openclaw::docs/chapter01/01-openclaw-ecosystem.md::开源旗舰::六款产品对比表
+openclaw/openclaw::docs/chapter01/01-openclaw-ecosystem.md::| 社区规模 |::六款产品 8 维对比矩阵
+openclaw/openclaw::docs/chapter01/01-openclaw-ecosystem.md::追求最大自由度::选型建议
+VoltAgent/awesome-openclaw-skills::docs/chapter01/01-openclaw-ecosystem.md::awesome-openclaw-skills)（::技能系统
+# 注意：claw-code 那行含两个 star 数字（"191K star" 与口号 "史上最快突破 100K star"），
+# 脚本只替换第一个，后者是产品口号不是当前值，保持不变。
+ultraworkers/claw-code::docs/chapter01/01-openclaw-ecosystem.md::ultraworkers/claw-code::周边生态
+NVIDIA/NemoClaw::docs/chapter01/01-openclaw-ecosystem.md::NVIDIA/NemoClaw::周边生态
+ValueCell-ai/ClawX::docs/chapter01/01-openclaw-ecosystem.md::ValueCell-ai/ClawX::周边生态
+aiming-lab/AutoResearchClaw::docs/chapter01/01-openclaw-ecosystem.md::AutoResearchClaw::周边生态
+HKUDS/ClawWork::docs/chapter01/01-openclaw-ecosystem.md::HKUDS/ClawWork::周边生态
+HKUDS/ClawTeam::docs/chapter01/01-openclaw-ecosystem.md::HKUDS/ClawTeam::周边生态
+qingchencloud/clawpanel::docs/chapter01/01-openclaw-ecosystem.md::qingchencloud/clawpanel::周边生态
+1186258278/OpenClawChineseTranslation::docs/chapter01/01-openclaw-ecosystem.md::OpenClawChineseTranslation::周边生态
+
+# ── 章节四：CLI 种类 ────────────────────────────────────────────────────────
+anthropics/claude-code::docs/chapter04/04-cli-tools.md::code.claude.com/docs/zh-CN/overview::主流 CLI 表格
+anthropics/claude-code::docs/chapter04/04-cli-tools.md::Claude 系列::CLI 选型对比矩阵
+anomalyco/opencode::docs/chapter04/04-cli-tools.md::opencode.ai::主流 CLI 表格
+anomalyco/opencode::docs/chapter04/04-cli-tools.md::多模型自由::CLI 选型对比矩阵
+farion1231/cc-switch::docs/chapter04/04-cli-tools.md::farion1231/cc-switch::辅助工具
+
+# ── 章节五：好用的 Skill ────────────────────────────────────────────────────
+anthropics/skills::docs/chapter05/05-skills.md::Anthropic 官方 Skills::Skill 生态表
+anthropics/skills::docs/chapter05/05-skills.md::Anthropic Skills 仓库::官方技能一览开头
+VoltAgent/awesome-openclaw-skills::docs/chapter05/05-skills.md::awesome-openclaw-skills)** |::Skill 生态表
+travisvn/awesome-claude-skills::docs/chapter05/05-skills.md::travisvn/awesome-claude-skills::Skill 生态表
+
+# ── 章节六：MCP ─────────────────────────────────────────────────────────────
+github/github-mcp-server::docs/chapter06/06-mcp.md::github/github-mcp-server::热门 MCP 服务器
+microsoft/playwright-mcp::docs/chapter06/06-mcp.md::microsoft/playwright-mcp::热门 MCP 服务器
+ChromeDevTools/chrome-devtools-mcp::docs/chapter06/06-mcp.md::ChromeDevTools/chrome-devtools-mcp::热门 MCP 服务器
+upstash/context7::docs/chapter06/06-mcp.md::upstash/context7::热门 MCP 服务器
+oraios/serena::docs/chapter06/06-mcp.md::oraios/serena::热门 MCP 服务器
+PrefectHQ/fastmcp::docs/chapter06/06-mcp.md::PrefectHQ/fastmcp::热门 MCP 服务器
+n8n-io/n8n::docs/chapter06/06-mcp.md::n8n-io/n8n::热门 MCP 服务器
+punkpeye/awesome-mcp-servers::docs/chapter06/06-mcp.md::punkpeye/awesome-mcp-servers::延伸阅读
+
+# ── 章节八：Agent 框架 ──────────────────────────────────────────────────────
+anthropics/claude-code::docs/chapter08/08-agent-frameworks.md::code.claude.com/docs/zh-CN/overview::主流框架表
+nousresearch/hermes-agent::docs/chapter08/08-agent-frameworks.md::nousresearch/hermes-agent::主流框架表
+microsoft/agent-framework::docs/chapter08/08-agent-frameworks.md::microsoft/agent-framework::主流框架表
+
+# ── 章节九：RAG 框架 ────────────────────────────────────────────────────────
+microsoft/graphrag::docs/chapter09/09-rag-frameworks.md::microsoft/graphrag::GraphRAG 方向
+
+# ── 章节十：向量知识库 ──────────────────────────────────────────────────────
+# 注意：匹配片段用「链接 URL」而非产品名 —— 产品名 pgvector 同时出现在
+# pgvectorscale 那一行（"在 pgvector 之上…"），用名字会一次命中两行。
+milvus-io/milvus::docs/chapter10/10-vector-databases.md::milvus.io::主流向量库表
+qdrant/qdrant::docs/chapter10/10-vector-databases.md::qdrant.tech::主流向量库表
+weaviate/weaviate::docs/chapter10/10-vector-databases.md::weaviate.io::主流向量库表
+chroma-core/chroma::docs/chapter10/10-vector-databases.md::trychroma.com::主流向量库表
+lancedb/lancedb::docs/chapter10/10-vector-databases.md::lancedb.com::主流向量库表
+pgvector/pgvector::docs/chapter10/10-vector-databases.md::pgvector/pgvector::主流向量库表
+timescale/pgvectorscale::docs/chapter10/10-vector-databases.md::timescale/pgvectorscale::主流向量库表
