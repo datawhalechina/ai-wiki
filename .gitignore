@@ -1,4 +1,9 @@
 node_modules/
 docs/.vitepress/dist
 docs/.vitepress/cache
+docs/.vitepress/*.timestamp-*.mjs
 .DS_Store
+
+# 内部工作文档，不入公开仓库
+.workbuddy/
+/AUDIT-*.md
