@@ -110,6 +110,32 @@
 >
 > 报告 P2-06 称 Turbopuffer 的客户包含「AWS Bedrock 后端」。实测多个来源一致列出的生产用户为 Cursor / Notion / Anthropic / Linear / Superhuman 等，**未找到 Bedrock 相关证据**，故未写入。
 
+### 新增（术语落位 · 章节十六）
+
+- **新增章节十六「AI 时代的角色与商业」**——这是全站的新维度：前面十五章都是「技术栈视角」（模型 → 框架 → 工具 → 范式），本章从「人与商业」切入，并让 Token 成为贯穿各层的成本线索。含三节：
+  - **FDE（前沿部署工程师）**——Palantir 于 2010 年代发明（早期内部称「Deltas」，2016 年前 FDE 比软件工程师还多）；Indeed 岗位数 2025-04 的 643 个 → 2026-04 的 5,330 个（约 +729%）；与 MLE / 解决方案顾问 / 技术支持的区别（交付物是跑在生产环境的系统）；薪资量级（海外中位 base 约 $190K，头部 $350K–550K 含股权）；三个能力交集
+  - **OPC（一人公司）**——与自由职业的**结构性区别**（卖时间 vs 卖可复用系统，AI 是「管理层」而非任务工具）；2026-09 工信部专项计划 + 全国 20 省 106 项地方政策；存量 1600 万家 / 占企业总量 27.4%（2025-06 快照）；四类高杠杆赛道与三条底线
+  - **Token（词元）**——作为 FDE / OPC 共同的边际成本项，说明它如何决定 loop 的可行性、模型分层调度（快判断用小模型 / 决策模型），以及订阅制与按量付费的取舍
+- **章节三**：新增「延伸：三种不是『LLM』的模型形态」小节
+  - **决策模型 Jev**（TypeSafe AI，2026-09 发布）——System One 路线，**不生成任何文本**，只返回带校准置信度的类型化判定；三种原语 Choice / Score / Noul；约 $0.042 / 百万输入 token。⚠️ 同时标注两个前提：官方与 Pydantic 均提示 **prompt injection 可影响其判定**，以及英文优先、**目前未向中国大陆开放**
+  - **世界模型（World Model）**——两条技术路线的分歧：生成式（DeepMind Genie 3、NVIDIA Cosmos）vs 隐空间（Meta V-JEPA 2、LeCun 的 AMI Labs）
+  - **专家混合（MoE）**——架构而非产品，强调需区分**总参数**与**激活参数**
+- **章节十二**：新增「范式之上：四层工程谱系」——把 **Prompt → Context → Harness → Loop** 讲成**层叠**关系而非并列；含 Loop Engineering 五组件表（Trigger / Goal / Actions / Verification / Memory）、社区参考实现与风险提示、**L1 只报告 → L2 待审 → L3 无人值守**的放权节奏，并注明再上一层的「graph engineering」暂不展开
+- **章节四**：新增 **DSH**（`deepseek-ai/deepseek-harness`，2026-08-13 开源的 Agent 运行时，主打「一切皆插件」；⚠️ v0.1 开发者预览版，官方明示不可用于生产）与 **Pi**（`earendil-works/pi`，极简底座仅保留读 / 写 / 改文件与跑命令四个工具，支持单会话内跨供应商接力）
+- **总览页**：术语表新增 12 条（MoE / Jev / World Model / CE / Harness / Harness Engineering / Loop Engineering / DSH / FDE / OPC / Token）
+
+### 变更（术语落位）
+
+- **章节十二**：**校准 Harness 的定义**——原文把 Harness Engineering 只讲成「质检门禁」（偏窄）。本次明确区分：**「Harness」本身指承载 agent 的运行时**（工具、权限、记忆、验证的总和，Claude Code / Codex / DSH / Pi 均属此层），而 Harness Engineering 是**设计它的方法论**，两者不在同一层。同时补实操建议一条（先定 trigger / goal / 验证方式 / 停止规则，再逐级放权）
+- **章节四**：cc-switch 的切换目标列表中 `Gemini CLI` 更新为 `Antigravity CLI`，与批次 1 的停服结论保持一致
+- **章节十五**：页脚补「下一章」互链至章节十六；**总览页**架构图说明由「15 个章节」更新为「16 个章节」，依赖关系补一条（章节十六为横切视角），章节目录表补一行
+- **star 清单新增 3 个仓库**（DSH / Pi / loop-engineering）并登记实测值；`anthropics/claude-code` 因自然增长由 147.7K 刷新为 **147.8K**
+
+> **术语归属的两处核实（落笔前已确认，避免照抄二手来源）**
+>
+> 1. **Pi 的作者归属**：中文文章普遍写作「Mario Zechner（@mitsuhiko）」，实为**把两人混写**。实测 `@mitsuhiko` 是 **Armin Ronacher**（Flask / Rye 作者、Earendil Works 创始人），`@badlogic` 才是 Mario Zechner（libGDX 作者）。Pi 的规范仓库为 `earendil-works/pi`（旧路径 `badlogic/pi-mono` 会重定向至此），其 README 自称「**Pi Agent Harness**」。
+> 2. **Jev 的官方定名是 `Jev`**（首字母大写，非全大写 JEV），取自 Jevons / 杰文斯悖论。
+
 ---
 
 ## 2026-05-17

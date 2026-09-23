@@ -60,6 +60,10 @@ export default defineConfig({
           { text: '端到端实战项目', link: '/chapter15/15-hands-on-projects' },
         ],
       },
+      {
+        text: '角色与商业',
+        items: [{ text: 'AI 时代的角色与商业', link: '/chapter16/16-roles-and-business' }],
+      },
     ],
 
     socialLinks: [

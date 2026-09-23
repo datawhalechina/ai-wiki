@@ -129,12 +129,56 @@ AI 发现问题后自动修复，循环执行直到所有门禁通过
 
 > **2026 年的补充**：Harness Engineering 阶段往往要同时跑多个 agent（一个写、一个测、一个审），这正是 **ADE**（Agent-first 开发环境）的用武之地——它把入口从编辑器换成任务，天生支持多 agent 并行与验证。详见[章节七](../chapter07/07-ide-tools.md)的「ADE」小节。
 
+## 范式之上：四层工程谱系
+
+上面四种范式回答的是「**这个项目该用哪种协作方式**」。2026 年业界（由 Google Chrome 工程负责人 Addy Osmani 整合提出，Boris Cherny、Peter Steinberger 参与讨论）另梳理出一条**层叠**谱系——每一层都建立在下一层之上：
+
+| 层 | 名称 | 解决什么问题 | 本文档位置 |
+|---|---|---|---|
+| L1 | **Prompt Engineering** | 单次指令怎么写 | [章节十四](../chapter14/14-prompt-engineering.md) |
+| L2 | **Context Engineering** | 喂给模型哪些上下文、工具与记忆 | 尚未单独成章 |
+| L3 | **Harness Engineering** | 给 agent 搭工具链、权限与验证门禁 | 本章（定义见下） |
+| L4 | **Loop Engineering** | 设计「提示 agent 的系统」，而非自己提示 | 本小节 |
+
+> **一个容易混的术语**：L3 的「Harness Engineering」是**工程实践**，而「Harness」本身指**承载 agent 的运行时**——工具、权限、记忆、验证的总和。两者不在同一层：Claude Code、Codex、DSH、Pi 都属于「Harness」（DSH 的口号就是 `Model + Harness = Agent`），而本章前面讲的 Harness Engineering 是设计它的一套方法论。本文档此前只强调了其中的「验证门禁」这一面。
+
+### Loop Engineering（循环工程）
+
+**一句话**：你不再手动给 agent 写 prompt，而是设计一套会自动给 agent 写 prompt 的系统。
+
+Prompt Engineering 关心「这句话怎么说最好」，Loop Engineering 关心「由什么机制去说这句话、判断结果、记住进度、决定何时停」。触发这次转变的是 Boris Cherny（Claude Code 作者）的一句话：
+
+> "I don't prompt Claude anymore. I have loops that are running. They're the ones that are prompting Claude and figuring out what to do."
+
+一个完整的 loop 由五个组件构成：
+
+| 组件 | 作用 | 例子 |
+|------|------|------|
+| **Trigger** | 什么启动循环 | 定时（每天 9 点查 issue）、事件（PR 打开 / 测试失败）、人的一次性指令 |
+| **Goal** | 可验证的终态 | 「所有测试通过」「P1 issue 归零」，而不是「优化一下」 |
+| **Actions** | agent 能用的工具 | 读写文件、跑命令、调 MCP、派生子 agent |
+| **Verification** | 怎么知道该停 | 跑测试看退出码、独立 reviewer agent 复核、CI 通过 |
+| **Memory** | 跨轮次保留什么 | 会话续接、`CLAUDE.md`、外部记忆库 |
+
+**常见落地形态**：把 loop 挂成 GitHub Actions 定时任务，例如每日 triage、PR 陪伴（babysitting）、CI 清扫、依赖升级、changelog 草拟。社区参考实现见 [cobusgreyling/loop-engineering](https://github.com/cobusgreyling/loop-engineering)（11.3K star，含 7 个生产型 loop 模式 + 三个脚手架 CLI）。
+
+**风险必须知道**：无监督的 loop 会「无监督地犯错」。
+
+- token 成本会随子 agent 与长跑循环迅速膨胀
+- 验证责任仍在开发者身上——**unattended loop 会犯 unattended 的错**
+- 设计时就要写入**停止规则**：预算上限、失败次数上限、哪些操作必须人工裁决
+
+业界推荐的放权节奏是 **L1 只报告 → L2 可修改但待审 → L3 无人值守**，逐级建立信心后再放手。
+
+> **再往前一层**：2026-07 已出现「graph engineering」的说法——loop 描述**单个** agent 的行为，graph 描述**多个** agent 之间的组织结构。这一层本文档暂不展开。
+
 ## 实操建议
 
 - **从 Vibe Coding 入门**：先用 Bolt.new 或 Cursor Agent 模式快速出原型，感受 AI 编程的效率
 - **项目变大时切换 Spec Coding**：当 Vibe Coding 产出难以维护时，用 PRD 或规格文档约束 AI 输出
 - **生产环境必须上 Harness**：无论哪种范式，上线前都需要测试门禁和 CodeReview
 - **混合使用**：同一项目中，核心模块用 Spec/Harness，探索性功能用 Vibe，不必拘泥于单一范式
+- **想让 agent 自己跑起来** → 先设计 loop（trigger / 可验证的 goal / 验证方式 / 停止规则），再按 L1→L3 逐级放权，不要一上来就无人值守
 
 ## 常见问题
 

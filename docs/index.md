@@ -10,7 +10,7 @@
 
 ## 全景架构图
 
-15 个章节可分为四层：**模型与数据层 → 框架与协议层 → 工具与平台层 → 范式与方法论层**
+16 个章节：前 15 章按四层组织（**模型与数据层 → 框架与协议层 → 工具与平台层 → 范式与方法论层**），第 16 章从「人与商业」视角横向收束。
 
 ```
 ┌─────────────────────────────────── 范式与方法论层 ──────────────────────────────────┐
@@ -36,7 +36,7 @@
 │                                                                                    │
 └───────────────────────────────────────────────────────────────────────────────────┘
                                          │
-                          资源导航(13) + 实战项目(15)
+                    资源导航(13) + 实战项目(15) + 角色与商业(16)
 ```
 
 **依赖关系**：
@@ -44,6 +44,7 @@
 - 框架与协议层依赖模型与数据层——Agent(8) 调用模型推理，RAG(9) 依赖 Embedding+向量库，MCP(6) 是 Agent(8) 和 Skill(5) 的工具协议
 - 工具与平台层依赖框架与协议层——CLI(4) 和 IDE(7) 内建 Agent 能力，Skill(5) 通过 MCP(6) 调用工具
 - 范式层是方法论，指导所有层的使用方式
+- 角色与商业(16) 是横切视角——不隶属于任何一层，而是把「人」与 Token 成本贯穿回各层
 
 ## 学习路径
 
@@ -107,6 +108,7 @@ MCP(6) → Agent 框架(8) → RAG(9) → Skill(5) → Prompt Engineering(14)
 | 十三、资源导航 | [`13-resources.md`](chapter13/13-resources.md) | 导航站、榜单与社区资源 |
 | 十四、Prompt Engineering | [`14-prompt-engineering.md`](chapter14/14-prompt-engineering.md) | 提示词核心技巧、框架与最佳实践 |
 | 十五、端到端实战项目 | [`15-hands-on-projects.md`](chapter15/15-hands-on-projects.md) | RAG 知识库、MCP Server、Vibe Coding MVP |
+| 十六、AI 时代的角色与商业 | [`16-roles-and-business.md`](chapter16/16-roles-and-business.md) | FDE、OPC 与 Token 计价 |
 
 ## 术语表
 
@@ -127,3 +129,14 @@ MCP(6) → Agent 框架(8) → RAG(9) → Skill(5) → Prompt Engineering(14)
 | **IDE** | Integrated Development Environment | 集成开发环境，如 VS Code、Cursor |
 | **BM25** | Best Matching 25 | 经典关键词检索算法，常与向量检索组合使用 |
 | **RRF** | Reciprocal Rank Fusion | 倒数排名融合，合并多路检索结果的排序方法 |
+| **MoE** | Mixture of Experts | 专家混合，推理时只激活部分「专家」子网络，降低推理成本 |
+| **Jev** | — | TypeSafe 的「决策模型」，不生成文本，只输出带概率的类型化判定 |
+| **World Model** | 世界模型 | 理解并预测物理世界演化的模型，用于仿真与具身智能 |
+| **CE** | Context Engineering | 上下文工程，决定喂给模型哪些上下文、工具与记忆 |
+| **Harness** | Agent Harness | 承载 agent 的运行时——工具、权限、记忆与验证的总和 |
+| **Harness Engineering** | 工具链工程 | 设计 Harness 的工程实践，含工具链、权限与验证门禁 |
+| **Loop Engineering** | 循环工程 | 设计「提示 agent 的系统」，而非自己逐步提示 |
+| **DSH** | DeepSeek Harness | DeepSeek 开源的 Agent 运行时，「一切皆插件」 |
+| **FDE** | Forward Deployed Engineer | 前沿部署工程师，驻客户现场让 AI 真正落地 |
+| **OPC** | One-Person Company | 一人公司，单人 + AI 完成全流程商业闭环 |
+| **Token** | 词元 | 模型处理文本与计费的最小单位 |
