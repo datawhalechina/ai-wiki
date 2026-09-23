@@ -40,7 +40,7 @@
 | 类型 | 推荐 | 说明 |
 |------|------|------|
 | **互动课程** | [Learn Prompting](https://learnprompting.org/) | 开源 Prompt Engineering 课程，从入门到进阶 |
-| **官方文档** | [Anthropic 文档](https://docs.anthropic.com/) / [OpenAI 文档](https://platform.openai.com/docs) | 模型使用的一手信息，最权威 |
+| **官方文档** | [Anthropic 文档](https://platform.claude.com/docs/en/home) / [OpenAI 文档](https://platform.openai.com/docs) | 模型使用的一手信息，最权威 |
 | **视频教程** | [3Blue1Brown：深度学习](https://www.3blue1brown.com/topics/neural-networks) | 可视化理解 Transformer 等核心概念 |
 | **实战项目** | [LangChain Templates](https://github.com/langchain-ai/langchain/tree/master/templates) | 官方模板，直接 clone 改造 |
 
@@ -60,5 +60,5 @@
 - **龙虾生态**：国内 Claw 产品百花齐放，安全机制和 Skills 市场是关注重点
 - **Coding Plan 竞争**：各厂商 Coding Plan 定价和模型覆盖范围快速变化
 - **MCP、Skill 生态**：正在快速演进，每周都有新的 MCP Server、Skill 发布
-- **Agent 框架融合**：微软推出 [Microsoft Agent Framework](https://github.com/microsoft/agent-framework)，统一 AutoGen 与 Semantic Kernel 的多 Agent 模式，行业正从分散走向统一
+- **Agent 框架融合**：微软推出 [Microsoft Agent Framework](https://github.com/microsoft/agent-framework)（**2026-04-02 发布 1.0 GA**），统一 AutoGen 与 Semantic Kernel 的多 Agent 模式，行业正从分散走向统一
 - **GraphRAG 与 Agentic RAG**：下一代 RAG 架构正在成为企业知识管理新标准

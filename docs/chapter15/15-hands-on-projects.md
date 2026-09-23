@@ -1,6 +1,6 @@
 # 十五、端到端实战项目
 
-[← 上一章：十四、Prompt Engineering](../chapter14/14-prompt-engineering.md) | [返回总览](../index.md)]
+[← 上一章：十四、Prompt Engineering](../chapter14/14-prompt-engineering.md) | [返回总览](../index.md)
 
 学完各章节的工具和概念后，最重要的是把它们串起来。以下三个实战项目覆盖最常见的 AI 开发场景，每个项目都标注了前置章节、所需工具和关键步骤。
 
@@ -93,7 +93,7 @@ print(response)
    └── fastmcp run weather_server.py
 
 4. 在客户端配置
-   └── Claude Code: 在 .claude/settings.json 的 mcpServers 中添加
+   └── Claude Code: 在项目根目录的 .mcp.json 中添加（也可用 claude mcp add 命令）
    └── OpenClaw: 在 .mcp.json 中添加
 
 5. 测试调用
@@ -123,7 +123,7 @@ if __name__ == "__main__":
     mcp.run()
 ```
 
-**客户端配置示例（Claude Code）**：
+**客户端配置示例（Claude Code）**：保存为项目根目录的 `.mcp.json`
 
 ```json
 {
@@ -140,7 +140,7 @@ if __name__ == "__main__":
 **进阶方向**：
 - 接入真实 API（和风天气、OpenWeatherMap）
 - 添加资源（@mcp.resource）和提示（@mcp.prompt）
-- 用 Streamable HTTP 部署为远程 MCP Server
+- 用 Streamable HTTP 部署为远程 MCP Server（新项目建议按 2026-07-28 无状态规范实现，参见章节六）
 
 ---
 

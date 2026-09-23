@@ -123,9 +123,11 @@ AI 发现问题后自动修复，循环执行直到所有门禁通过
 | 范式 | 推荐 CLI | 推荐 IDE | 推荐 Skill/工作流 |
 |------|---------|---------|----------------|
 | Vibe Coding | Claude Code / OpenClaw | Cursor Agent 模式 / Bolt.new | 前端设计、创意生成类 Skill |
-| Spec Coding | Claude Code（Plan 模式）| Cursor / Windsurf | skill-creator（生成规格）、doc-coauthoring（文档协作） |
-| Glue Coding | OpenClaw（Skills 驱动）| Trae / Replit | mcp-builder（集成外部工具）、API 对接 Skill |
-| Harness Engineering | Claude Code（TDD 模式）| Cursor + Copilot | webapp-testing（E2E 测试）、CodeReview Skill |
+| Spec Coding | Claude Code（Plan 模式）| Cursor / Devin Desktop | skill-creator（生成规格）、doc-coauthoring（文档协作） |
+| Glue Coding | OpenClaw（Skills 驱动）| TraeCode / Replit | mcp-builder（集成外部工具）、API 对接 Skill |
+| Harness Engineering | Claude Code（TDD 模式）| Cursor + Copilot / **ADE（ZCode、Warp）** | webapp-testing（E2E 测试）、CodeReview Skill |
+
+> **2026 年的补充**：Harness Engineering 阶段往往要同时跑多个 agent（一个写、一个测、一个审），这正是 **ADE**（Agent-first 开发环境）的用武之地——它把入口从编辑器换成任务，天生支持多 agent 并行与验证。详见[章节七](../chapter07/07-ide-tools.md)的「ADE」小节。
 
 ## 实操建议
 

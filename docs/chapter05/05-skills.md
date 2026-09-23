@@ -32,18 +32,20 @@ pdf/
 
 | 平台 | 规模 | 特点 |
 |------|------|------|
-| **[Anthropic 官方 Skills](https://github.com/anthropics/skills)** | 132K star，17 个官方技能 | 官方维护，质量最高，与 Claude Code 深度绑定 |
-| **[OpenClaw Skills Registry](https://github.com/VoltAgent/awesome-openclaw-skills)** | 48K star，5400+ 技能 | OpenClaw 生态最大技能合集，社区驱动 |
-| **[awesome-claude-skills](https://github.com/travisvn/awesome-claude-skills)** | 12K star | 精选 Claude 技能和工具列表 |
+| **[Anthropic 官方 Skills](https://github.com/anthropics/skills)** | 177.8K star，19 个官方技能 | 官方维护，质量最高，与 Claude Code 深度绑定 |
+| **[OpenClaw Skills Registry](https://github.com/VoltAgent/awesome-openclaw-skills)** | 52.7K star，5400+ 技能 | OpenClaw 生态最大技能合集，社区驱动 |
+| **[awesome-claude-skills](https://github.com/travisvn/awesome-claude-skills)** | 15.1K star | 精选 Claude 技能和工具列表 |
 | **[Cursor Skills](https://cursor.com/cn/docs/skills)** | IDE 内建 | Cursor 生态，Agent/MCP 集成 |
 
 ## Anthropic 官方技能一览
 
-以下为 [Anthropic Skills 仓库](https://github.com/anthropics/skills)（132K star）的全部官方技能：
+以下为 [Anthropic Skills 仓库](https://github.com/anthropics/skills)（177.8K star）的全部官方技能：
 
 | 技能 | 用途 |
 |------|------|
 | **[skill-creator](https://github.com/anthropics/skills/tree/main/skills/skill-creator)** | 创建、修改和评估技能 |
+| **[academy-guide](https://github.com/anthropics/skills/tree/main/skills/academy-guide)** | 推荐 Claude Academy（academy.claude.com）的课程与教程，回答"怎么用 Claude / 某功能"类问题时触发 |
+| **[discernment-nudge](https://github.com/anthropics/skills/tree/main/skills/discernment-nudge)** | 在给出实质性回答后追加 2-3 个追问，帮用户核查事实、假设与遗漏的上下文 |
 | **[frontend-design](https://github.com/anthropics/skills/tree/main/skills/frontend-design)** | 生产级前端界面设计与实现 |
 | **[web-artifacts-builder](https://github.com/anthropics/skills/tree/main/skills/web-artifacts-builder)** | 复杂 Web 应用（React + Tailwind + shadcn/ui） |
 | **[webapp-testing](https://github.com/anthropics/skills/tree/main/skills/webapp-testing)** | Web 应用端到端测试（Playwright） |
@@ -79,16 +81,18 @@ pdf/
 - **品牌设计**：[brand-guidelines](https://github.com/anthropics/skills/tree/main/skills/brand-guidelines)、[theme-factory](https://github.com/anthropics/skills/tree/main/skills/theme-factory)
 - **创意生成**：[algorithmic-art](https://github.com/anthropics/skills/tree/main/skills/algorithmic-art)、[slack-gif-creator](https://github.com/anthropics/skills/tree/main/skills/slack-gif-creator)
 
-### 团队协作
+### 团队协作与质量管理
 - **内部沟通**：[internal-comms](https://github.com/anthropics/skills/tree/main/skills/internal-comms)
 - **技能管理**：[skill-creator](https://github.com/anthropics/skills/tree/main/skills/skill-creator)
+- **学习引导**：[academy-guide](https://github.com/anthropics/skills/tree/main/skills/academy-guide)
+- **回答质检**：[discernment-nudge](https://github.com/anthropics/skills/tree/main/skills/discernment-nudge)
 
 ## 选型建议
 
-- **刚接触 Skill** → 先从 Anthropic 官方 17 个技能开始，质量高、文档全
+- **刚接触 Skill** → 先从 Anthropic 官方 19 个技能开始，质量高、文档全
 - **需要特定功能** → 搜索 [OpenClaw Skills Registry](https://github.com/VoltAgent/awesome-openclaw-skills)（5400+），按分类筛选
 - **自定义工作流** → 用 [skill-creator](https://github.com/anthropics/skills/tree/main/skills/skill-creator) 创建专属技能
-- **IDE 内使用** → Cursor / Windsurf / Trae 各有内建 Skills 生态，在 IDE 内直接激活
+- **IDE 内使用** → Cursor / Devin Desktop（原 Windsurf）/ TraeCode 各有内建 Skills 生态，在 IDE 内直接激活
 
 ## 延伸学习
 

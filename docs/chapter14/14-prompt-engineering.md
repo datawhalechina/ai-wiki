@@ -1,6 +1,6 @@
 # 十四、Prompt Engineering
 
-[← 上一章：十三、资源导航](../chapter13/13-resources.md) | [返回总览](../index.md) | [下一章：十五、端到端实战项目 →](../chapter15/15-hands-on-projects.md)]
+[← 上一章：十三、资源导航](../chapter13/13-resources.md) | [返回总览](../index.md) | [下一章：十五、端到端实战项目 →](../chapter15/15-hands-on-projects.md)
 
 Prompt Engineering（提示词工程）是与大模型交互的核心技能——同一个模型，不同的提示词可以产出天差地别的结果。掌握提示词技巧，比切换更贵的模型更有效。
 
@@ -128,6 +128,6 @@ Q3 环比下降 10%，Q3 营收是多少？
 
 ## 延伸学习
 
-- **[Anthropic Prompt Engineering 互动教程](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview)**
+- **[Anthropic Prompt Engineering 互动教程](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview)**
 - **[OpenAI Prompt Engineering Guide](https://platform.openai.com/docs/guides/prompt-engineering)**
 - **[Learn Prompting（开源课程）](https://learnprompting.org/)**

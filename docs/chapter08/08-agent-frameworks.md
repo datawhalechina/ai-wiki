@@ -27,12 +27,12 @@ AI Agent 框架提供构建自主推理、规划和执行任务的智能体系�
 | 框架                                                         | 特点                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | **[LangChain / LangGraph](https://www.langchain.com/)**      | 最成熟的生态，LangGraph 专注状态图多 Agent 编排，生产验证最充分 |
-| **[AutoGen](https://microsoft.github.io/autogen/)**          | 微软出品，多 Agent 对话协作                                  |
+| **[AutoGen](https://microsoft.github.io/autogen/)**          | 微软出品，多 Agent 对话协作。**已进入维护模式**（仅安全补丁与关键修复，不再有新功能），新项目建议改用 Microsoft Agent Framework；社区分支 AG2 继续独立演进 |
 | **[CrewAI](https://crewai.com/)**                            | 角色化多 Agent 协作                                          |
-| **[Claude Code](https://code.claude.com/docs/zh-CN/overview)** | Anthropic 的 Agent 能力封装，122K+ GitHub 星标               |
+| **[Claude Code](https://code.claude.com/docs/zh-CN/overview)** | Anthropic 的 Agent 能力封装，147.7K GitHub 星标               |
 | **[OpenClaw](https://openclaw.ai/)**                         | 开源本地 AI 智能体，强调"动手执行"，可 7×24 小时自动化       |
-| **[Hermes Agent](https://github.com/nousresearch/hermes-agent)** | 开源新星 142K star；Hermes Agent 是由 Nous Research 开发的开源、自托管自主 AI 智能体框架，专注于持久记忆、自我进化和跨平台工具使用，常被称为”会随着使用不断成长的数字员工”。它能持久化记忆，在跨会话中沉淀技能，并支持飞书、Telegram 等多平台接入。 |
-| **[Microsoft Agent Framework](https://github.com/microsoft/agent-framework)** | 微软推出的统一 Agent 框架，融合 AutoGen 和 Semantic Kernel 的多 Agent 模式，支持 Python 和 .NET |
+| **[Hermes Agent](https://github.com/nousresearch/hermes-agent)** | 开源新星 248.3K star；Hermes Agent 是由 Nous Research 开发的开源、自托管自主 AI 智能体框架，专注于持久记忆、自我进化和跨平台工具使用，常被称为”会随着使用不断成长的数字员工”。它能持久化记忆，在跨会话中沉淀技能，并支持飞书、Telegram 等多平台接入。 |
+| **[Microsoft Agent Framework](https://github.com/microsoft/agent-framework)** | 微软推出的统一 Agent 框架，已**统一 AutoGen + Semantic Kernel** 的多 Agent 模式，支持 Python 和 .NET。2025-10 公开预览 → 2026-02-19 RC → **2026-04-02 发布 1.0 GA**；13.7K star |
 
 ## 5 分钟快速上手：用 CrewAI 创建多 Agent 协作
 
@@ -92,7 +92,7 @@ python crew_demo.py
 |------|--------|---------|---------|------------|---------|---------|
 | LangChain/LangGraph | 极高 | 中 | 原生状态图编排 | 需自行集成 | 生产级 | 复杂多 Agent 工作流 |
 | Microsoft Agent Framework | 中 | 中 | 融合 AutoGen+SK 模式 | — | 企业级 | .NET/Python 企业应用 |
-| AutoGen | 高 | 中 | 对话式多 Agent | 有限 | 中型+ | 研究探索、对话协作 |
+| AutoGen | 高 | 中 | 对话式多 Agent | 有限 | 中型+ | 研究探索、对话协作（**维护模式**，新项目建议改用 MAF） |
 | CrewAI | 高 | 低 | 角色化分工 | 有限 | 中小型 | 快速搭建角色化 Agent |
 | Hermes Agent | 中 | 低 | 支持 | 持久记忆+自进化 | 中型 | 个人数字员工，自动化 |
 | OpenClaw | 中 | 低 | Skills 驱动 | 会话级 | 中小型 | 本地自动化，IM 操控 |
@@ -106,7 +106,7 @@ python crew_demo.py
  └── 否 → 需要多 Agent 协作？
            ├── 是 → 生产级？
            │        ├── 是 → LangGraph（最成熟）/ Microsoft Agent Framework（.NET 生态）
-           │        └── 否 → CrewAI（快速上手）/ AutoGen（微软生态）
+           │        └── 否 → CrewAI（快速上手）/ Microsoft Agent Framework（微软生态，已统一 AutoGen + SK）
            └── 否 → 需要持久记忆？
                     ├── 是 → Hermes Agent（自进化记忆）
                     └── 否 → 低代码平台（Coze / Dify）
