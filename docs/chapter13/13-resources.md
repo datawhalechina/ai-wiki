@@ -9,6 +9,7 @@
 | **[AI 工具导航](https://www.ai-all.info/)** | 工具聚合、分类导航 | 不确定用什么工具时先来逛逛 | 按场景筛选比搜索更高效 |
 | **[Product Hunt AI](https://www.producthunt.com/categories/ai)** | 新品发布、热度排行 | 关注前沿趋势、发现新工具 | 每周看一次 Top 5 即可，避免信息过载 |
 | **[MCP Server 市场](https://mcp.so/zh)** | MCP 服务器聚合搜索 | 要找特定功能的 MCP Server | 按场景分类浏览，中文友好 |
+| **[巨浪 AI](https://jvlangai.com/)** | 模型 API 服务商公开报价查询与原始来源 | 需要核对 API 接入方案的中文开发者 | 对照完整模型、分组和计费单位回来源确认；不作为服务质量认证 |
 
 ## 评测与榜单
 
