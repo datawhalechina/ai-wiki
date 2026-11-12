@@ -109,7 +109,7 @@ MCP(6) → Agent 框架(8) → RAG(9) → Skill(5) → Prompt Engineering(14)
 | 十四、Prompt Engineering | [`14-prompt-engineering.md`](chapter14/14-prompt-engineering.md) | 提示词核心技巧、框架与最佳实践 |
 | 十五、端到端实战项目 | [`15-hands-on-projects.md`](chapter15/15-hands-on-projects.md) | RAG 知识库、MCP Server、Vibe Coding MVP |
 | 十六、AI 时代的角色与商业 | [`16-roles-and-business.md`](chapter16/16-roles-and-business.md) | FDE、OPC 与 Token 计价 |
-| 十七、AI 应用与多模态创作 | [`17-ai-apps.md`](chapter17/17-ai-apps.md) | 按场景梳理成熟应用：搜索、写作、翻译、图像、语音、影音、视频
+| 十七、AI 应用与多模态创作 | [`17-ai-apps.md`](chapter17/17-ai-apps.md) | 按场景梳理成熟应用：搜索、写作、翻译、图像、语音、影音、视频 |
 
 ## 术语表
 

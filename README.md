@@ -27,7 +27,7 @@
 
 - `README.md`：项目介绍、导航入口、贡献说明
 - `docs/index.md`：正文总览目录页
-- `docs/chapter01` ~ `docs/chapter16`：按主题介绍；每章支持前后章与总览互链
+- `docs/chapter01` ~ `docs/chapter17`：按主题介绍；每章支持前后章与总览互链
 - `scripts/`：维护工具（star 数批量刷新、章节配图生成）
 
 ## 章节目录
@@ -50,6 +50,7 @@
 | 十四、Prompt Engineering | [`14-prompt-engineering.md`](docs/chapter14/14-prompt-engineering.md) |
 | 十五、端到端实战项目 | [`15-hands-on-projects.md`](docs/chapter15/15-hands-on-projects.md) |
 | 十六、AI 时代的角色与商业 | [`16-roles-and-business.md`](docs/chapter16/16-roles-and-business.md) |
+| 十七、AI 应用与多模态创作 | [`17-ai-apps.md`](docs/chapter17/17-ai-apps.md) |
 
 ## 参与贡献
 
