@@ -64,6 +64,10 @@ export default defineConfig({
         text: '角色与商业',
         items: [{ text: 'AI 时代的角色与商业', link: '/chapter16/16-roles-and-business' }],
       },
+      {
+        text: '应用层',
+        items: [{ text: 'AI 应用与多模态创作', link: '/chapter17/17-ai-apps' }],
+      },
     ],
 
     socialLinks: [
