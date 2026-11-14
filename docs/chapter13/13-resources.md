@@ -17,7 +17,7 @@
 | **[Artificial Analysis](https://artificialanalysis.ai/)** | 模型价格/性能/延迟对比 | 做模型选型决策 | 重点看 Quality vs Price 象限图，找到性价比最优解 |
 | **[OpenRouter](https://openrouter.ai/rankings)** | 模型热度榜、调用占比 | 判断哪些模型社区在用 | 排名反映真实使用量，比宣传更有参考价值 |
 | **[LMArena](https://arena.ai/)** | LLM 对战榜、Elo 排名 | 对比模型实际对话能力 | 偏主观偏好，适合选对话体验，不适合选推理能力 |
-| **[MTEB Leaderboard](https://huggingface.co/spaces/mteb/leaderboard)** | Embedding 模型实时排名 | 选 Embedding 模型 | 筛选中文任务（Chinese）列，关注 Retrieval 子榜单 |
+| **[MTEB Leaderboard](https://leaderboard.mteb.org/)** | Embedding 模型实时排名 | 选 Embedding 模型 | **先分清 v1 / v2 两套榜单**（任务集与计分不同，分数不可横比），再筛选中文任务（Chinese）列，关注 Retrieval 子榜单 |
 
 ### 评测榜单使用建议
 

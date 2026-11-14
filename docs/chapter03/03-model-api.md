@@ -8,9 +8,9 @@
 
 | 模型                                                         | 厂商      | 特点                                                         |
 | ------------------------------------------------------------ | --------- | ------------------------------------------------------------ |
-| **[Claude API (Opus 5.5)](https://platform.claude.com/docs/en/models/overview)** | Anthropic | 主力 **Claude Opus 5.5**（2026-09-22，`claude-opus-5-5`，$4/$20），**1M 上下文**。同期另有 **Fable 5.1 / Mythos 5.1**（2026-09-01）：**同权重、防护等级不同**——Fable 为通用可用版，Mythos 为邀请制的可信访问版（面向网络安全与生命科学） |
-| **[GPT-6 系列](https://developers.openai.com/api/docs)**     | OpenAI    | **GPT-6 Astra**（2026-09-03，**1.05M 上下文**）、**GPT-6 Sol / Luna**（2026-09-22，分旗舰与低成本档）。上一代 GPT-5.6 的 Sol / Terra / Luna 三档仍在役 |
-| **[Gemini 系列](https://ai.google.dev/gemini-api)**          | Google    | **Gemini 3.8 Flash / 3.8 Live** 于 2026-09 发布；Pro 档仍为 **Gemini 3.1 Pro**；约 **1M 上下文**，多模态能力突出。Gemini 4 官方确认已进入预训练，**尚未发布** |
+| **[Claude API](https://platform.claude.com/docs/en/models/overview)** | Anthropic | 日常主力 **Claude Opus 5.5**（2026-09-22，`claude-opus-5-5`，$4/$20，1M 上下文）；上探 **Claude Fable 5.2 / Mythos 5.2**（2026-11-09，$8/$40，1M 上下文 / 128K 输出，始终开启自适应思考，另有 2.5 倍速的 fast 模式 $16/$80）；下探 **Sonnet 5.5**（09-28）/ **Haiku 5.5**（10-07）。Fable 与 Mythos **同权重、防护不同**：Fable 面向所有用户，Mythos 仅限经审核的机构 |
+| **[GPT-6 系列](https://developers.openai.com/api/docs)**     | OpenAI    | 四层并列，全部 1.05M 上下文 / 128K 输出：**Astra**（2026-09-03，$10/$50，旗舰）、**6.1 Sol**（09-29，$2/$10，日常主力）、**6.1 Terra**（10-26，$1/$5，偏视觉推理 / computer use / 写作）、**Luna**（$0.10/$0.50，高吞吐）。Pro 已变为 reasoning effort 档位而非独立模型；GPT-5.5 于 2026-10-14 从 ChatGPT / Codex 下线，**API 仍可调用** |
+| **[Gemini 系列](https://ai.google.dev/gemini-api)**          | Google    | 双旗舰 **Gemini 4 Argon**（2026-10-13 公开，1,048,576 上下文、单次输出上限 943,718）与 **Gemini 4 Carbon**（10-28 发布，**11-10 起对全部付费开发者开放**，主打编码与长程 agent）。两者推广价均 $2/$10，**2026-11-30 后恢复 $4/$20**（缓存输入 $0.10）。3.8 Flash / 3.8 Live 仍在役，3.1 Pro 已非旗舰；Gemini 3.5 Pro 未发布 |
 
 > ⚠️ **上下文窗口的口径**：表中的数值是厂商规格书里的**上限**，实际可用量受输出预留、计费方式与接入渠道影响。同一模型在不同云渠道（如 AWS Bedrock）的标注可能不一致，选型前请以你**实际接入的那个渠道**的文档为准。
 
@@ -18,11 +18,13 @@
 
 | 模型                                                | 厂商      | 特点                      |
 | ------------------------------------------------- | ------- | ----------------------- |
-| **[DeepSeek-V4.1-Flash](https://platform.deepseek.com/)** | 深度求索    | 2026-09-10 发布（API 名 `deepseek-flash`）：552B MoE、**原生多模态**、**1M 上下文**；开源强推理，成本低，编码能力强 |
-| **[Qwen3.8 系列](https://qwen.ai/apiplatform)**     | 阿里      | 旗舰 **Qwen3.8-Max**（2026-08-03）：总参 2.4T / 激活 95B，**1M 上下文**；另有 3.7-Max / 3.7-Plus / 3.6-Plus 等档位。中文理解精准 |
-| **[Kimi K3](https://platform.moonshot.ai/)**      | 月之暗面    | **Kimi K3**（2026-07）：2.8T 参数、原生视觉理解、**1M 上下文**；K2.8 Preview 于 2026-09-11 全量上线 Kimi Code，全档位 1M 上下文 |
-| **[GLM-5.3](https://bigmodel.cn/console/)**         | 智谱 AI   | 2026-08-14 上线，MoE **744B 总参 / 40B 激活**；文本输入 1M、输出 128K。国内老牌模型，编码场景持续优化 |
-| **[MiniMax M3](https://www.minimaxi.com/)**       | MiniMax | 2026-06-01 发布：**428B 总参 / 23B 激活**、**1M 上下文**、原生多模态；另有音乐、语音、视频模型 |
+| **[DeepSeek-V4.1-Flash](https://platform.deepseek.com/)** | 深度求索    | **V4.1-Flash-1017**（2026-10-17）：552B MoE（输入约 8B / 输出约 16B 激活）、**原生多模态**、**1M 上下文**、MIT 开源权重；API 低峰 $0.15/$0.60、高峰 $0.30/$1.20，编码与 agent 能力显著提升 |
+| **[Qwen 系列](https://qwen.ai/apiplatform)**     | 阿里      | 现役旗舰 **Qwen3.8-Max**（2026-08-03）：总参 2.4T / 激活 95B，**1M 上下文**。**Qwen4-Max 预览版**（2026-11-11 上线，`qwen4-max-preview`）1M 上下文、39.3 万输出、原生图片与视频理解，但**仅 Token Plan 可调、11-25 下线**，参数 / 价格 / 权重均未公布 |
+| **[Kimi K3.1 Pro](https://platform.moonshot.ai/)**      | 月之暗面    | **K3.1 Pro**（2026-10-23）：2.8T 总参 / 104B 激活、原生图像输入、**1M 上下文**；$2/$10（缓存 $0.20），Highspeed 档 $4/$20；权重 11-02 上 HF（自有许可）。K2 系列已于 10-31 停止新用户接入 |
+| **[GLM-5.3](https://bigmodel.cn/console/)**         | 智谱 AI   | 2026-08 上线，MoE **744B 总参 / 40B 激活**；文本输入 1M、输出 128K。已扩展为 Flash / FlashX / Prime 家族；**下一代（5.4 / 5.5）截至 11 月未发布** |
+| **[MiniMax M3.1 Flash](https://www.minimaxi.com/)**       | MiniMax | 在 **M3**（2026-06-01，428B / 23B）基础上于 **2026-10-19** 推出：428B 总参 / 23B 激活、1M 上下文、$0.15/$0.60；厂商称 agent 任务成本较前代降约 70%（自述口径）。另有音乐、语音、视频模型 |
+| **[混元 Hy4](https://cloud.tencent.com/product/hunyuan)** | 腾讯    | **2026-11-04 正式版**：770B 总参 / 49B 激活、1M 上下文，**首次引入视觉理解与 Computer Use**；¥6 / ¥18 / 缓存 ¥0.3（每百万 token）。权重「近期开源」尚未落地 |
+| **[Mistral Large 4](https://mistral.ai/)** | Mistral | 代号 *Le Chonk*：2026-10-06 预览、**10-29 转为开源权重**，$0.70/$2.10（缓存 $0.07）。欧洲阵营当前最能打的一款编码模型 |
 
 ## 模型聚合平台
 
@@ -33,35 +35,60 @@
 
 ### 编程场景
 
-| 模型 | 编码能力 | 价格 | 上下文 | 速度 | 中文代码注释 |
+| 模型 | 编码能力 | 价格（输入/输出，每百万 token） | 上下文 | 速度 | 中文代码注释 |
 |------|---------|------|--------|------|------------|
-| Claude Opus 5.5 | ⭐⭐⭐⭐⭐ | 高 | 1M | 中 | ⭐⭐⭐⭐ |
-| GPT-6 Astra | ⭐⭐⭐⭐⭐ | 高 | 1.05M | 中 | ⭐⭐⭐ |
-| Gemini 3.8 Flash | ⭐⭐⭐⭐ | 中 | 1M | 快 | ⭐⭐⭐ |
-| DeepSeek-V4.1-Flash | ⭐⭐⭐⭐ | 低 | 1M | 快 | ⭐⭐⭐⭐⭐ |
-| Qwen3.8-Max | ⭐⭐⭐⭐ | 中 | 1M | 快 | ⭐⭐⭐⭐⭐ |
-| Kimi K3 | ⭐⭐⭐⭐ | 中 | 1M | 快 | ⭐⭐⭐⭐⭐ |
-| GLM-5.3 | ⭐⭐⭐ | 中 | 1M | 快 | ⭐⭐⭐⭐⭐ |
-| MiniMax M3 | ⭐⭐⭐ | 中 | 1M | 快 | ⭐⭐⭐⭐ |
+| Claude Fable 5.2 | ⭐⭐⭐⭐⭐ | $8 / $40 | 1M | 快 | ⭐⭐⭐⭐ |
+| Claude Opus 5.5 | ⭐⭐⭐⭐⭐ | $4 / $20 | 1M | 中 | ⭐⭐⭐⭐ |
+| GPT-6 Astra | ⭐⭐⭐⭐⭐ | $10 / $50 | 1.05M | 中 | ⭐⭐⭐ |
+| GPT-6.1 Sol | ⭐⭐⭐⭐⭐ | $2 / $10 | 1.05M | 快 | ⭐⭐⭐ |
+| Gemini 4 Carbon | ⭐⭐⭐⭐⭐ | $2 / $10（推广价） | 1M | 快 | ⭐⭐⭐ |
+| Kimi K3.1 Pro | ⭐⭐⭐⭐⭐ | $2 / $10 | 1M | 快 | ⭐⭐⭐⭐⭐ |
+| DeepSeek-V4.1-Flash-1017 | ⭐⭐⭐⭐ | $0.15 / $0.60（低峰） | 1M | 快 | ⭐⭐⭐⭐⭐ |
+| Qwen3.8-Max | ⭐⭐⭐⭐ | $2 / $6 | 1M | 快 | ⭐⭐⭐⭐⭐ |
+| 混元 Hy4 | ⭐⭐⭐⭐ | ¥6 / ¥18 | 1M | 中 | ⭐⭐⭐⭐⭐ |
+| GLM-5.3 | ⭐⭐⭐ | $1.40 / $4.40 | 1M | 快 | ⭐⭐⭐⭐⭐ |
+| MiniMax M3.1 Flash | ⭐⭐⭐ | $0.15 / $0.60 | 1M | 很快 | ⭐⭐⭐⭐ |
+
+> Gemini 两款旗舰的 $2/$10 是推广价，**2026-11-30 后翻倍到 $4/$20**——按现价做的预算要留出这一档。
 
 ### 非编程场景
 
 | 场景 | 首选 | 次选 | 理由 |
 |------|------|------|------|
-| 长文档分析 | Gemini 3.8 / GPT-6 Astra | Claude Opus 5.5 / Kimi K3 | 1M+ 上下文，原生多模态 |
-| 中文写作 | Qwen3.8-Max / Kimi K3 | DeepSeek-V4.1-Flash | 中文理解精准，文风自然 |
-| 多轮对话 | Claude Opus 5.5 | GPT-6 Astra | 指令遵循强，逻辑一致 |
-| 多模态理解 | Gemini 3.8 | GPT-6 Astra | 原生多模态，图文理解强 |
-| 低成本大批量 | DeepSeek-V4.1-Flash | GPT-6 Luna / Qwen3.7-Plus | 开源+低价，推理成本极低 |
-| 语音/音乐生成 | MiniMax M3 | — | 原生语音和音乐模型 |
+| 长文档分析 | Gemini 4 Argon / GPT-6 Astra | Claude Opus 5.5 / Kimi K3.1 Pro | 1M+ 上下文，原生多模态 |
+| 中文写作 | Qwen3.8-Max / Kimi K3.1 Pro | 混元 Hy4 / DeepSeek-V4.1-Flash | 中文理解精准，文风自然 |
+| 多轮对话 | Claude Opus 5.5 | GPT-6.1 Sol | 指令遵循强，逻辑一致 |
+| 多模态理解 | Gemini 4 Argon | GPT-6.1 Terra | 原生多模态，Terra 偏视觉推理 |
+| 看图操作桌面 | 混元 Hy4 / GPT-6.1 Terra | Gemini 4 Carbon | 内置 Computer Use 或屏幕理解 |
+| 低成本大批量 | DeepSeek-V4.1-Flash-1017 | GPT-6 Luna / MiniMax M3.1 Flash | 开源低价，推理成本极低 |
+| 语音/音乐生成 | MiniMax M3.1 Flash | — | 原生语音和音乐模型 |
 
 ## 选型建议
 
-- **日常编码** → **Claude Opus 5.5** 或 **DeepSeek-V4.1-Flash**（前者质量最高，后者性价比最佳）
-- **中文项目优先** → **Qwen3.8-Max** / **Kimi K3** / **DeepSeek-V4.1-Flash**：中文理解和生成最自然
-- **长文档/多模态** → **Gemini 3.8** 或 **GPT-6 Astra**：1M+ 上下文窗口，原生多模态
-- **低成本试验** → **DeepSeek-V4.1-Flash** / **GPT-6 Luna**：开源模型中编码能力最强，或大厂里最便宜的一档
-- **不想分别对接** → **OpenRouter**：一个 API 调 500+ 模型、80+ 提供商，按需切换
+- **日常编码** → **Claude Opus 5.5**（质量与价格最平衡）或 **GPT-6.1 Sol**（$2/$10 一档，缓存便宜）；**DeepSeek-V4.1-Flash-1017** 性价比最佳
+- **最难的迁移 / 长周期 agent** → **Claude Fable 5.2** 或 **Gemini 4 Carbon**：前者官方定位「最艰巨的开放式技术工作」，后者主打长程多步骤任务；两者都贵，按任务挑而不是全程挂
+- **中文项目优先** → **Qwen3.8-Max** / **Kimi K3.1 Pro** / **混元 Hy4**：中文理解和生成最自然
+- **长文档 / 多模态** → **Gemini 4 Argon** 或 **GPT-6 Astra**：1M+ 上下文窗口，原生多模态
+- **预算敏感的中文任务** → **GLM-5.3** / **MiniMax M3.1 Flash**：国产里的低价高吞吐档
+- **低成本试验** → **DeepSeek-V4.1-Flash-1017** / **GPT-6 Luna**：开源模型中编码能力最强，或大厂里最便宜的一档
+- **只想要一个 Key 打通全部** → **OpenRouter**：一个 API 调 500+ 模型、80+ 提供商，按需切换
+
+## 怎么读 2026 年的版本号
+
+2026 下半年起，厂商集体放弃了「一个模型一个版本号」的线性叙事，改成**同代多档 + 推理档位**。直接后果是：**版本号大不等于能力强**。读规格表时先分清四层：
+
+| 层级 | 例子 | 怎么看 |
+|------|------|--------|
+| **代际** | GPT-6 → GPT-6.1、Gemini 3.8 → Gemini 4 | 只代表训练批次，常伴随架构与知识截止变化 |
+| **同代档位** | Astra / Sol / Terra / Luna；Argon / Carbon；Opus / Sonnet / Haiku；Luna 型低价档 | **这是同一代的不同裁剪**，Terra 弱于 Sol 不代表「版本更低」 |
+| **推理强度** | `low / medium / high / xhigh`、Gemini 的 thinking level、Kimi 的 Highspeed | 同一模型换个档位，分数与成本可以差一倍以上 |
+| **渠道与别名** | Bedrock / Vertex / 第三方路由的 ID；`-preview`、`-flash`、`-lite` | 同名不同渠道的限制与价格可能不同，`preview` 还有下线日 |
+
+三条实用规则：
+
+1. **比价前先对齐档位**。「$1/$5」通常是该代最便宜的那一档，拿它和别家的旗舰价比是错的。
+2. **`preview` 不是产品**。Qwen4-Max 预览只到 2026-11-25，写完的代码要留好换模型的余地。
+3. **看到「同代多档」先问一句：它替代的是谁**。厂商常把新档插在旧旗舰下方（如 6.1 Terra 之于 6.1 Sol），不是简单升级。
 
 ## 延伸：三种不是「LLM」的模型形态
 

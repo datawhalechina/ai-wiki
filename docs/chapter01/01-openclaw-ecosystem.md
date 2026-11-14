@@ -4,7 +4,7 @@
 
 "龙虾"是对开源 AI 智能体 **[OpenClaw](https://openclaw.ai/)**（原名 Clawdbot/Moltbot）的昵称，因其红色机械龙虾图标而得名。它能理解自然语言指令，自主调用电脑工具完成任务，真正实现从"意图"到"执行"的闭环。
 
-**[openclaw/openclaw](https://github.com/openclaw/openclaw)**：390.3K star · 76K fork · TypeScript · MIT 协议 · 每日发版
+**[openclaw/openclaw](https://github.com/openclaw/openclaw)**：394.4K star · 76K fork · TypeScript · MIT 协议 · 每日发版
 
 ## OpenClaw 核心能力
 
@@ -12,9 +12,12 @@
 - **系统操控**：读写文件、运行代码/脚本（可沙盒）、模拟键鼠、操控浏览器
 - **多 IM 接入**：WhatsApp、Telegram、Discord、Slack、Signal、iMessage、微信、飞书、QQ
 - **持久记忆**：记住用户偏好和上下文，跨会话形成个性化 AI
-- **技能系统**：[ClawHub](https://openclaw.ai/) 技能市场（已拆为 **Skills + Plugins** 双结构，并设有[中国官方镜像 mirror-cn.clawhub.com](https://mirror-cn.clawhub.com/)，2026-04 由火山引擎共建）+ 社区 [5400+ Skills](https://github.com/VoltAgent/awesome-openclaw-skills)（52.7K star）
+- **技能系统**：[ClawHub](https://openclaw.ai/) 技能市场（已拆为 **Skills + Plugins** 双结构，并设有[中国官方镜像 mirror-cn.clawhub.com](https://mirror-cn.clawhub.com/)，2026-04 由火山引擎共建）+ 社区 [5400+ Skills](https://github.com/VoltAgent/awesome-openclaw-skills)（53.8K star）
 - **多智能体**：可同时运行多个实例协同工作
-- **后台自动化**：cron 任务、定时提醒、后台常驻
+- **可观测面板**（2026-11 起）：Chat Details 侧栏汇总会话信息、任务进度、PR 与自动化任务，Subagents 面板可只读查看每个 worker 的 transcript
+- **Advisor 自查**（实验性，默认关闭）：Agent 干活途中复检进展，发现「重复失败的路径」或「偏离请求」时给出纠正建议。**只建议、不执行工具、不代批**，且每次复查多花一轮模型调用
+- **MCP Relay**（可选插件，默认关闭）：让 ChatGPT / Claude 直连 OpenClaw 会话，**不用开公网端口、不必交出 Gateway 密码**；代价是 relay 能读到流经它的内容
+- **后台自动化**：cron 任务、定时提醒、后台常驻；2026-11 起支持 **MCP 事件触发**（MCP 服务器上报事件即启任务，需公网 HTTPS 回调）
 - **语音能力**：集成 ElevenLabs TTS，支持语音通话
 - **伴侣应用（Beta）**：macOS 15+ 菜单栏应用
 
@@ -22,7 +25,9 @@
 
 | 时间 | 事件 |
 |------|------|
-| 2026-09-19 | 发版 **v2026.9.5**（最新正式版）；另有 extended-stable 渠道 v2026.7.35（09-21），面向求稳的生产用户 |
+| 2026-11-08 | 发版 **v2026.11.2**（当前 stable / npm `latest`）：纯修复版，115 个 PR、64 位贡献者，主攻隐私与信任边界（配置密钥不再写入本地审计历史、LSP 输出不再进日志、沙箱搜索只认可信 provider）、账号安全的投递重试、Gateway 可用性与更新自愈。**无新功能**，但修复了从 2026.10.10 升级时卡在「database is locked」的问题 |
+| 2026-11-03 | 发版 **v2026.10.10**（功能版，结束 5 个 beta）：官方口径 **3,028 个 PR / 454 位贡献者**。新增 Chat Details 侧栏、实验性 **Advisor**、Browser Talk 分离语音、跨机文件夹、可选 **MCP Relay** 插件、MCP 事件触发自动化 |
+| 2026-09-19 | 发版 v2026.9.5；另有 extended-stable 渠道 v2026.7.35（09-21），面向求稳的生产用户（现 extended-stable 为 **2026.9.36**） |
 | 2026-08-31 | 发布 **OpenClaw 2.0**（v2026.8.1）：官方口径 **987 位贡献者、16,977 个 PR**，约合项目历史 PR 总量的一半 |
 | 2026-07-08 | 项目转入 **[OpenClaw Foundation](https://openclaw.ai/blog/introducing-openclaw-foundation)**，成为美国 501(c)(3) 非营利组织，**协议保持 MIT**；OpenAI 为主要捐赠方 |
 | 2026-05-10 | 发版 v2026.5.10-beta.2，保持每日发版节奏 |
@@ -37,7 +42,7 @@
 
 | 产品 | 厂商 | 端形态 | 模型 | 定位 |
 |------|------|--------|------|------|
-| **[OpenClaw](https://openclaw.ai/)** | 开源社区 | 本地/云端 | 任意模型 | 开源旗舰，390.3K star，"海纳百川" |
+| **[OpenClaw](https://openclaw.ai/)** | 开源社区 | 本地/云端 | 任意模型 | 开源旗舰，394.4K star，"海纳百川" |
 | **[AutoClaw（澳龙）](https://autoglm.z.ai/autoclaw/)** | 智谱 AI | **本地**（Win/macOS 一键安装，约 1 分钟） | **完全开放**（推荐 DeepSeek/Kimi/MiniMax/GLM） | 2026-03-10 上线，国内首个真·一键安装本地版；预置 50+ Skills；内置 Pony-Alpha-2（内测代号）；一键接入飞书 |
 | **[KimiClaw](https://www.kimi.com/bot)** | 月之暗面 | 云端（另有桌面版 / 安卓托管） | Kimi 系（默认 K2.6，可切 K3） | 一键云部署，40GB 云存储；一键部署需 **Allegretto 及以上**会员 |
 | **[MaxClaw](https://agent.minimaxi.com/activity/max-claw)** | MiniMax | 云端 | MiniMax 系（M3 / M2.7） | 10 秒部署、50GB 云存储；语音/音乐能力强 |
@@ -87,7 +92,7 @@
 | 多 IM 支持 | 10+ | 飞书等 | 多通道 | — | — | 企业 IM |
 | 语音 | ElevenLabs | — | — | 原生语音 | — | — |
 | 企业版 | — | — | — | — | ✅ 席位制 | — |
-| 社区规模 | 390.3K star | — | — | — | — | — |
+| 社区规模 | 394.4K star | — | — | — | — | — |
 | 发版节奏 | 每日 | — | — | — | — | — |
 
 ## OpenClaw 周边生态
@@ -96,18 +101,18 @@
 
 | 项目 | 领域 | 亮点 |
 |------|------|------|
-| **[claw-code](https://github.com/ultraworkers/claw-code)**（195.3K star） | Rust 重写 | "史上最快突破 100K star"，Rust 高性能版本 |
-| **[NVIDIA NemoClaw](https://github.com/NVIDIA/NemoClaw)**（22.5K star） | 安全沙盒 | NVIDIA OpenShell 安全容器运行 OpenClaw |
+| **[claw-code](https://github.com/ultraworkers/claw-code)**（194.8K star） | Rust 重写 | "史上最快突破 100K star"，Rust 高性能版本 |
+| **[NVIDIA NemoClaw](https://github.com/NVIDIA/NemoClaw)**（23.0K star） | 安全沙盒 | NVIDIA OpenShell 安全容器运行 OpenClaw |
 | **[ClawX](https://github.com/ValueCell-ai/ClawX)**（7.6K star） | 桌面 GUI | 图形界面版，[中文站 clawx.com.cn](https://clawx.com.cn) |
-| **[AutoResearchClaw](https://github.com/aiming-lab/AutoResearchClaw)**（14.5K star） | 科研自动化 | 从想法到论文全自动 |
+| **[AutoResearchClaw](https://github.com/aiming-lab/AutoResearchClaw)**（14.9K star） | 科研自动化 | 从想法到论文全自动 |
 | **[ClawWork](https://github.com/HKUDS/ClawWork)**（8.6K star） | 自动化工作 | "11 小时赚 $15K" |
-| **[ClawTeam](https://github.com/HKUDS/ClawTeam)**（5.5K star） | 群体智能 | 多 Agent 集群全自动协作 |
+| **[ClawTeam](https://github.com/HKUDS/ClawTeam)**（5.6K star） | 群体智能 | 多 Agent 集群全自动协作 |
 | **[clawpanel](https://github.com/qingchencloud/clawpanel)**（2.9K star） | 管理面板 | 多引擎管理，Tauri 桌面应用，11 种语言 |
 | **[汉化版](https://github.com/1186258278/OpenClawChineseTranslation)**（3.8K star） | 中文本地化 | CLI + Dashboard 全中文，含搭建教程 |
 
 ## 选型建议
 
-- **追求最大自由度 + 社区生态** → **OpenClaw**：开源、390.3K star、每日迭代、任意模型、5400+ Skills
+- **追求最大自由度 + 社区生态** → **OpenClaw**：开源、394.4K star、每日迭代、任意模型、5400+ Skills
 - **想低门槛在本地跑起来** → **AutoClaw（澳龙）**：一键安装、预置 50+ Skills、**模型完全开放**（可接任意模型的 Coding Plan，不绑定 GLM）
 - **数据不出本机、要开源可控** → **LobsterAI（有道龙虾）**：100% 开源桌面 Agent，可 NAS 部署
 - **不想装东西，开箱即用** → **KimiClaw**（`kimi.com/bot`）/ **MaxClaw** / **JVSClaw**：云端一键部署

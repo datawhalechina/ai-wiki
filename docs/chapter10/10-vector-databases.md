@@ -17,13 +17,13 @@
 | --- | --- | --- |
 | **[Pinecone](https://www.pinecone.io/)** | 云服务 | 全托管（闭源），企业级，易上手；老牌路线，存储成本偏高 |
 | **[Turbopuffer](https://turbopuffer.com/)** | 云服务 | **对象存储（S3 / GCS / Azure）原生**，索引不常驻内存；Cursor / Notion / Anthropic 生产使用；无免费档，$16/月起 |
-| **[Milvus / Zilliz](https://milvus.io/)** | 开源 / 云服务 | 生产级，大规模向量检索，云原生架构（**46.2K star**） |
-| **[Qdrant](https://qdrant.tech/)** | 开源 / 云服务 | Rust 编写，高性能，高级过滤（**34.8K star**） |
-| **[Weaviate](https://weaviate.io/)** | 开源 / 云服务 | 内置向量化模块，GraphQL API（**16.8K star**） |
-| **[Chroma](https://trychroma.com/)** | 开源（嵌入式） | 轻量、零配置起步，适合原型与中小规模；2025 年以 Rust 重写（**29.4K star**） |
-| **[LanceDB](https://lancedb.com/)** | 开源（嵌入式）/ 云 | 进程内运行，**Lance 列存格式（基于 Apache Arrow）**，同一张表存向量与多模态数据，自带版本管理与回滚（**11.5K star**） |
-| **[pgvector](https://github.com/pgvector/pgvector)** | Postgres 扩展 | 在既有 PostgreSQL 里做向量检索，与业务数据同事务查询；Supabase / Neon / RDS 等默认自带（**23.1K star**） |
-| **[pgvectorscale](https://github.com/timescale/pgvectorscale)** | Postgres 扩展 | Timescale 出品，在 pgvector 之上叠加 **StreamingDiskANN** 磁盘索引与量化压缩，突破内存上限（**3.1K star**） |
+| **[Milvus / Zilliz](https://milvus.io/)** | 开源 / 云服务 | 生产级，大规模向量检索，云原生架构（**46.7K star**） |
+| **[Qdrant](https://qdrant.tech/)** | 开源 / 云服务 | Rust 编写，高性能，高级过滤（**35.5K star**） |
+| **[Weaviate](https://weaviate.io/)** | 开源 / 云服务 | 内置向量化模块，GraphQL API（**16.9K star**） |
+| **[Chroma](https://trychroma.com/)** | 开源（嵌入式） | 轻量、零配置起步，适合原型与中小规模；2025 年以 Rust 重写（**29.7K star**） |
+| **[LanceDB](https://lancedb.com/)** | 开源（嵌入式）/ 云 | 进程内运行，**Lance 列存格式（基于 Apache Arrow）**，同一张表存向量与多模态数据，自带版本管理与回滚（**11.9K star**） |
+| **[pgvector](https://github.com/pgvector/pgvector)** | Postgres 扩展 | 在既有 PostgreSQL 里做向量检索，与业务数据同事务查询；Supabase / Neon / RDS 等默认自带（**23.7K star**） |
+| **[pgvectorscale](https://github.com/timescale/pgvectorscale)** | Postgres 扩展 | Timescale 出品，在 pgvector 之上叠加 **StreamingDiskANN** 磁盘索引与量化压缩，突破内存上限（**3.2K star**） |
 
 ## 向量数据库选型对比
 

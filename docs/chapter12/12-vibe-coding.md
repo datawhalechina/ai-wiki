@@ -160,7 +160,7 @@ Prompt Engineering 关心「这句话怎么说最好」，Loop Engineering 关�
 | **Verification** | 怎么知道该停 | 跑测试看退出码、独立 reviewer agent 复核、CI 通过 |
 | **Memory** | 跨轮次保留什么 | 会话续接、`CLAUDE.md`、外部记忆库 |
 
-**常见落地形态**：把 loop 挂成 GitHub Actions 定时任务，例如每日 triage、PR 陪伴（babysitting）、CI 清扫、依赖升级、changelog 草拟。社区参考实现见 [cobusgreyling/loop-engineering](https://github.com/cobusgreyling/loop-engineering)（11.3K star，含 7 个生产型 loop 模式 + 三个脚手架 CLI）。
+**常见落地形态**：把 loop 挂成 GitHub Actions 定时任务，例如每日 triage、PR 陪伴（babysitting）、CI 清扫、依赖升级、changelog 草拟。社区参考实现见 [cobusgreyling/loop-engineering](https://github.com/cobusgreyling/loop-engineering)（11.8K star，含 7 个生产型 loop 模式 + 三个脚手架 CLI）。
 
 **风险必须知道**：无监督的 loop 会「无监督地犯错」。
 

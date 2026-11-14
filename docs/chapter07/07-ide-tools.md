@@ -20,9 +20,9 @@
 
 | 工具                                                      | 形态          | 特点                                                   | 最新情况                                                     |
 | --------------------------------------------------------- | ------------- | ------------------------------------------------------ | ------------------------------------------------------------ |
-| **[Cursor](https://www.cursor.com/)**                     | AI 原生 IDE   | 基于 VSCode，AI 编程新宠儿，Composer 模式、Agent 模式  | 归属 **Anysphere**（**2026-08-14 起为 SpaceX 全资子公司**）；版本约 **3.21.x**（2026-09），持续强化 Agent 模式和 MCP 集成能力 |
+| **[Cursor](https://www.cursor.com/)**                     | AI 原生 IDE   | 基于 VSCode，AI 编程新宠儿，Composer 模式、Agent 模式  | 归属 **Anysphere**（**2026-08-14 起为 SpaceX 全资子公司**）。2026-10 ~ 11 三连发：**Agent SDK**（10-20）、**Build Live Apps**（11-05，云 agent 直接建库 + 鉴权 + 托管并给出分享链接）、**实时语音**（11-06，由 Grok Voice 驱动，支持 Agents Window / IDE / Web / iOS）。官方 changelog 以功能为单位发布，**不再统一标注版本号**（9 月为 3.21.x） |
 | **[Devin Desktop](https://devin.ai/desktop)**（原 Windsurf） | AI 原生 IDE   | **Cognition** 出品（Devin 母公司），流畅的 AI 协作体验 | **2026-06-02 由 Windsurf 更名**，原域名 `windsurf.com` 已 301 跳转至 `devin.ai/desktop`；本地 Agent 由 Cascade 改为 **Devin Local**（Rust 重写） |
-| **[Antigravity](https://antigravity.google/)**            | Google AI IDE | 基于 VS Code 构建，Agent-first 设计                     | 已 **GA（正式可用）**。个人档 **$0/月**：不限量 Tab 补全与命令请求 + 每周基础 agent 额度，可选模型含 Gemini 3 系列 Flash、Gemini 3.1 Pro，另可调 Claude Sonnet/Opus 4.6 与 gpt-oss-120b；付费走 Google AI Pro（$19.99/月）与 Ultra（$99.99 / $199.99）。**Antigravity 2.0 已从 IDE 转为「命令中心」**，专门并行管理多个本地 agent，另有 CLI 与 SDK 入口；企业版经 Gemini Enterprise 提供。社区生态：[antigravity-skills](https://github.com/rmyndharis/antigravity-skills)、[配额监控插件](https://github.com/jlcodes99/vscode-antigravity-cockpit) |
+| **[Antigravity](https://antigravity.google/)**            | Google AI IDE | 基于 VS Code 构建，Agent-first 设计                     | 已 **GA（正式可用）**。个人档 **$0/月**：不限量 Tab 补全与命令请求 + 每周基础 agent 额度，可选模型含 **Gemini 4 Argon / Carbon**、3.8 Flash、3.1 Pro，另可调 Claude Sonnet/Opus 4.6 与 gpt-oss-120b；付费走 Google AI Pro（$19.99/月）与 Ultra（$99.99 / $199.99）。**Antigravity 2.0 已从 IDE 转为「命令中心」**，并预览 **`/swarm`**（把一条提示词变成一支协同 agent 团队）；另有 **CLI 1.5.x**（11-04 起连发 7 个版本，`agy acp` 可当 ACP 服务器、`--remote-agent` 跑远程会话）与 SDK 入口；企业版经 Gemini Enterprise 提供。社区生态：[antigravity-skills](https://github.com/rmyndharis/antigravity-skills)、[配额监控插件](https://github.com/jlcodes99/vscode-antigravity-cockpit) |
 | **[TraeCode](https://www.trae.ai/)**（原 TRAE IDE）        | 字节 AI IDE   | 基础版免费，中文指令理解精准度高                       | **已更名为 TraeCode**，IDE 模式与 **SOLO 模式**（AI 主导规划与执行）并存；原先的办公能力已拆分为独立产品 **TraeWork**（AI 原生工作台，网页 / 桌面 / 移动三端，Work / Code / Design 三模式） |
 | **[GitHub Copilot](https://github.com/features/copilot)** | 微软 IDE 插件 | 微软生态的智能编码标配                                 |                                                              |
 | **[Visual Studio 2026](https://visualstudio.microsoft.com/)** | 微软 IDE      | .NET / C++ 主力 IDE，Fluent UI 重做，性能大幅提升      | **2025-11-11 正式发布**（与 .NET 10 LTS 同期）；**GitHub Copilot 免费内置**（Copilot Free 每月 2,000 次补全 + 50 次高级请求，超出后回落到 IntelliCode）；内置 Profiler Agent、Debugger Agent（自动分析失败单测并给出修复）与 C#/C++ 专用 agent，可装 VS 2022 扩展 |
@@ -34,7 +34,7 @@
 
 | 工具 | 厂商 | 特点 | 最新情况 |
 | --- | --- | --- | --- |
-| **[ZCode](https://z.ai/)** | 智谱 Z.ai | Agent-first 的 ADE，由 GLM 系列驱动 | 国内名 **Z Code**，2025-12-26 首发；**2026-07-02 Z.ai 发布 ADE 版并登顶 Hacker News**；内核已适配 **GLM-5.3-Flash**；支持 BYOK 接入 GPT / Claude / Gemini 等。⚠️ **2026-09-18 就"代码库数据上传"公开致歉并宣布将开源代码库**，企业采用建议等开源后再评估 |
+| **[ZCode](https://z.ai/)** | 智谱 Z.ai | Agent-first 的 ADE，由 GLM 系列驱动 | 国内名 **Z Code**，2025-12-26 首发；**2026-07-02 Z.ai 发布 ADE 版并登顶 Hacker News**；内核已适配 **GLM-5.3-Flash**；支持 BYOK 接入 GPT / Claude / Gemini 等。**2026-11-03 的 3.17.2 上线 Computer Use / Browser Use / Sites 三个官方插件**，模型配置新增 Kimi K3.1 Pro、MiniMax M3.1 Flash。⚠️ **2026-09-18 就"代码库数据上传"公开致歉并宣布将开源代码库**，企业采用建议等开源后再评估 |
 | **[JetBrains Air](https://www.jetbrains.com/air/)** | JetBrains | 把 JetBrains 六个月来围绕 agentic 开发的工作整合成一套产品体系 | **2026-09-22 发布**。含 Air in IDEs（IDE 内插件）、Air Teams（团队云端协作）、Air Governance（原 JetBrains Central，治理与成本）、Air Context（语义索引）、Air Gateway（把终端 agent 接进来）。坚持**多供应商**：可接 Claude Agent、Codex、Copilot、OpenCode、Junie，以及任何实现 **ACP**（Agent Client Protocol，JetBrains 与 Zed 共同制定）的 agent |
 | **[Warp](https://www.warp.dev/)** | Warp | 从终端起家的 ADE，配云端编排平台 **Oz** | **2026-04-28 开源**核心产品（65K star），并提出"Open Agentic Development"模式：非技术用户提需求，agent 在公开仓库里实现并提交 PR。Oz 可把 **Claude Code、Codex、Warp Agent 并排跑在同一控制面**（2026-05-19），带跨 harness 持久记忆、自动多 agent 编排、企业级权限与成本上限 |
 | **[Emdash](https://github.com/generalaction/emdash)** | 开源（YC W26，MIT） | 桌面端多 agent 编排，用 **git worktree** 给每个 agent 隔离工作目录 | 可接入 **31+ 种 CLI agent**（Claude Code、Codex、Gemini CLI、OpenCode、Cline、Droid 等），支持 SSH 远程跑长任务（5.8K star） |
@@ -152,7 +152,7 @@
 |------|------|------|---------|-----------|---------|---------|---------|
 | Cursor | AI IDE | 付费 | 多模型可选 | Composer+Agent | 支持 | 良 | 专业开发，大型项目 |
 | Devin Desktop | AI IDE | 付费 | 多模型可选 | Devin Local | 支持 | 良 | 流畅协作体验 |
-| Antigravity | AI IDE | **$0 个人档** | Gemini 3 系列 + Claude | Agent-first；2.0 并行多 agent | 支持 | 良 | Google 生态，零成本起步 |
+| Antigravity | AI IDE | **$0 个人档** | Gemini 4 + Claude | Agent-first；2.0 并行多 agent；`/swarm` 预览 | 支持 | 良 | Google 生态，零成本起步 |
 | TraeCode | AI IDE | 基础版免费 | 豆包大模型 | IDE + SOLO 双模式 | 支持 | 优 | 中文优先，零成本入门 |
 | Visual Studio 2026 | 传统 IDE | 内置 Copilot Free | GPT-5 / Claude | Profiler / Debugger Agent | 支持 | 优 | .NET / C++ 团队 |
 | Copilot | IDE 插件 | 付费 | GPT-5/Claude | Agent 模式 | 支持 | 良 | VS Code/JetBrains 用户 |
