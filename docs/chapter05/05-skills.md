@@ -32,14 +32,14 @@ pdf/
 
 | 平台 | 规模 | 特点 |
 |------|------|------|
-| **[Anthropic 官方 Skills](https://github.com/anthropics/skills)** | 194.2K star，19 个官方技能 | 官方维护，质量最高，与 Claude Code 深度绑定 |
+| **[Anthropic 官方 Skills](https://github.com/anthropics/skills)** | 194.3K star，19 个官方技能 | 官方维护，质量最高，与 Claude Code 深度绑定 |
 | **[OpenClaw Skills Registry](https://github.com/VoltAgent/awesome-openclaw-skills)** | 53.8K star，5400+ 技能 | OpenClaw 生态最大技能合集，社区驱动 |
 | **[awesome-claude-skills](https://github.com/travisvn/awesome-claude-skills)** | 15.8K star | 精选 Claude 技能和工具列表 |
 | **[Cursor Skills](https://cursor.com/cn/docs/skills)** | IDE 内建 | Cursor 生态，Agent/MCP 集成 |
 
 ## Anthropic 官方技能一览
 
-以下为 [Anthropic Skills 仓库](https://github.com/anthropics/skills)（194.2K star）的全部官方技能：
+以下为 [Anthropic Skills 仓库](https://github.com/anthropics/skills)（194.3K star）的全部官方技能：
 
 | 技能 | 用途 |
 |------|------|

@@ -37,7 +37,7 @@ MCP 的传输与状态模型经历了两轮重要变化，选型和排错前建�
 |-----------|---------|
 | **[GitHub](https://github.com/github/github-mcp-server)**（34.5K star） | Issues、PRs、仓库管理，GitHub 官方维护 |
 | **[Playwright](https://github.com/microsoft/playwright-mcp)**（39.6K star） | 微软官方，AI 精确控制网页、自动化测试与抓取 |
-| **[Chrome DevTools](https://github.com/ChromeDevTools/chrome-devtools-mcp)**（55.6K star） | Chrome 开发者工具集成，调试、性能分析 |
+| **[Chrome DevTools](https://github.com/ChromeDevTools/chrome-devtools-mcp)**（55.9K star） | Chrome 开发者工具集成，调试、性能分析 |
 | **[Context7](https://github.com/upstash/context7)**（64.8K star） | 实时获取最新库文档和代码示例，编码必备 |
 | **[Firecrawl](https://github.com/firecrawl/firecrawl-mcp-server)** | 网页抓取、内容提取为 Markdown |
 | **[Jina AI](https://github.com/jina-ai/mcp)** | 语义搜索、图像搜索、跨模态搜索 |
@@ -46,7 +46,7 @@ MCP 的传输与状态模型经历了两轮重要变化，选型和排错前建�
 | **[Figma](https://github.com/GLips/Figma-Context-MCP)** | 向 Agent 提供 Figma 布局和设计信息 |
 | **[Serena](https://github.com/oraios/serena)**（31.4K star） | 语义级代码检索与编辑，给 Agent 装上 IDE 级理解力 |
 | **[FastMCP](https://github.com/PrefectHQ/fastmcp)**（28.4K star） | 极速构建 MCP Server 的 Python 框架 |
-| **[n8n](https://github.com/n8n-io/n8n)**（210.4K star） | 工作流自动化平台，400+ 集成，原生 MCP 支持 |
+| **[n8n](https://github.com/n8n-io/n8n)**（210.5K star） | 工作流自动化平台，400+ 集成，原生 MCP 支持 |
 
 > 更多 MCP Server 参见 [awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers)（97.7K star），收录了社区贡献的大量 MCP 服务器。
 

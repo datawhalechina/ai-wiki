@@ -10,7 +10,7 @@
 | ------------------------------------------------------------ | --------- | ------------------------------------------------------------ |
 | **[Claude API](https://platform.claude.com/docs/en/models/overview)** | Anthropic | 日常主力 **Claude Opus 5.5**（2026-09-22，`claude-opus-5-5`，$4/$20，1M 上下文）；上探 **Claude Fable 5.2 / Mythos 5.2**（2026-11-09，$8/$40，1M 上下文 / 128K 输出，始终开启自适应思考，另有 2.5 倍速的 fast 模式 $16/$80）；下探 **Sonnet 5.5**（09-28）/ **Haiku 5.5**（10-07）。Fable 与 Mythos **同权重、防护不同**：Fable 面向所有用户，Mythos 仅限经审核的机构 |
 | **[GPT-6 系列](https://developers.openai.com/api/docs)**     | OpenAI    | 四层并列，全部 1.05M 上下文 / 128K 输出：**Astra**（2026-09-03，$10/$50，旗舰）、**6.1 Sol**（09-29，$2/$10，日常主力）、**6.1 Terra**（10-26，$1/$5，偏视觉推理 / computer use / 写作）、**Luna**（$0.10/$0.50，高吞吐）。Pro 已变为 reasoning effort 档位而非独立模型；GPT-5.5 于 2026-10-14 从 ChatGPT / Codex 下线，**API 仍可调用** |
-| **[Gemini 系列](https://ai.google.dev/gemini-api)**          | Google    | 双旗舰 **Gemini 4 Argon**（2026-10-13 公开，1,048,576 上下文、单次输出上限 943,718）与 **Gemini 4 Carbon**（10-28 发布，**11-10 起对全部付费开发者开放**，主打编码与长程 agent）。两者推广价均 $2/$10，**2026-11-30 后恢复 $4/$20**（缓存输入 $0.10）。3.8 Flash / 3.8 Live 仍在役，3.1 Pro 已非旗舰；Gemini 3.5 Pro 未发布 |
+| **[Gemini 系列](https://ai.google.dev/gemini-api)**          | Google    | 三档并列：**Gemini 4 Argon**（2026-10-13 公开，1,048,576 上下文、单次输出上限 943,718）、**Gemini 4 Carbon**（10-28 发布，**11-10 起对全部付费开发者开放**，主打编码与长程 agent）与 **Gemini 4 Hydrogen**（**2026-11-12 发布**，定位「快速执行引擎」，1M 上下文、1M 输出，四档思考 `low/medium/high/xhigh`，**$1.50/$7.50 为常规价不涨价**，既可单用也可与 Carbon/Argon 搭班）。Argon 与 Carbon 为推广价 $2/$10，**2026-11-30 后恢复 $4/$20**（缓存输入 $0.10）。3.8 Flash / 3.8 Live 仍在役，3.1 Pro 已非旗舰；Gemini 3.5 Pro 未发布 |
 
 > ⚠️ **上下文窗口的口径**：表中的数值是厂商规格书里的**上限**，实际可用量受输出预留、计费方式与接入渠道影响。同一模型在不同云渠道（如 AWS Bedrock）的标注可能不一致，选型前请以你**实际接入的那个渠道**的文档为准。
 
@@ -95,6 +95,7 @@ DeepSeek 是国内少数把「模型 + 协议 + 周边工具」都收在同一�
 | GPT-6 Astra | ⭐⭐⭐⭐⭐ | $10 / $50 | 1.05M | 中 | ⭐⭐⭐ |
 | GPT-6.1 Sol | ⭐⭐⭐⭐⭐ | $2 / $10 | 1.05M | 快 | ⭐⭐⭐ |
 | Gemini 4 Carbon | ⭐⭐⭐⭐⭐ | $2 / $10（推广价） | 1M | 快 | ⭐⭐⭐ |
+| Gemini 4 Hydrogen | ⭐⭐⭐⭐ | $1.50 / $7.50 | 1M | 很快 | ⭐⭐⭐ |
 | Kimi K3.1 Pro | ⭐⭐⭐⭐⭐ | $2 / $10 | 1M | 快 | ⭐⭐⭐⭐⭐ |
 | DeepSeek-V4.1-Flash-1017 | ⭐⭐⭐⭐ | $0.15 / $0.60（低峰） | 1M | 快 | ⭐⭐⭐⭐⭐ |
 | DeepSeek-V4-Pro-0813 | ⭐⭐⭐⭐⭐ | $0.66 / $1.98（低峰） | 1M | 中 | ⭐⭐⭐⭐⭐ |
@@ -103,7 +104,9 @@ DeepSeek 是国内少数把「模型 + 协议 + 周边工具」都收在同一�
 | GLM-5.3 | ⭐⭐⭐ | $1.40 / $4.40 | 1M | 快 | ⭐⭐⭐⭐⭐ |
 | MiniMax M3.1 Flash | ⭐⭐⭐ | $0.15 / $0.60 | 1M | 很快 | ⭐⭐⭐⭐ |
 
-> Gemini 两款旗舰的 $2/$10 是推广价，**2026-11-30 后翻倍到 $4/$20**——按现价做的预算要留出这一档。
+> Argon 与 Carbon 的 $2/$10 是推广价，**2026-11-30 后翻倍到 $4/$20**——按现价做的预算要留出这一档。Hydrogen 的 $1.50/$7.50 是常规价，不在此列。
+>
+> Hydrogen 的定位值得单独记：它默认 `high` 思考档在 Artificial Analysis 智能指数拿到 51，**高于 Argon 的 50**，`xhigh` 档 54；但它是「执行引擎」而非「前沿判断」——官方给的分工是 Carbon/Argon 做架构判断，Hydrogen 写代码、跑测试、验变更。同理，Antigravity 的 **Orchestrator** 就是按这个分工自动换模型（Carbon 规划、Hydrogen 执行），官方称 Terminal-Bench 4.0 成功率接近 Carbon，配额少用 24%、快 19%。
 
 ### 非编程场景
 
@@ -135,7 +138,7 @@ DeepSeek 是国内少数把「模型 + 协议 + 周边工具」都收在同一�
 | 层级 | 例子 | 怎么看 |
 |------|------|--------|
 | **代际** | GPT-6 → GPT-6.1、Gemini 3.8 → Gemini 4 | 只代表训练批次，常伴随架构与知识截止变化 |
-| **同代档位** | Astra / Sol / Terra / Luna；Argon / Carbon；Opus / Sonnet / Haiku；Luna 型低价档 | **这是同一代的不同裁剪**，Terra 弱于 Sol 不代表「版本更低」 |
+| **同代档位** | Astra / Sol / Terra / Luna；Argon / Carbon / Hydrogen；Opus / Sonnet / Haiku；Luna 型低价档 | **这是同一代的不同裁剪**，Terra 弱于 Sol 不代表「版本更低」 |
 | **推理强度** | `low / medium / high / xhigh`、Gemini 的 thinking level、Kimi 的 Highspeed | 同一模型换个档位，分数与成本可以差一倍以上 |
 | **渠道与别名** | Bedrock / Vertex / 第三方路由的 ID；`-preview`、`-flash`、`-lite` | 同名不同渠道的限制与价格可能不同，`preview` 还有下线日 |
 
