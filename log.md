@@ -22,6 +22,7 @@
 - **章节七**：Cursor 补 10-20 Agent SDK、11-05 Build Live Apps、11-06 Grok Voice 实时语音三条，并说明官方已改为按功能发版、不再统一标注版本号；Antigravity 补 **CLI 1.5.x**（11-04 起连发 7 版、`agy acp`、`--remote-agent`）与 **`/swarm`** 预览；ZCode 补 **3.17.2（11-03）三个官方插件**
 - **章节六**：Extensions 框架补一句三者用途（长任务托管 / 可交互 UI / 模态无关征询），并新增「**MCP 2.0**」别名说明——指的就是 2026-07-28 规范
 - **章节十三**：MTEB 链接由 HF Space 改为官方 **`leaderboard.mteb.org`**，与章节十一保持一致，并提示先分清 v1 / v2
+- **章节三**：DeepSeek 由单行条目扩为完整一节「**一个 Key 下的 API 全家桶**」，补齐此前完全缺失的旗舰档 **`deepseek-v4-pro`**（V4-Pro-0813：1.6T / 49B 激活、纯文本、1M 上下文 / 384K 输出、并发 500）。内容分三层：① 模型层——两档并列，给全低峰 / 高峰价与缓存命中比价，并指出「高峰」其实是北京时间 09:00–12:00 与 14:00–18:00，夜间与周末一律半价；② 接口层——OpenAI Chat Completions / Responses / Anthropic / Beta 四条 Base URL，说明 Claude Code 可直连；③ 周边层——Search & Fetch、Web Tools、文件解析与 OCR、TTS / ASR 的单价、计费条件与 QPS 口径。另补三个改名坑（`deepseek-chat` / `deepseek-reasoner` 已于 07-24 退役、`deepseek-v4-flash` 等旧别名被路由到新版、**「V4.1-Pro」并不存在**）与思考模式默认开启带来的三个 400 陷阱；编程对比表加 V4-Pro 一行，「怎么读版本号」补第 4 条（滚动别名会静默换代）
 
 ### 工程
 
