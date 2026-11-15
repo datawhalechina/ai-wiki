@@ -31,7 +31,7 @@ AI Agent 框架提供构建自主推理、规划和执行任务的智能体系�
 | **[CrewAI](https://crewai.com/)**                            | 角色化多 Agent 协作                                          |
 | **[Claude Code](https://code.claude.com/docs/zh-CN/overview)** | Anthropic 的 Agent 能力封装，155.7K GitHub 星标               |
 | **[OpenClaw](https://openclaw.ai/)**                         | 开源本地 AI 智能体，强调"动手执行"，可 7×24 小时自动化       |
-| **[Hermes Agent](https://github.com/nousresearch/hermes-agent)** | 开源新星 263.4K star；Hermes Agent 是由 Nous Research 开发的开源、自托管自主 AI 智能体框架，专注于持久记忆、自我进化和跨平台工具使用，常被称为”会随着使用不断成长的数字员工”。它能持久化记忆，在跨会话中沉淀技能，并支持飞书、Telegram 等多平台接入。 |
+| **[Hermes Agent](https://github.com/nousresearch/hermes-agent)** | 开源新星 263.5K star；Hermes Agent 是由 Nous Research 开发的开源、自托管自主 AI 智能体框架，专注于持久记忆、自我进化和跨平台工具使用，常被称为”会随着使用不断成长的数字员工”。它能持久化记忆，在跨会话中沉淀技能，并支持飞书、Telegram 等多平台接入。 |
 | **[Microsoft Agent Framework](https://github.com/microsoft/agent-framework)** | 微软推出的统一 Agent 框架，已**统一 AutoGen + Semantic Kernel** 的多 Agent 模式，支持 Python 和 .NET。2025-10 公开预览 → 2026-02-19 RC → **2026-04-02 发布 1.0 GA**；14.7K star |
 
 ## 5 分钟快速上手：用 CrewAI 创建多 Agent 协作

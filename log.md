@@ -4,6 +4,28 @@
 
 ---
 
+## 2026-11-15 19:00 · 每日时效更新
+
+> 例行日增量：核对 11-14 19:00 之后 24 小时的官方口径。核心是一条判断被推翻了——**Gemini 3.8 Flash 并不是「仍在役」，它已被 Hydrogen 接替**。
+
+### 变更
+
+- **章节三 / Gemini 行**：`3.8 Flash / 3.8 Live 仍在役` → **`3.8 Flash 已被 Hydrogen 接替`**（3.8 Live 仍在役）。依据是 Google 官方迁移文档《Migrate to the latest Gemini models》把 `gemini-3.8-flash` 的迁移目标直接写成 `gemini-4-hydrogen`，并附完整迁移清单；Vertex 的模型生命周期表仍保留 `gemini-3.8-flash`（弃用日 2027-09-02），所以口径写成「已接替、Vertex 尚可调用至弃用日」而不是「已下线」。昨天（11-14）判断为「仍在役」是因为当天只核到发布公告、没核迁移文档，这次修正
+- **章节三 / Gemini 行**：Hydrogen 的输出口径由「1M 上下文、1M 输出」收紧为「**输入+输出合计 1,048,576、单段输出上限 65,536**」。官方迁移文档明确这是统一额度 + 单段上限，超过 65,536 需走长解码 / 续写；原写法会让读者以为一次能吐 100 万 token
+- **章节三 / Gemini 行与单价小节**：补 **11-14 起 Hydrogen 成为 Search「AI 模式」默认模型**，以及官方给的两个反差数字——Terminal-Bench 4.1 **57%**（3.8 Flash 18.2%）、默认档任务**快 2.5 倍**。这两条解释了 Google 为何敢弃用 Flash 这一档品牌
+- **章节三 / 新增 Meta 行**：Muse Ember（2026-11-09）经 **Meta Model API** 对外，1M 上下文、原生文本 / 图像 / 音频 / 视频输入、**$0.10 / $0.50**，与 GPT-6 Luna、DeepSeek Flash 同价带。这是 Meta 第一次把自研模型做成付费 API，模型章此前完全没有 Meta 条目
+- **章节三 / 混元行**：补**实时语音线 Hy Realtime**（2026-11-13 发布，新增 Agentic 工具调用与唱歌，已在元宝语音通话 / 腾讯客服上线，腾讯云 API 未开放、无对外定价）。同时刻意写明「无定价」，避免读者误当成可调模型
+- **章节四 / Antigravity CLI 行**：模型列 `Gemini 4 Argon / Carbon、3.8 Flash、3.1 Pro` → `Gemini 4 Argon / Carbon / Hydrogen、3.1 Pro`。原写法漏了 Hydrogen 却留着已被接替的 Flash，与章节七自相矛盾，属内部不一致的修复
+- **章节七 / Antigravity 行**：可选模型由 `… / Hydrogen、3.8 Flash、3.1 Pro` 改为 `… / Hydrogen、3.1 Pro（3.8 Flash 档已由 Hydrogen 接替）`
+
+### 工程
+
+- star 刷新 **14 处 / 4 个文件**（ch04 / ch05 / ch06 / ch08），`--check` 复验 **51 条全绿**；单次最大涨幅 `anthropics/skills` 194.6K → 194.9K
+- `vitepress build` 通过（2.38s）
+- 核过但**未改**：Claude Code 仍 2.1.325（11-13）、Codex CLI 仍 0.169.0（11-13，0.171.0 只到 alpha.5）、OpenClaw stable 仍 2026.11.3（11-15 的 11.5-beta.3 是预发布，不写）、DSH 仍 `0.2.2-rc.3`
+
+---
+
 ## 2026-11-15
 
 > 本次不是时效审计，是**章节四的内容补充**：DSH 在选型建议里只有一句「一切皆插件」，读者拿不到可执行的下一步，故补一节插件安装与发现机制 + 社区索引源 + 风险提示。外部事实均取自 `deepseek-ai/deepseek-harness` 仓库的官方文档（`docs/user/guide/plugin-market.zh.md`、`docs/cli-help.zh.md`）与 npm 元数据。

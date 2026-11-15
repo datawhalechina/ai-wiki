@@ -12,9 +12,9 @@ CLI（命令行界面）AI 工具是终端中的 AI 编程助手，支持自然�
 | ------------------------------------------------------------ | --------- | ------------------------------------------------------------ |
 | **[Claude Code](https://code.claude.com/docs/zh-CN/overview)** | Anthropic | 终端级深度编码助手，最新 **2.1.325**（2026-11-13）。Stack Overflow 2026 开发者调查中采用率 **65.5%**，为同类最高（Codex CLI 29.5%），155.7K GitHub 星标 |
 | **[Codex CLI](https://openai.com/codex/)**                   | OpenAI    | 最新 **0.169.0**（2026-11-13，同日连发 0.168.0 / 0.169.0，中间还有 0.167.1、0.167.2 两个补丁）。默认模型仍为 **`gpt-6-astra`**（自 0.153.4 起，0.167 变更记录中未见调整），客户端默认挂在 **Low 推理档**防额度超支；**0.165 起接入 GCP Vertex AI 作为内置 provider**（`model_provider = "gcp"`），模型目录加入 **`gpt-6.1-terra`**；**GPT-5.5 已于 2026-10-14 从 ChatGPT 登录会话退役**（API 与 API-key 会话不受影响），官方建议把保存的设置与脚本指向 `gpt-6.1-sol`。0.167 新增 agent 指挥中心（`codex agents --no-daemon`）、跨后端切换保留草稿、10 个 `/presets` 槽位；**0.168 把 provider 选择搬进 TUI**（Sessions → Model providers 选默认）、侧栏会话可拖拽缩放（`leader z`）、支持音频附件与动图；**0.169 扩成多标签侧栏、可按名称 / 提示预览 / 工作目录搜索历史任务、终端内增改自定义 provider（SSH 可走 device code）**，并让 `codex exec` 在不可信目录默认关闭项目配置与 MCP（需显式 `--trust`） |
-| **[OpenCode](https://opencode.ai/)**                         | 开源      | 226.9K GitHub 星标                                            |
-| **[DSH](https://github.com/deepseek-ai/deepseek-harness)**   | DeepSeek  | 281.1K GitHub 星标。开源 Agent 运行时，主打「一切皆插件」——模型、工具、循环、UI 均可替换重组；**当前 `0.2.2-rc`（npm `latest` 为 `0.2.2-rc.1`），仍属开发者预览，官方明示会出现破坏兼容性的变更、不可用于生产**；插件怎么装、索引源加哪个见下文「DSH 插件推荐小结」 |
-| **[Pi](https://github.com/earendil-works/pi)**               | Earendil Works | 122.0K GitHub 星标。极简底座——只保留读/写/改文件与跑命令四个工具；支持单会话内跨供应商接力（Claude 做到一半转给 DeepSeek 继续） |
+| **[OpenCode](https://opencode.ai/)**                         | 开源      | 227.0K GitHub 星标                                            |
+| **[DSH](https://github.com/deepseek-ai/deepseek-harness)**   | DeepSeek  | 281.4K GitHub 星标。开源 Agent 运行时，主打「一切皆插件」——模型、工具、循环、UI 均可替换重组；**当前 `0.2.2-rc`（npm `latest` 为 `0.2.2-rc.1`），仍属开发者预览，官方明示会出现破坏兼容性的变更、不可用于生产**；插件怎么装、索引源加哪个见下文「DSH 插件推荐小结」 |
+| **[Pi](https://github.com/earendil-works/pi)**               | Earendil Works | 122.1K GitHub 星标。极简底座——只保留读/写/改文件与跑命令四个工具；支持单会话内跨供应商接力（Claude 做到一半转给 DeepSeek 继续） |
 | **[Antigravity CLI](https://antigravity.google/)**           | Google    | 命令名 `agy`，Gemini CLI 的继任者，已全面开放（第三方多标注为 preview，**官方未使用 GA 字样**）。**Gemini CLI 已于 2026-06-18 对免费 / Google AI Pro / Google AI Ultra 用户停止服务**，企业版（Code Assist）不受影响。个人档 **$0/月**，无需信用卡 |
 | **[Qoder CLI](https://qoder.com)**                           | Qoder-AI | Agentic Coding Platform，支持 CLI 和 IDE，自主编程模式，CodeReview 能力 |
 | **[CodeBuddy](https://codebuddy.cn/)**                       | 腾讯      | 命令行中用自然语言驱动开发全流程                             |
@@ -27,7 +27,7 @@ CLI 工具最关键的分化点是**能不能换模型**——这直接决定你
 |------|---------|-----------|--------|
 | **Claude Code** | Anthropic Claude（现役 Opus 5.5） | 原生仅 Anthropic；**可通过 Base URL 指向第三方端点**（阿里云、腾讯云 Coding Plan 均支持此用法） | 中 |
 | **Codex CLI** | **`gpt-6-astra`** | `gpt-6.1-sol`（复杂编码与 agentic 流程）、`gpt-6.1-terra`（视觉推理 / computer use / 写作）、`gpt-6-sol` / `gpt-6-luna`（存量档位）；另有 GCP Vertex AI 与 Amazon Bedrock 渠道 | 低（仅 OpenAI） |
-| **Antigravity CLI** | Gemini 4 系 | Gemini 4 Argon / Carbon、3.8 Flash、3.1 Pro，以及 **Claude Sonnet 4.6、Claude Opus 4.6、gpt-oss-120b**；1.5.1 起所有 ACP 客户端可用账户全部模型 | 中（**不支持 BYOK**） |
+| **Antigravity CLI** | Gemini 4 系 | Gemini 4 Argon / Carbon / Hydrogen、3.1 Pro，以及 **Claude Sonnet 4.6、Claude Opus 4.6、gpt-oss-120b**；1.5.1 起所有 ACP 客户端可用账户全部模型 | 中（**不支持 BYOK**） |
 | **OpenCode** | 内置免费模型 | **Go 订阅打包 30 款**：GLM-5.3、Kimi K3、DeepSeek V4.1、MiMo、Qwen3.8、MiniMax M3、Grok 4.7 等 | 极高 |
 | **DSH** | 可切换 | 支持**近 40 家**模型提供方，模型/工具/循环/UI 均可替换 | 极高 |
 | **Pi** | 可切换 | 多供应商（20+），支持**单会话内跨供应商接力** | 极高 |
@@ -42,12 +42,12 @@ CLI 工具最关键的分化点是**能不能换模型**——这直接决定你
 |------|------|-----------|---------|-----------|---------|---------|
 | Claude Code | 否 | Claude 系列 | 深度集成 | 极高（155.7K star） | 低 | 深度编码、大型项目重构 |
 | Codex CLI | 开源 | **`gpt-6-astra` 默认，可切 6.1 Sol / 6.1 Terra / Luna** | 支持 | 高 | 低 | OpenAI 生态、多模型切换 |
-| OpenCode | 开源 | 多模型自由 | 支持 | 极高（226.9K star） | 中 | 开源优先、社区驱动、自定义工作流 |
+| OpenCode | 开源 | 多模型自由 | 支持 | 极高（227.0K star） | 中 | 开源优先、社区驱动、自定义工作流 |
 | Antigravity CLI | 否 | Gemini + Claude + gpt-oss | 支持 | 中 | 低 | Google 生态、多模态任务、免费档 $0（2026-06 起取代 Gemini CLI） |
 | Qoder CLI | 否 | 多模型支持 | 支持 | 中 | 低 | 自主编程、CodeReview、IDE+CLI 双模式 |
 | CodeBuddy | 否 | 混元+DeepSeek | 支持 | 中 | 低 | 腾讯生态、全流程开发 |
-| DSH | 开源（MIT） | 近 40 家提供方 | 支持 | 高（281.1K star） | 中 | 插件化改造、自定义 agent 运行时（预览版） |
-| Pi | 开源（MIT） | 多供应商（20+） | 支持 | 高（122.0K star） | 中 | 极简底座、自建工作流、跨模型接力 |
+| DSH | 开源（MIT） | 近 40 家提供方 | 支持 | 高（281.4K star） | 中 | 插件化改造、自定义 agent 运行时（预览版） |
+| Pi | 开源（MIT） | 多供应商（20+） | 支持 | 高（122.1K star） | 中 | 极简底座、自建工作流、跨模型接力 |
 
 ## 选型建议
 
@@ -74,9 +74,9 @@ dsh plugin --profile web add dshmarket     # profile 名按你的宿主填（如
 
 | 项目 | 实测 star | 作用 | 怎么用 |
 |------|-----------|------|--------|
-| [dsh-market](https://github.com/dsh-market/dsh-market) | 12.4K star | 可视化插件市场：浏览 / 搜索 / 一键装，同一份目录兼作索引源，另有主题一键切换 | `dsh plugin --profile web add dshmarket`；或把索引 `https://cdn.jsdelivr.net/npm/dsh-plugin-catalog/index.json` 添加进「发现」 |
+| [dsh-market](https://github.com/dsh-market/dsh-market) | 12.5K star | 可视化插件市场：浏览 / 搜索 / 一键装，同一份目录兼作索引源，另有主题一键切换 | `dsh plugin --profile web add dshmarket`；或把索引 `https://cdn.jsdelivr.net/npm/dsh-plugin-catalog/index.json` 添加进「发现」 |
 | [awesome-dsh-plugin](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin) | 24.7K star | 人工精选清单，按用途分类，适合上手前先扫一遍 | 索引源 `https://awesome-dsh-plugin.com/index.json` |
-| [DSH Desktop](https://github.com/anywhere-labs/dsh-desktop) | 36.0K star | 把桌面端本身也做成插件，补 GUI 与常驻体验 | 见仓库 README（非插件索引，属宿主外壳） |
+| [DSH Desktop](https://github.com/anywhere-labs/dsh-desktop) | 36.1K star | 把桌面端本身也做成插件，补 GUI 与常驻体验 | 见仓库 README（非插件索引，属宿主外壳） |
 
 三点实践经验：
 
@@ -111,5 +111,5 @@ claude
 
 | 工具 | 特点 |
 |------|------|
-| **[cc-switch](https://github.com/farion1231/cc-switch)**（154.4K star） | 跨平台桌面应用，一键切换 Claude Code / Codex / OpenCode / OpenClaw / Antigravity CLI，免去终端手动切换的繁琐 |
+| **[cc-switch](https://github.com/farion1231/cc-switch)**（154.5K star） | 跨平台桌面应用，一键切换 Claude Code / Codex / OpenCode / OpenClaw / Antigravity CLI，免去终端手动切换的繁琐 |
 
