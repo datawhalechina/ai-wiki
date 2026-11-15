@@ -18,7 +18,7 @@
 | **[Pinecone](https://www.pinecone.io/)** | 云服务 | 全托管（闭源），企业级，易上手；老牌路线，存储成本偏高 |
 | **[Turbopuffer](https://turbopuffer.com/)** | 云服务 | **对象存储（S3 / GCS / Azure）原生**，索引不常驻内存；Cursor / Notion / Anthropic 生产使用；无免费档，$16/月起 |
 | **[Milvus / Zilliz](https://milvus.io/)** | 开源 / 云服务 | 生产级，大规模向量检索，云原生架构（**46.7K star**） |
-| **[Qdrant](https://qdrant.tech/)** | 开源 / 云服务 | Rust 编写，高性能，高级过滤（**35.5K star**） |
+| **[Qdrant](https://qdrant.tech/)** | 开源 / 云服务 | Rust 编写，高性能，高级过滤（**35.6K star**） |
 | **[Weaviate](https://weaviate.io/)** | 开源 / 云服务 | 内置向量化模块，GraphQL API（**16.9K star**） |
 | **[Chroma](https://trychroma.com/)** | 开源（嵌入式） | 轻量、零配置起步，适合原型与中小规模；2025 年以 Rust 重写（**29.7K star**） |
 | **[LanceDB](https://lancedb.com/)** | 开源（嵌入式）/ 云 | 进程内运行，**Lance 列存格式（基于 Apache Arrow）**，同一张表存向量与多模态数据，自带版本管理与回滚（**11.9K star**） |

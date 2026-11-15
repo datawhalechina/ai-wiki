@@ -41,6 +41,13 @@ deepseek-ai/deepseek-harness::docs/chapter04/04-cli-tools.md::插件化改造::C
 earendil-works/pi::docs/chapter04/04-cli-tools.md::earendil-works/pi::主流 CLI 表格
 earendil-works/pi::docs/chapter04/04-cli-tools.md::极简底座、自建工作流::CLI 选型对比矩阵
 
+# ── 章节四：DSH 插件推荐小结（第三方生态，非官方）────────────────────────────
+dsh-market/dsh-market::docs/chapter04/04-cli-tools.md::dsh-market/dsh-market::插件推荐表
+awesome-dsh-plugin/awesome-dsh-plugin::docs/chapter04/04-cli-tools.md::awesome-dsh-plugin/awesome-dsh-plugin::插件推荐表
+anywhere-labs/dsh-desktop::docs/chapter04/04-cli-tools.md::anywhere-labs/dsh-desktop::插件推荐表
+# 风险提示段落里引用，仅作 star 事实，不代表推荐；片段唯一命中正文那一处
+Ebony-Vinyl/dsh-our-free-model::docs/chapter04/04-cli-tools.md::Ebony-Vinyl/dsh-our-free-model::插件风险提示
+
 # ── 章节五：好用的 Skill ────────────────────────────────────────────────────
 anthropics/skills::docs/chapter05/05-skills.md::Anthropic 官方 Skills::Skill 生态表
 anthropics/skills::docs/chapter05/05-skills.md::Anthropic Skills 仓库::官方技能一览开头

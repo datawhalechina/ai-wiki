@@ -4,7 +4,7 @@
 
 "龙虾"是对开源 AI 智能体 **[OpenClaw](https://openclaw.ai/)**（原名 Clawdbot/Moltbot）的昵称，因其红色机械龙虾图标而得名。它能理解自然语言指令，自主调用电脑工具完成任务，真正实现从"意图"到"执行"的闭环。
 
-**[openclaw/openclaw](https://github.com/openclaw/openclaw)**：394.4K star · 76K fork · TypeScript · MIT 协议 · 每日发版
+**[openclaw/openclaw](https://github.com/openclaw/openclaw)**：394.5K star · 76K fork · TypeScript · MIT 协议 · 每日发版
 
 ## OpenClaw 核心能力
 
@@ -43,7 +43,7 @@
 
 | 产品 | 厂商 | 端形态 | 模型 | 定位 |
 |------|------|--------|------|------|
-| **[OpenClaw](https://openclaw.ai/)** | 开源社区 | 本地/云端 | 任意模型 | 开源旗舰，394.4K star，"海纳百川" |
+| **[OpenClaw](https://openclaw.ai/)** | 开源社区 | 本地/云端 | 任意模型 | 开源旗舰，394.5K star，"海纳百川" |
 | **[AutoClaw（澳龙）](https://autoglm.z.ai/autoclaw/)** | 智谱 AI | **本地**（Win/macOS 一键安装，约 1 分钟） | **完全开放**（推荐 DeepSeek/Kimi/MiniMax/GLM） | 2026-03-10 上线，国内首个真·一键安装本地版；预置 50+ Skills；内置 Pony-Alpha-2（内测代号）；一键接入飞书 |
 | **[KimiClaw](https://www.kimi.com/bot)** | 月之暗面 | 云端（另有桌面版 / 安卓托管） | Kimi 系（默认 K2.6，可切 K3） | 一键云部署，40GB 云存储；一键部署需 **Allegretto 及以上**会员 |
 | **[MaxClaw](https://agent.minimaxi.com/activity/max-claw)** | MiniMax | 云端 | MiniMax 系（M3 / M2.7） | 10 秒部署、50GB 云存储；语音/音乐能力强 |
@@ -93,7 +93,7 @@
 | 多 IM 支持 | 10+ | 飞书等 | 多通道 | — | — | 企业 IM |
 | 语音 | ElevenLabs | — | — | 原生语音 | — | — |
 | 企业版 | — | — | — | — | ✅ 席位制 | — |
-| 社区规模 | 394.4K star | — | — | — | — | — |
+| 社区规模 | 394.5K star | — | — | — | — | — |
 | 发版节奏 | 每日 | — | — | — | — | — |
 
 ## OpenClaw 周边生态
@@ -113,7 +113,7 @@
 
 ## 选型建议
 
-- **追求最大自由度 + 社区生态** → **OpenClaw**：开源、394.4K star、每日迭代、任意模型、5400+ Skills
+- **追求最大自由度 + 社区生态** → **OpenClaw**：开源、394.5K star、每日迭代、任意模型、5400+ Skills
 - **想低门槛在本地跑起来** → **AutoClaw（澳龙）**：一键安装、预置 50+ Skills、**模型完全开放**（可接任意模型的 Coding Plan，不绑定 GLM）
 - **数据不出本机、要开源可控** → **LobsterAI（有道龙虾）**：100% 开源桌面 Agent，可 NAS 部署
 - **不想装东西，开箱即用** → **KimiClaw**（`kimi.com/bot`）/ **MaxClaw** / **JVSClaw**：云端一键部署
