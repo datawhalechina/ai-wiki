@@ -27,7 +27,7 @@ Coding Plan 是各 AI 平台推出的编程订阅套餐，以固定月费提供�
 | **[Kimi 会员](https://www.kimi.com/code)** | 月之暗面 | Andante **49 元/月**<br>Moderato **99 元/月**<br>Allegretto **199 元/月**<br>Allegro **699 元/月** | **Kimi K3.1 Pro**（2026-10-23 起替代 K3 成为会员可调用的旗舰） | **已不是独立套餐**：Kimi Code 是会员权益之一，四档**全部可调用**；所有会员功能共享一个额度池，Kimi Code 另有独立的 5 小时/周限额；一键云部署 Kimi Claw 需 **Allegretto 及以上**。⚠️ K2 系列已于 **2026-10-31 停止新用户接入**，年底退役 |
 | **[MiniMax Token Plan](https://platform.minimaxi.com/subscribe/token-plan)** | MiniMax | Plus **49 元/月**<br>Max **119 元/月**<br>Ultra **469 元/月** | 仅 MiniMax 系列（**M3**、M2.7、图像、语音） | 国际站 $22 / $55 / $132；年付立省 2 个月；全模态共享同一份额度；M3 支持 1M 上下文与原生多模态；音乐模型自 2026-08-20 起移出套餐 |
 | **[阿里云 Coding Plan](https://help.aliyun.com/zh/model-studio/coding-plan)** | 阿里云百炼 | **Pro 一档 200 元/月** | qwen3.7-plus、qwen3.6-plus、kimi-k2.5、glm-5、MiniMax-M2.5 等 | ⚠️ **Lite 已停售**（2026-03-20 停新购、04-13 停续费）；新客首月 **¥39.90**，每日 09:30 限量补货；按**请求次数**计（5 小时 6,000 / 周 45,000 / 月 90,000 次）；兼容工具最广 |
-| **[腾讯云 Token Plan](https://cloud.tencent.com/act/pro/tokenplan)** | 腾讯云 | **Hy 线**：28 / 78 / 238 / 468 元<br>**通用线**：39 / 99 / 299 / 599 元 | 通用线：DeepSeek-V4 原厂直供、GLM-5.3、Kimi K3、MiniMax-M3 等<br>Hy 线：Hy3、Hy4 preview | 分 **Hy Token Plan**（混元专属）与**通用 Token Plan**（多模型）两条独立线，各四档；平台已迁至 **TokenHub**；自 2026-08-31 起改为**积分抵扣**；**不支持退款、不支持降配、到期无法续费** |
+| **[腾讯云 Token Plan](https://cloud.tencent.com/act/pro/tokenplan)** | 腾讯云 | **Hy 线**：28 / 78 / 238 / 468 元<br>**通用线**：39 / 99 / 299 / 599 元 | 通用线：DeepSeek-V4 原厂直供、GLM-5.3、Kimi K3、MiniMax-M3 等<br>Hy 线：Hy3、Hy4（正式版）、Hy4 flash | 分 **Hy Token Plan**（混元专属）与**通用 Token Plan**（多模型）两条独立线，各四档；平台已迁至 **TokenHub**；自 2026-08-31 起改为**积分抵扣**；**不支持退款、不支持降配、到期无法续费** |
 
 ## 其他值得关注的厂商
 
