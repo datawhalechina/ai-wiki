@@ -10,8 +10,8 @@ CLI（命令行界面）AI 工具是终端中的 AI 编程助手，支持自然�
 
 | 工具                                                         | 厂商      | 特点                                                         |
 | ------------------------------------------------------------ | --------- | ------------------------------------------------------------ |
-| **[Claude Code](https://code.claude.com/docs/zh-CN/overview)** | Anthropic | 终端级深度编码助手，最新 **2.1.326**（2026-11-16，补丁版：**Code Mode 与 agent teams 可同开**，团队会话默认进 Code Mode；`/status` 新增一行说明「功能是被 provider 还是环境变量关掉的」；Ctrl+O 展开被折叠的启动提示；新增 `OTEL_RESOURCE_INCLUDE_HOST`）。Stack Overflow 2026 开发者调查中采用率 **65.5%**，为同类最高（Codex CLI 29.5%），155.7K GitHub 星标 |
-| **[Codex CLI](https://openai.com/codex/)**                   | OpenAI    | 最新 **0.169.0**（2026-11-13，同日连发 0.168.0 / 0.169.0，中间还有 0.167.1、0.167.2 两个补丁）。默认模型仍为 **`gpt-6-astra`**（自 0.153.4 起，0.167 变更记录中未见调整），客户端默认挂在 **Low 推理档**防额度超支；**0.165 起接入 GCP Vertex AI 作为内置 provider**（`model_provider = "gcp"`），模型目录加入 **`gpt-6.1-terra`**；**GPT-5.5 已于 2026-10-14 从 ChatGPT 登录会话退役**（API 与 API-key 会话不受影响），官方建议把保存的设置与脚本指向 `gpt-6.1-sol`。0.167 新增 agent 指挥中心（`codex agents --no-daemon`）、跨后端切换保留草稿、10 个 `/presets` 槽位；**0.168 把 provider 选择搬进 TUI**（Sessions → Model providers 选默认）、侧栏会话可拖拽缩放（`leader z`）、支持音频附件与动图；**0.169 扩成多标签侧栏、可按名称 / 提示预览 / 工作目录搜索历史任务、终端内增改自定义 provider（SSH 可走 device code）**，并让 `codex exec` 在不可信目录默认关闭项目配置与 MCP（需显式 `--trust`） |
+| **[Claude Code](https://code.claude.com/docs/zh-CN/overview)** | Anthropic | 终端级深度编码助手，最新 **2.1.327**（2026-11-17，补丁版：`claude mcp add-json <name> -` 支持从 **stdin** 读服务器 JSON，令牌不必再落到命令行历史；`/status` 新增一段**体检清单**——列出损坏的 agent / skill / command / output-style 文件、键位冲突、不可用的沙箱、被忽略的权限设置，以及「永远匹配不上」的 hook matcher；`/config` 会标出被其他设置覆盖的行；`/tui classic` 成为非全屏渲染器的正式名。修了大量会话恢复与 `/export`、`/rewind`、`/plugin` 的静默失败，以及 auto 模式下 Code Mode 脚本被重复要求授权的问题）。Stack Overflow 2026 开发者调查中采用率 **65.5%**，为同类最高（Codex CLI 29.5%），155.7K GitHub 星标 |
+| **[Codex CLI](https://openai.com/codex/)**                   | OpenAI    | 最新 **0.170.0**（2026-11-18）：TUI 里的实时语音通话改走 **WebRTC 协商**、OpenTelemetry 导出器支持自动刷新的鉴权头、实验性支持「不同环境下的同名 MCP 服务器共存」；修 MCP OAuth 在取消/登录/登出时的凭证竞态、Cloud 会话断流后的自动重连、Windows 沙箱的文件替换与权限保留。默认模型此前一直是 **`gpt-6-astra`**（自 0.153.4 起），而 11-17 起 **`gpt-6.2-astra` / `gpt-6.2-sol` 已可通过 `/model` 选用**——0.170 的变更记录没提默认值，升级后先用 `/model` 确认自己挂在哪一代，别假设它会跟着换。客户端默认挂在 **Low 推理档**防额度超支；**0.165 起接入 GCP Vertex AI 作为内置 provider**（`model_provider = "gcp"`），模型目录加入 **`gpt-6.1-terra`**；**GPT-5.5 已于 2026-10-14 从 ChatGPT 登录会话退役**（API 与 API-key 会话不受影响），官方建议把保存的设置与脚本指向 `gpt-6.1-sol`。0.167 新增 agent 指挥中心（`codex agents --no-daemon`）、跨后端切换保留草稿、10 个 `/presets` 槽位；**0.168 把 provider 选择搬进 TUI**（Sessions → Model providers 选默认）、侧栏会话可拖拽缩放（`leader z`）、支持音频附件与动图；**0.169 扩成多标签侧栏、可按名称 / 提示预览 / 工作目录搜索历史任务、终端内增改自定义 provider（SSH 可走 device code）**，并让 `codex exec` 在不可信目录默认关闭项目配置与 MCP（需显式 `--trust`） |
 | **[OpenCode](https://opencode.ai/)**                         | 开源      | 227.0K GitHub 星标                                            |
 | **[DSH](https://github.com/deepseek-ai/deepseek-harness)**   | DeepSeek  | 281.4K GitHub 星标。开源 Agent 运行时，主打「一切皆插件」——模型、工具、循环、UI 均可替换重组；**当前 `0.2.2-rc`（npm `latest` 为 `0.2.2-rc.1`），仍属开发者预览，官方明示会出现破坏兼容性的变更、不可用于生产**；插件怎么装、索引源加哪个见下文「DSH 插件推荐小结」 |
 | **[Pi](https://github.com/earendil-works/pi)**               | Earendil Works | 122.1K GitHub 星标。极简底座——只保留读/写/改文件与跑命令四个工具；支持单会话内跨供应商接力（Claude 做到一半转给 DeepSeek 继续） |
@@ -62,7 +62,7 @@ CLI 工具最关键的分化点是**能不能换模型**——这直接决定你
 
 DSH 的「一切皆插件」不是修辞。官方 CLI 帮助里把 `dsh` 的启动过程描述为「**按序叠放的插件包补丁层（plugin-bundle patch layers），你的覆盖在最上面**」——所以模型、工具、循环、UI 都能换，而换的方式就是装卸插件包。
 
-当前版本为 **`0.2.2-rc`**（npm `latest` 是 `0.2.2-rc.1`，`next` 已到 `0.2.2-rc.3`，2026-11-13），**全部是预发布**，官方仍标注「未来将出现破坏兼容性的变更」，不要用在生产。
+当前版本为 **`0.2.2-rc`**（npm `latest` 仍是 `0.2.2-rc.1`（11-04），`next` 已迭代到 `0.2.2-rc.5`（2026-11-18）），**全部是预发布**，官方仍标注「未来将出现破坏兼容性的变更」，不要用在生产。
 
 **装插件**：`dsh plugin` 只是把参数转发给该 profile 目录下的 pnpm，因此语法就是 pnpm 的语法，改完要重启 `dsh web` 才生效：
 

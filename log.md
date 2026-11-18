@@ -4,6 +4,46 @@
 
 ---
 
+## 2026-11-18 23:00 · 每日时效更新
+
+> 例行日增量：核对 11-17 19:00 之后约 28 小时的官方口径。今天三件事——**OpenAI 把旗舰换成 GPT-6.2 双子并降价 20%**、**腾讯把 Hy4 flash 的权重放出来了**、**DeepSeek 把「模型自己触发的搜索」改成免费**。
+
+### 变更
+
+- **章节三 / OpenAI 行**：`四层并列（Astra / 6.1 Sol / 6.1 Terra / Luna）` → **GPT-6.2 双档置顶**：`gpt-6.2-astra`（$8/$40、缓存 $0.40，输入输出较上代降 20%、缓存降 60%）与 `gpt-6.2-sol`（$2/$10、缓存 $0.10，维持 6.1 Sol 价），均 1.05M / 128K、五档 effort、Ultrafast 加速档（2027-02-28 前 3 倍价、之后 6 倍）、**>272K 输入按长上下文另计**（Astra $16/$60、Sol $4/$15）。同时把「旧档怎么办」写清：GPT-6 Astra / 6.1 Sol / 6.1 Terra / Luna **都不在弃用名单，API 仍可调用**，6.2 是往顶上插一层而不是把旧档下线；**没有 6.2 Terra / 6.2 Luna**。依据：OpenAI 官方 changelog（11-17 条目）、`developers.openai.com/api/docs/pricing`（逐个模型核价）、`/api/docs/models`（上下文与 effort 档）、`/api/docs/deprecations`（确认 6.0 / 6.1 未被弃用）四处一手互证
+- **章节三 / 编程对比表**：`GPT-6 Astra $10/$50`、`GPT-6.1 Sol $2/$10` → **`GPT-6.2 Astra $8/$40`、`GPT-6.2 Sol $2/$10`**
+- **章节三 / 非编程表与选型建议**：长文档分析、多轮对话、日常编码、长文档 / 多模态四处引用同步换成 6.2（6.1 Terra 保留——视觉推理档没有换代）
+- **章节三 / 《怎么读版本号》**：代际行补 `GPT-6.1 → GPT-6.2`；第 3 条原只讲「新档插在旧旗舰下方」，补上反例——**6.2 是「同名换代、往上盖一层」**，旧旗舰不下架但不再是首选，最容易按旧价做预算
+- **章节三 / 腾讯混元行**：`计划开源，权重未放` → **2026-11-18 已开放权重**（Hy4-flash / Hy4-flash-FP8 / Hy4-flash-base 三个仓库，Hugging Face / ModelScope / GitCode / GitHub，腾讯 Hy License，官方同时预告 Hy4 本体也在加速开源）。依据：HF 仓库实测存在（三个 repo，11-17T03:44Z 建库）+ 腾讯官方新闻稿 + 凤凰 / IT之家 / 新浪同源报道
+- **章节三 / DeepSeek 周边 API**：`Web Tools 随对话触发同样计费` → **2026-11-18 12:00（北京）起，模型侧触发的服务端搜索与抓取不再计费，只算 token**；显式调 `/v1/tools/search`、`/v1/tools/fetch` 仍按 $0.75/千次成功请求。下方「计费仍是 token 费 + 工具调用费两条线，开参数不会让工具调用变免费」整段作废并重写。依据：`api-docs.deepseek.com/quick_start/pricing` 页内公告原文
+- **章节一 / 最新动态**：新增 **2026-11-18 发版 extended-stable 2026.10.33**（LTS 渠道接替 2026.9.37，stable 未动；兼容性基线锁 11.4；四条重点是有界内存、更新中断自愈、回复跨重启存活、共享会话隐私；分发只含 npm 核心包 + 官方插件 + Gateway 镜像，不含原生应用）；09-19 行的「现 extended-stable 为 2026.9.37」同步改为 2026.10.33
+- **章节四 / Claude Code 行**：`2.1.326` → **`2.1.327`**（2026-11-17：`claude mcp add-json <name> -` 支持从 stdin 读 JSON，令牌不进命令行历史；`/status` 新增损坏文件 / 键位冲突 / 不可用沙箱 / 被忽略权限 / 永不匹配的 hook matcher 体检清单；`/tui classic` 成为非全屏渲染器的正式名）
+- **章节四 / Codex CLI 行**：`0.169.0` → **`0.170.0`**（2026-11-18：TUI 实时语音走 WebRTC 协商、OTel 导出器支持刷新鉴权头、实验性支持跨环境同名 MCP 服务器；修 MCP OAuth 凭证竞态、Cloud 会话重连、Windows 沙箱权限保留）。默认模型表述从「仍为 `gpt-6-astra`」改为**「此前是 `gpt-6-astra`，11-17 起 6.2 两档可经 `/model` 选用」**——0.170 release notes 没有提默认值，官方 ChatGPT 文档也只写「用 model picker / `/model`」，不替它猜
+- **章节四 / DSH 版本段**：`next 已到 0.2.2-rc.3（11-13）` → **`next` 迭代到 0.2.2-rc.5（11-18）**，`latest` 仍停在 rc.1
+
+### 修复
+
+- **Hy4 flash 参数量**：`224B 总参 / 激活 12B` → **`220B 总参 / 每 token 激活 11.3B 文本 + 0.43B 视觉`**。上次是照 11-16 新闻稿的整数口径写的；本轮权重开放后官方模型卡给了可核对的拆解——155.5B 主干 + 63.5B Engram + 0.43B ViT + 0.85B DFly2 = 220.25B，与 HF safetensors 实际统计（220,251,201,958）一致，故以模型卡为准
+- **同一行的「计划开源」**：11-17 的稿子写「权重未放」当时正确，但只隔一天就失效——**权重类表述的保质期同样很短**，以后写「计划开源」一律带上核查日期
+
+### 工程
+
+- `vitepress build` 通过（2.13s）
+- 本轮**未触碰任何 star 数字**，未运行 `update_stars.sh`——star 由独立任务每周刷新
+- 外链体检：新增引用无死链（`huggingface.co/tencent/Hy4-flash`、`github.com/Tencent-Hunyuan/Hy4-flash`、`modelscope.cn/.../Hy4-flash` 均 200）
+- 核过但**未改**：Anthropic 四档（Fable 5.2 / Opus 5.5 / Sonnet 5.5 / Haiku 5.5，价与上下文一字未变）、Gemini 三档（Argon / Carbon 仍 $2/$10 推广价，11-30 后 $4/$20；Hydrogen $1.50/$7.50）、DeepSeek 两档模型价、Qwen4-Max（仍未开放权重）、Kimi K3.1 Pro（HF 建库仍是 11-02）、GLM-5.3（5.4 / 5.5 未发布）、MiniMax M3.1 Flash、Antigravity CLI 官方 changelog 仍 **1.5.9**、OpenClaw stable 仍 **2026.11.5**、ch02 各套餐刊例价
+
+### 未写入（依据不足或不在范围）
+
+- **Codex 默认模型是否已切 6.2**：0.170 release notes 与官方文档都没写默认值，只有「用 `/model` 选」。按「官方没说就不替它断言」处理，正文改成提示读者自己确认
+- **OpenAI 的法律 / 生命科学门类变体**（`gpt-6.2-astra-law`、`gpt-6-rosalind`）：定价页确有这两行，但 24 小时内找不到发布公告或模型页，暂不单列
+- **MTEB English v2 榜首**：官方 featured 榜显示 `ingot-8b-r3` 居首，但具体分数取不到（榜单前端渲染），无法与正文的 74.22 做同口径对比，故不动 ch11
+- **Antigravity CLI 1.5.10**：官方 `/docs/changelog` 的 CLI 目录仍到 1.5.9，维持上轮判断不写
+- **Gemini 4 Krypton / Helix**：仍只有传闻，官方模型页无此二档
+- **腾讯 Hy4 本体开源**：官方只说「加速开源」，无日期无仓库，不当既成事实
+
+---
+
 ## 2026-11-17 19:00 · 每日时效更新
 
 > 例行日增量：核对 11-16 19:00 之后 24 小时的官方口径。今天的主角是**两家国产厂商同时把「旗舰」重新定价**——阿里把 Qwen4-Max 从预览转正式并给出书面价格，腾讯把激活参数砍到 12B 的 Hy4 flash 压到 ¥0.5/百万 token。
