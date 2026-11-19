@@ -4,6 +4,46 @@
 
 ---
 
+## 2026-11-19 23:00 · 每日时效更新
+
+> 例行日增量：核对 11-18 之后的官方口径。主线是**Google 补上中间档**——Gemini 4 Neon 直接 GA，位置明确「夹在 Hydrogen 与 Carbon 之间」，顺带把 Genie 4 从「10 月发布」推进到「已向 AI Ultra 开放」；工具侧是 Claude Code 与 Antigravity CLI 的连续补丁。
+
+### 新增
+
+- **章节三 / 编程对比表**：新增 **Gemini 4 Neon** 行（$3 / $15，1M，快）。依据同下条
+- **章节三 / Gemini 行**：新增「同日 API 另开一项能力」——**Word / PowerPoint / Excel 等 Office 与 OpenDocument 文件可直接传**，可按页码范围、工作表页签、单元格区域、时间段或内容层（页图 / 提取文本 / 公式 / 视频逐字稿）切片计费。依据：官方 release notes 11-18 条目「Multimodal file processing and slicing」
+
+### 变更
+
+- **章节三 / Gemini 行**：`三档并列（Argon / Carbon / Hydrogen）` → **四档**，补 **Gemini 4 Neon**（**2026-11-18 直接 GA**，$3/$15、缓存 $0.15 且**只支持隐式缓存**、统一 1M 上下文、长输出可续写到 1M（同步档默认 64K）、四档思考默认 `high`、**无免费档**、同日成为 Antigravity 的默认模型）。依据四处一手互证：`/docs/changelog` 11-18 条目明写 "generally available (GA)" 与价格档位、`/docs/pricing#gemini-4-neon`（逐档价 + Batch $1.50/$7.50）、`/docs/whats-new-gemini-4-neon`（定位原文 "sits between Hydrogen and Carbon"）、`/docs/deprecations`（Neon 11-18 发布、四个 Gemini 4 档位**均无下线日**）
+- **章节三 / Gemini 行 · 促销窗口口径**：`$2/$10 推广价、2026-11-30 后恢复 $4/$20` → **只到 11-30，12-01 起 $4/$20**（缓存输入同步 $0.10 → $0.20）。官方定价页原文是 "through November 30, 2026 / starting December 1, 2026"，原写法容易读成「11-30 当天就涨」
+- **章节三 / 对比表下方注释**：`Hydrogen 是常规价，不在此列` → 补 Neon 同为常规价；**Orchestrator 的规划档 `Carbon → Neon`**（2026-11-18 起 Neon 规划、Hydrogen 执行）。依据：Antigravity 官方 changelog 11-18「Gemini 4 Neon」条 + Google 官方 whats-new 页「pair with Hydrogen in multi-model workflows」
+- **章节三 /《怎么读版本号》**：同代档位一行补 Neon（`Neon / Carbon / Argon / Hydrogen`）
+- **章节三 / 世界模型**：`Genie 3（11B / 720p / 24fps，2026-01 起经 Project Genie 开放）` → **Genie 4**（2026-10 发布，**11 月起经 Project Genie 向合格的 AI Ultra 订阅者开放**；架构上是「建在 Gemini 家族之上」——Gemini Omni 负责真实感、其他 Gemini 模型负责连贯性与推理，可边跑边改事件 / 机位 / 声音），Genie 3 降为上一代。依据：`deepmind.google/models/genie/` 页面正文 + DeepMind 博客索引两条（10 月 "Genie 4: A new generation of world simulation"、11 月 "Genie 4 is now available"）
+- **章节七 / Antigravity 行 · CLI**：`11 月连发 10 版至 1.5.9` → **最新 1.5.12（2026-11-19）**，并补 1.5.10（11-17，`--remote-agent` 加 accept-edits 模式、Orchestrator 开放给 Gemini Enterprise / ADC）、1.5.11（11-18，subagent 标签拖拽引用、Vim 撤销语义、`agy plugin validate` 支持 `.zip` 与 GitHub URL）、1.5.12（11-19，Remote Control 并排分屏、配 `GEMINI_API_KEY` 可用 Neon、`/fork` 提速）。原「连发 10 版」这个计数无法复核，删掉改用具体版本号。依据：`antigravity.google/docs/changelog` 的 Antigravity CLI 标签页（三条均带日期，"Latest" 标在 1.5.12）
+- **章节七 / Antigravity 行 · 模型列与 Orchestrator**：模型列补 **Neon** 并注明「11-18 起为没手动选模型时的默认」；Orchestrator 由「Carbon 规划、Hydrogen 执行」改为「**11-18 起 Neon 规划、Hydrogen 执行**（此前是 Carbon 规划）」
+- **章节四 / Antigravity CLI 行 · 模型列**：补 `Gemini 4 Neon`，并注明 1.5.12 起配 `GEMINI_API_KEY` 也可用
+- **章节四 / Claude Code 行**：`2.1.327` → **`2.1.328`**（2026-11-18，144 条修复：auto 模式的自动判断扩到 Bedrock / Google Cloud Agent Platform / Microsoft Foundry / Claude apps gateway，未指定权限模式的交互式会话直接落在 auto；MCP 工具 schema 以 `anyOf/oneOf/allOf` 开头不再整段消失，单个坏 schema 只跳过该工具；自动压缩不再复用旧系统提示词；修 zsh `=cmd` 被误展开；`mcp_tool` hook 增 `"onFailure": "block"`；自托管 runner 增三个参数与两个编排器指标）。2.1.327 的内容压缩为「前一版，侧重凭证与体检」保留。依据：Anthropic 官方 `CHANGELOG.md`（raw 源）+ `npm view @anthropic-ai/claude-code version` 双确认
+
+### 修复
+
+- **章节四 / DSH 版本口径**：`npm latest 仍是 0.2.2-rc.1（11-04），next 已到 rc.5` → **`latest` 与 `next` 两个 dist-tag 现在都指向 `0.2.2-rc.5`（11-18）**，即 `npm i -g @deepseek-ai/dsh` 拿到的就是 rc.5。上次判断错在哪 → 当时只查了 dist-tag 的静态值、把「latest 停在 rc.1」当成长期状态，实际 npm 在 rc.5 之后把 `latest` 一起迁了；这次用 registry 的 `dist-tags` + 各版本 `time` 两处对过
+
+### 工程
+
+- `npm run build` 通过（VitePress 1.6.4，2.25s）
+- 外链体检：ai.google.dev（首页 / pricing）、antigravity.google、deepmind.google/models/genie、api-docs.deepseek.com 五条均 200
+
+### 观察到但未写入
+
+- **微软 Ignite 2026 的七款 MAI 模型**（11-17）：MAI-Code-2 称达 GPT-6.1 Sol 98% 性能、成本 40%，已在 GitHub Copilot 全档上线。**价格两套口径互相矛盾**——TechTarget 写「标准价 $1/$5」，北京商报引从业者称「$1/$5 是五折促销价，2027-05-17 起翻倍」；且 Code-2-Flash 仅 Foundry 私有预览、无公开通用 API 与定价页，先不写
+- **腾讯 Q3 财报称「受先进半导体进口限制，下一代混元推出节奏会拉长」**：财报电话会口径，非产品事实，且与 Hy4 / Hy4 flash 的在役状态不冲突
+- **Anthropic IPO 定价 $83 / 股**（11-19 纳斯达克挂牌）：资本市场事件，不属本书章节范围
+- **MiniMax H3 Image**（11-10 开源权重图像模型）：与本章「文本 / 语音 / 视频」叙事无关，暂不单列
+- **MTEB eng v2 榜首分数**：仍取不到官方 featured 榜的可引用数值，维持不写
+
+---
+
 ## 2026-11-18 23:00 · 每日时效更新
 
 > 例行日增量：核对 11-17 19:00 之后约 28 小时的官方口径。今天三件事——**OpenAI 把旗舰换成 GPT-6.2 双子并降价 20%**、**腾讯把 Hy4 flash 的权重放出来了**、**DeepSeek 把「模型自己触发的搜索」改成免费**。

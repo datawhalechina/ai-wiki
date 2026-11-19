@@ -10,7 +10,7 @@
 | ------------------------------------------------------------ | --------- | ------------------------------------------------------------ |
 | **[Claude API](https://platform.claude.com/docs/en/models/overview)** | Anthropic | 日常主力 **Claude Opus 5.5**（2026-09-22，`claude-opus-5-5`，$4/$20，1M 上下文）；上探 **Claude Fable 5.2 / Mythos 5.2**（2026-11-09，$8/$40，1M 上下文 / 128K 输出，始终开启自适应思考，另有 2.5 倍速的 fast 模式 $16/$80）；下探 **Sonnet 5.5**（09-28）/ **Haiku 5.5**（10-07）。Fable 与 Mythos **同权重、防护不同**：Fable 面向所有用户，Mythos 仅限经审核的机构 |
 | **[GPT-6 系列](https://developers.openai.com/api/docs)**     | OpenAI    | **GPT-6.2 双档（2026-11-17 发布，均 1.05M 上下文 / 128K 输出）**：**Astra**（`gpt-6.2-astra`，$8/$40、缓存 $0.40，接替 GPT-6 Astra 当旗舰——输入输出比上代降 20%、缓存输入降 60%）与 **Sol**（`gpt-6.2-sol`，$2/$10、缓存 $0.10，维持 6.1 Sol 定价，接替 6.1 Sol 当日常主力）。两者都支持 `low / medium / high / xhigh / max` 五档 effort（无 `none`）与 **Ultrafast** 加速档（2027-02-28 前为标准价 3 倍、之后 6 倍），**输入超 272K 按长上下文另计**（Astra $16/$60、Sol $4/$15）。上一代 **GPT-6 Astra**（2026-09-03，$10/$50）、**6.1 Sol**（09-29）、**6.1 Terra**（10-26，$1/$5，偏视觉推理 / computer use / 写作）、**Luna**（$0.10/$0.50，高吞吐）**均未进弃用名单，API 仍可调用**——6.2 是「往顶上插一层」，不是把旧档下线；也没有 6.2 Terra / 6.2 Luna，中低价位仍用 6.1 Terra 与 GPT-6 Luna。Pro 已变为 reasoning effort 档位而非独立模型；GPT-5.5 于 2026-10-14 从 ChatGPT / Codex 下线，**API 仍可调用**。另有一条**受审核的门类专用线**：**GPT-6 Cyber**（2026-11-05，`gpt-6-cyber`，$20/$100，1.05M 上下文 / 922K 输入 / 128K 输出），是 **GPT-6 Astra** 的网络安全后训练变体，**只对通过 Daybreak Red 审核的组织开放**（普通 API Key 调不到，企业还需单独为该模型申请）；官方明说它在通用编码上并不优于 GPT-6 Astra，价值在于「Astra 会拒掉的授权渗透任务它能做完」 |
-| **[Gemini 系列](https://ai.google.dev/gemini-api)**          | Google    | 三档并列：**Gemini 4 Argon**（2026-10-13 公开，1,048,576 上下文、单次输出上限 943,718）、**Gemini 4 Carbon**（10-28 发布，**11-10 起对全部付费开发者开放**，主打编码与长程 agent）与 **Gemini 4 Hydrogen**（**2026-11-12 发布**，定位「快速执行引擎」，输入+输出**合计** 1,048,576、单段输出上限 65,536（更长输出要走续写），四档思考 `low/medium/high/xhigh`，**$1.50/$7.50 为常规价不涨价**，既可单用也可与 Carbon/Argon 搭班；**11-14 起成为 Search「AI 模式」的默认模型**）。Argon 与 Carbon 为推广价 $2/$10，**2026-11-30 后恢复 $4/$20**（缓存输入 $0.10）。**3.8 Flash 已被 Hydrogen 接替**——官方迁移指南把 `gemini-3.8-flash` 直接指向 `gemini-4-hydrogen`，Vertex 上仍可调用至 2027-09-02 弃用日；3.8 Live 仍在役，3.1 Pro 已非旗舰；Gemini 3.5 Pro 未发布 |
+| **[Gemini 系列](https://ai.google.dev/gemini-api)**          | Google    | 四档分工：**Gemini 4 Neon**（**2026-11-18 直接 GA**，官方定位**夹在 Hydrogen 与 Carbon 之间**——要「前沿级质量 + 端到端更快」，面向高频的复杂工程 / 知识工作 / 科研任务；**$3/$15**、缓存 $0.15（**只支持隐式缓存**）、统一 1M 上下文、长输出可续写到 1M（同步档默认 64K）、四档思考 `low / medium / high(默认) / xhigh`、**无免费档**；同日成为 Antigravity 里「没手动选模型时的默认」与 Managed Agents 可选项）、**Gemini 4 Carbon**（10-28 发布，**11-10 起对全部付费开发者开放**，主打编码与长程 agent）、**Gemini 4 Argon**（2026-10-13 公开，1,048,576 上下文、单次输出上限 943,718）与 **Gemini 4 Hydrogen**（**2026-11-12 发布**，定位「快速执行引擎」，输入+输出**合计** 1,048,576、单段输出上限 65,536（更长输出要走续写），同四档思考，**$1.50/$7.50 为常规价不涨价**，既可单用也可与 Neon / Carbon / Argon 搭班；**11-14 起成为 Search「AI 模式」的默认模型**）。Argon 与 Carbon 的推广价 $2/$10 **只到 2026-11-30**，**12-01 起 $4/$20**（缓存输入同步 $0.10 → $0.20）；四个 Gemini 4 档位在弃用表上**都没有下线日期**。**3.8 Flash 已被 Hydrogen 接替**——官方迁移指南把 `gemini-3.8-flash` 直接指向 `gemini-4-hydrogen`，Vertex 上仍可调用至 2027-09-02 弃用日；3.8 Live 仍在役，3.1 Pro 已非旗舰；Gemini 3.5 Pro 未发布。同日 API 另开一项能力：**Word / PowerPoint / Excel 等 Office 与 OpenDocument 文件可直接传**，并能按页码范围、工作表页签、单元格区域、时间段或内容层（页图 / 提取文本 / 公式 / 视频逐字稿）切片，只为你真正要处理的那部分付费 |
 | **[Muse Ember](https://ai.meta.com/)** | Meta | 2026-11-09 起经 **Meta Model API**（配套 Muse Code）对外服务，Meta 首度把自研模型做成付费 API：Muse 家族里最小的一档，1M 上下文、原生文本 / 图像 / 音频 / 视频输入，**$0.10 / $0.50**——与 GPT-6 Luna、DeepSeek Flash 同一价格带，定位重复性 agent 任务的低成本执行层。参数量未公布 |
 
 > ⚠️ **上下文窗口的口径**：表中的数值是厂商规格书里的**上限**，实际可用量受输出预留、计费方式与接入渠道影响。同一模型在不同云渠道（如 AWS Bedrock）的标注可能不一致，选型前请以你**实际接入的那个渠道**的文档为准。
@@ -107,6 +107,7 @@ DeepSeek 是国内少数把「模型 + 协议 + 周边工具」都收在同一�
 | GPT-6.2 Astra | ⭐⭐⭐⭐⭐ | $8 / $40 | 1.05M | 中 | ⭐⭐⭐ |
 | GPT-6.2 Sol | ⭐⭐⭐⭐⭐ | $2 / $10 | 1.05M | 快 | ⭐⭐⭐ |
 | Gemini 4 Carbon | ⭐⭐⭐⭐⭐ | $2 / $10（推广价） | 1M | 快 | ⭐⭐⭐ |
+| Gemini 4 Neon | ⭐⭐⭐⭐⭐ | $3 / $15 | 1M | 快 | ⭐⭐⭐ |
 | Gemini 4 Hydrogen | ⭐⭐⭐⭐ | $1.50 / $7.50 | 1M | 很快 | ⭐⭐⭐ |
 | Kimi K3.1 Pro | ⭐⭐⭐⭐⭐ | $2 / $10 | 1M | 快 | ⭐⭐⭐⭐⭐ |
 | DeepSeek-V4.1-Flash-1017 | ⭐⭐⭐⭐ | $0.15 / $0.60（低峰） | 1M | 快 | ⭐⭐⭐⭐⭐ |
@@ -116,9 +117,9 @@ DeepSeek 是国内少数把「模型 + 协议 + 周边工具」都收在同一�
 | GLM-5.3 | ⭐⭐⭐ | $1.40 / $4.40 | 1M | 快 | ⭐⭐⭐⭐⭐ |
 | MiniMax M3.1 Flash | ⭐⭐⭐ | $0.15 / $0.60 | 1M | 很快 | ⭐⭐⭐⭐ |
 
-> Argon 与 Carbon 的 $2/$10 是推广价，**2026-11-30 后翻倍到 $4/$20**——按现价做的预算要留出这一档。Hydrogen 的 $1.50/$7.50 是常规价，不在此列。
+> Argon 与 Carbon 的 $2/$10 是推广价，**2026-11-30 到期、12-01 起翻倍到 $4/$20**——按现价做的预算要留出这一档。Hydrogen 的 $1.50/$7.50 与 Neon 的 $3/$15 都是常规价，不在此列。
 >
-> Hydrogen 的定位值得单独记：它默认 `high` 思考档在 Artificial Analysis 智能指数拿到 51，**高于 Argon 的 50**，`xhigh` 档 54；但它是「执行引擎」而非「前沿判断」——官方给的分工是 Carbon/Argon 做架构判断，Hydrogen 写代码、跑测试、验变更。同理，Antigravity 的 **Orchestrator** 就是按这个分工自动换模型（Carbon 规划、Hydrogen 执行），官方称 Terminal-Bench 4.0 成功率接近 Carbon，配额少用 24%、快 19%。官方另称 Hydrogen 单跑 Terminal-Bench 4.1 得 57%（3.8 Flash 仅 18.2%）、默认档任务快 2.5 倍——这正是 Google 敢直接弃用 Flash 品牌改名的底气；代价是原有 `gemini-3.8-flash` 调用必须改模型名，`thinking_budget` 在 Gemini 4 上直接返回 400。
+> Hydrogen 的定位值得单独记：它默认 `high` 思考档在 Artificial Analysis 智能指数拿到 51，**高于 Argon 的 50**，`xhigh` 档 54；但它是「执行引擎」而非「前沿判断」——官方给的分工是 Carbon / Argon / Neon 做架构判断，Hydrogen 写代码、跑测试、验变更。同理，Antigravity 的 **Orchestrator** 就是按这个分工自动换模型，**2026-11-18 起规划档从 Carbon 换成 Neon（Neon 规划、Hydrogen 执行）**，官方称 Terminal-Bench 4.0 成功率接近 Carbon，配额少用 24%、快 19%。官方另称 Hydrogen 单跑 Terminal-Bench 4.1 得 57%（3.8 Flash 仅 18.2%）、默认档任务快 2.5 倍——这正是 Google 敢直接弃用 Flash 品牌改名的底气；代价是原有 `gemini-3.8-flash` 调用必须改模型名，`thinking_budget` 在 Gemini 4 上直接返回 400。
 
 ### 非编程场景
 
@@ -151,7 +152,7 @@ DeepSeek 是国内少数把「模型 + 协议 + 周边工具」都收在同一�
 | 层级 | 例子 | 怎么看 |
 |------|------|--------|
 | **代际** | GPT-6 → GPT-6.1 → GPT-6.2、Gemini 3.8 → Gemini 4 | 只代表训练批次，常伴随架构与知识截止变化 |
-| **同代档位** | Astra / Sol / Terra / Luna；Argon / Carbon / Hydrogen；Opus / Sonnet / Haiku；Luna 型低价档 | **这是同一代的不同裁剪**，Terra 弱于 Sol 不代表「版本更低」 |
+| **同代档位** | Astra / Sol / Terra / Luna；Neon / Carbon / Argon / Hydrogen；Opus / Sonnet / Haiku；Luna 型低价档 | **这是同一代的不同裁剪**，Terra 弱于 Sol 不代表「版本更低」 |
 | **推理强度** | `low / medium / high / xhigh`、Gemini 的 thinking level、Kimi 的 Highspeed | 同一模型换个档位，分数与成本可以差一倍以上 |
 | **渠道与别名** | Bedrock / Vertex / 第三方路由的 ID；`-preview`、`-flash`、`-lite` | 同名不同渠道的限制与价格可能不同，`preview` 还有下线日 |
 
@@ -169,7 +170,7 @@ DeepSeek 是国内少数把「模型 + 协议 + 周边工具」都收在同一�
 | 形态 | 代表 | 它做什么 | 关键区别 |
 |------|------|---------|---------|
 | **决策模型** | Jev（TypeSafe AI）、Gemini Decision 1（Google） | 只输出带概率的类型化判定：分类、评分、真/假 | 不生成文本，结构上无法「胡说」；Jev 延迟 70–500ms（2026-09），Gemini Decision 1 端到端 150–250ms（2026-11-11） |
-| **世界模型** | Genie 3、NVIDIA Cosmos、Marble、V-JEPA 2 | 理解并预测物理世界的演化，生成可交互环境 | 吃视频级算力；主战场是仿真与具身智能，尚不能直接替换 LLM |
+| **世界模型** | Genie 4、NVIDIA Cosmos、Marble、V-JEPA 2 | 理解并预测物理世界的演化，生成可交互环境 | 吃视频级算力；主战场是仿真与具身智能，尚不能直接替换 LLM |
 | **专家混合（MoE）** | 多数前沿开源模型 | 稀疏激活——推理时只调用部分「专家」子网络 | 是**架构**而非产品，决定推理成本与吞吐 |
 
 ### 决策模型：Jev
@@ -205,7 +206,7 @@ DeepSeek 是国内少数把「模型 + 协议 + 周边工具」都收在同一�
 
 目标是让模型理解物理世界如何演化，而不只是处理语言。2026 年分成两条技术路线：
 
-- **生成式路线** —— 直接生成像素。Google DeepMind **Genie 3**（11B 参数自回归 Transformer，720p / 24fps）可实时生成可交互环境，2026-01 起经 Project Genie 向美国 AI Ultra 订阅者开放；Waymo 已用它微调出 **Waymo World Model**，专门生成现实中罕见的驾驶场景。NVIDIA **Cosmos** 是开源的世界基础模型平台，主要产出合成训练数据。
+- **生成式路线** —— 直接生成像素。Google DeepMind **Genie 4**（2026-10 发布，**11 月起经 Project Genie 向合格的 Google AI Ultra 订阅者开放**）官方称是其「最真实、最可交互」的一代：不再是单一生成模型，而是**建立在 Gemini 家族之上**——Gemini Omni 负责真实世界的外观与行为，其他 Gemini 模型提供维持模拟连贯性所需的推理；给一句文本或一张图起场景，之后可边跑边用提示词改事件、机位与声音。上一代 **Genie 3**（11B 参数自回归 Transformer，720p / 24fps）是 2026-01 起首批向 AI Ultra 开放的那一版；Waymo 已用这一系列微调出 **Waymo World Model**，专门生成现实中罕见的驾驶场景。NVIDIA **Cosmos** 是开源的世界基础模型平台，主要产出合成训练数据。
 - **隐空间路线** —— 只预测表征、不重建像素。Meta **V-JEPA 2** 用约 100 万小时视频预训练，再加仅 62 小时机器人数据，即可零样本完成抓放操作。Yann LeCun 于 2026 年初离开 Meta 创办 **AMI Labs**，专攻这条 JEPA 路线。
 
 目前主要用于自动驾驶仿真、机器人训练与内容生成，**还不是能直接替换 LLM API 的产品**。

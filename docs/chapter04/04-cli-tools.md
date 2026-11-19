@@ -10,7 +10,7 @@ CLI（命令行界面）AI 工具是终端中的 AI 编程助手，支持自然�
 
 | 工具                                                         | 厂商      | 特点                                                         |
 | ------------------------------------------------------------ | --------- | ------------------------------------------------------------ |
-| **[Claude Code](https://code.claude.com/docs/zh-CN/overview)** | Anthropic | 终端级深度编码助手，最新 **2.1.327**（2026-11-17，补丁版：`claude mcp add-json <name> -` 支持从 **stdin** 读服务器 JSON，令牌不必再落到命令行历史；`/status` 新增一段**体检清单**——列出损坏的 agent / skill / command / output-style 文件、键位冲突、不可用的沙箱、被忽略的权限设置，以及「永远匹配不上」的 hook matcher；`/config` 会标出被其他设置覆盖的行；`/tui classic` 成为非全屏渲染器的正式名。修了大量会话恢复与 `/export`、`/rewind`、`/plugin` 的静默失败，以及 auto 模式下 Code Mode 脚本被重复要求授权的问题）。Stack Overflow 2026 开发者调查中采用率 **65.5%**，为同类最高（Codex CLI 29.5%），155.7K GitHub 星标 |
+| **[Claude Code](https://code.claude.com/docs/zh-CN/overview)** | Anthropic | 终端级深度编码助手，最新 **2.1.328**（2026-11-18，144 条修复的补丁：**auto 模式的自动判断扩到 Bedrock / Google Cloud Agent Platform / Microsoft Foundry 与 Claude apps gateway**，交互式会话只要没指定权限模式就直接落在 auto；MCP 工具 schema 以 `anyOf / oneOf / allOf` 开头时不再整段消失，单个坏 schema 只让该工具被跳过、不再拖垮整个会话；自动压缩不再复用旧的系统提示词；修好 zsh 里 `=cmd` 被误当命令路径展开（`echo ====` 报 not found）这类静默失败；`mcp_tool` hook 新增 `"onFailure": "block"`；自托管 runner 增 `--repository-folder` / `--hook-label` / `--metadata` 与两个编排器指标）。前一版 **2.1.327**（11-17）侧重凭证与体检：`claude mcp add-json <name> -` 支持从 **stdin** 读服务器 JSON，令牌不必再落到命令行历史；`/status` 新增一段**体检清单**——列出损坏的 agent / skill / command / output-style 文件、键位冲突、不可用的沙箱、被忽略的权限设置，以及「永远匹配不上」的 hook matcher；`/config` 会标出被其他设置覆盖的行；`/tui classic` 成为非全屏渲染器的正式名，并修了一批会话恢复与 `/export`、`/rewind`、`/plugin` 的静默失败。Stack Overflow 2026 开发者调查中采用率 **65.5%**，为同类最高（Codex CLI 29.5%），155.7K GitHub 星标 |
 | **[Codex CLI](https://openai.com/codex/)**                   | OpenAI    | 最新 **0.170.0**（2026-11-18）：TUI 里的实时语音通话改走 **WebRTC 协商**、OpenTelemetry 导出器支持自动刷新的鉴权头、实验性支持「不同环境下的同名 MCP 服务器共存」；修 MCP OAuth 在取消/登录/登出时的凭证竞态、Cloud 会话断流后的自动重连、Windows 沙箱的文件替换与权限保留。默认模型此前一直是 **`gpt-6-astra`**（自 0.153.4 起），而 11-17 起 **`gpt-6.2-astra` / `gpt-6.2-sol` 已可通过 `/model` 选用**——0.170 的变更记录没提默认值，升级后先用 `/model` 确认自己挂在哪一代，别假设它会跟着换。客户端默认挂在 **Low 推理档**防额度超支；**0.165 起接入 GCP Vertex AI 作为内置 provider**（`model_provider = "gcp"`），模型目录加入 **`gpt-6.1-terra`**；**GPT-5.5 已于 2026-10-14 从 ChatGPT 登录会话退役**（API 与 API-key 会话不受影响），官方建议把保存的设置与脚本指向 `gpt-6.1-sol`。0.167 新增 agent 指挥中心（`codex agents --no-daemon`）、跨后端切换保留草稿、10 个 `/presets` 槽位；**0.168 把 provider 选择搬进 TUI**（Sessions → Model providers 选默认）、侧栏会话可拖拽缩放（`leader z`）、支持音频附件与动图；**0.169 扩成多标签侧栏、可按名称 / 提示预览 / 工作目录搜索历史任务、终端内增改自定义 provider（SSH 可走 device code）**，并让 `codex exec` 在不可信目录默认关闭项目配置与 MCP（需显式 `--trust`） |
 | **[OpenCode](https://opencode.ai/)**                         | 开源      | 227.0K GitHub 星标                                            |
 | **[DSH](https://github.com/deepseek-ai/deepseek-harness)**   | DeepSeek  | 281.4K GitHub 星标。开源 Agent 运行时，主打「一切皆插件」——模型、工具、循环、UI 均可替换重组；**当前 `0.2.2-rc`（npm `latest` 为 `0.2.2-rc.1`），仍属开发者预览，官方明示会出现破坏兼容性的变更、不可用于生产**；插件怎么装、索引源加哪个见下文「DSH 插件推荐小结」 |
@@ -27,7 +27,7 @@ CLI 工具最关键的分化点是**能不能换模型**——这直接决定你
 |------|---------|-----------|--------|
 | **Claude Code** | Anthropic Claude（现役 Opus 5.5） | 原生仅 Anthropic；**可通过 Base URL 指向第三方端点**（阿里云、腾讯云 Coding Plan 均支持此用法） | 中 |
 | **Codex CLI** | **`gpt-6-astra`** | `gpt-6.1-sol`（复杂编码与 agentic 流程）、`gpt-6.1-terra`（视觉推理 / computer use / 写作）、`gpt-6-sol` / `gpt-6-luna`（存量档位）；另有 GCP Vertex AI 与 Amazon Bedrock 渠道 | 低（仅 OpenAI） |
-| **Antigravity CLI** | Gemini 4 系 | Gemini 4 Argon / Carbon / Hydrogen、3.1 Pro，以及 **Claude Sonnet 4.6、Claude Opus 4.6、gpt-oss-120b**；1.5.1 起所有 ACP 客户端可用账户全部模型 | 中（**不支持 BYOK**） |
+| **Antigravity CLI** | Gemini 4 系 | Gemini 4 Neon / Argon / Carbon / Hydrogen、3.1 Pro，以及 **Claude Sonnet 4.6、Claude Opus 4.6、gpt-oss-120b**；**1.5.12（11-19）起配 `GEMINI_API_KEY` 也能用 Neon**；1.5.1 起所有 ACP 客户端可用账户全部模型 | 中（**不支持 BYOK**） |
 | **OpenCode** | 内置免费模型 | **Go 订阅打包 30 款**：GLM-5.3、Kimi K3、DeepSeek V4.1、MiMo、Qwen3.8、MiniMax M3、Grok 4.7 等 | 极高 |
 | **DSH** | 可切换 | 支持**近 40 家**模型提供方，模型/工具/循环/UI 均可替换 | 极高 |
 | **Pi** | 可切换 | 多供应商（20+），支持**单会话内跨供应商接力** | 极高 |
@@ -62,7 +62,7 @@ CLI 工具最关键的分化点是**能不能换模型**——这直接决定你
 
 DSH 的「一切皆插件」不是修辞。官方 CLI 帮助里把 `dsh` 的启动过程描述为「**按序叠放的插件包补丁层（plugin-bundle patch layers），你的覆盖在最上面**」——所以模型、工具、循环、UI 都能换，而换的方式就是装卸插件包。
 
-当前版本为 **`0.2.2-rc`**（npm `latest` 仍是 `0.2.2-rc.1`（11-04），`next` 已迭代到 `0.2.2-rc.5`（2026-11-18）），**全部是预发布**，官方仍标注「未来将出现破坏兼容性的变更」，不要用在生产。
+当前版本为 **`0.2.2-rc`**（npm 上 `latest` 与 `next` 两个 dist-tag 现已同时指向 **`0.2.2-rc.5`**（2026-11-18）——即 `npm i -g @deepseek-ai/dsh` 拿到的就是 rc.5，不再是此前的 `0.2.2-rc.1`），**全部是预发布**，官方仍标注「未来将出现破坏兼容性的变更」，不要用在生产。
 
 **装插件**：`dsh plugin` 只是把参数转发给该 profile 目录下的 pnpm，因此语法就是 pnpm 的语法，改完要重启 `dsh web` 才生效：
 
