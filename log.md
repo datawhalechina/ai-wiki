@@ -4,6 +4,28 @@
 
 ---
 
+## 2026-11-20 23:00 · 每日时效更新
+
+> 例行日增量：核对 11-19 之后的官方口径。模型侧全线静止（四家旗舰的价格、上下文、弃用表都没动），实质变化集中在工具版本与世界模型的 API 化：Codex 换代并把默认模型写进 release note、OpenClaw 出补丁版、Genie 4 从「订阅者可用」变成「API 可买」。
+
+### 新增
+
+- **章节一 / 最新动态**：新增 **2026-11-19 v2026.11.6** 行（当前 stable / npm `latest`，**386 个 PR / 157 位贡献者**、48 个直接提交）。三条行为变化：① macOS / Linux 上一部分原本自动执行的 shell 命令改为弹审批或被拒（安全修复）；② 默认日志迁到所选状态目录，外部日志收集器需改路径或改用 `openclaw logs`；③ Git 更新默认不再构建 TypeScript 声明，需 `.d.ts` 要设 `OPENCLAW_RUN_NODE_SKIP_DTS_BUILD=0`。另记两条值得警觉的修复（更新技能会把 API Key 引用静默替换成明文、Doctor 与更新迁移错误合并 API 与 Claude/Gemini CLI 路由），并注明捆绑 Codex 升到 0.169.0、Grok OAuth 代理 1.0.13、`beta` 标签为 2026.11.10-beta.1。依据：`gh api repos/openclaw/openclaw/releases/tags/v2026.11.6`（386 PR / 157 contributors）+ `docs.openclaw.ai/releases/2026.11.6`（行为变化与修复清单）+ `npm view openclaw dist-tags`（latest / extended-stable 2026.10.33 / beta 三值互证）
+- **章节三 / 世界模型 · Genie 4**：补 API 侧口径——**2026-11-19 起 `genie-4` 在 Interactions API（`v1beta`）GA**，只开付费档 **$1.50 / 百万输入、$9.00 / 百万文本输出、$17.50 / 百万视频输出**（约 $0.10/秒，含立体声），输出 **24 fps 16:9 可操纵视频 + 48 kHz 立体声**、走 WebRTC / WebSockets 流式，可用 WASD / 方向键与中途文本事件实时改机位。依据：Gemini API 官方 release notes 11-19 条目（"Genie 4 (`genie-4`) generally available (GA)"，含三条单价）
+
+### 变更
+
+- **章节四 / Codex CLI 行**：`最新 0.170.0（2026-11-18）` → **`0.171.0`（2026-11-20）**，要点前置为「**模型目录纳入 `gpt-6.2-sol` / `gpt-6.2-astra`，Sol 是目录默认项**」，另补 TUI 工作区默认开启、undo / redo 快捷键、`codex exec --remote`、`/rc`、`/remote`、`/statusline`。依据：`gh api repos/openai/codex/releases/tags/rust-v0.171.0`（00:44Z，`prerelease=false`）+ `npm view @openai/codex dist-tags`（`latest=0.171.0`，`alpha=0.173.0-alpha.1` 不计）
+- **章节四 / Codex 默认模型口径**：`0.170 的变更记录没提默认值，6.2 要用 /model 自选、别假设会跟着换` → **`0.171 起模型目录默认项是 gpt-6.2-sol`**（官方原话 default catalog selection），保留「目录默认 ≠ 已存配置被改写」的提醒。**上次判断错在哪 → 11-17 至 11-18 看的是 0.170 的 release note，它确实没写默认值，据此写成「官方未交代」；0.171 的 New Features 第一条直接写明 Sol 为 default catalog selection**，这次以该条为准
+- **章节四 / Claude Code 行**：`2.1.328` → **`2.1.329`（2026-11-19）**：`/tasks` 升为会话级总览（定时任务 / `/loop` 唤醒 / 目标 / 对话分叉）、`/mcp` 服务器页新增 Server message 行显示被拒 HTTP MCP 的 JSON-RPC 错误、`/status` 增 Marketplace auto-update 行、OpenTelemetry 与 Code Mode 可同时开；修 `~/.claude.json` 读不到时保存会清空 / 重置（会丢配置）、macOS Keychain 只读不写导致反复登出、`/teleport` 选云会话顶掉当前对话、`application/octet-stream` 的 PDF / 图片 / Office 被存成 `.bin`，并撤掉 2.1.326 在 `max_tokens` 报错处的自动重试。2.1.328 压成「前一版」保留。依据：官方 `CHANGELOG.md` 2.1.329 条目 + `npm view @anthropic-ai/claude-code time`（2.1.329 = 2026-11-19T18:40Z）
+- **章节一 / 时间线口径**：11-17 行的「当前 stable」→ **「11-17 起为 stable，已被 11.6 接替」**；11-18 行的「stable 未动，仍是 11.5」→ **「当天 stable 仍是 11.5，次日由 11.6 接替」**。原因：原写法是当日快照，留到第二天会与表头新行自相矛盾
+
+### 工程
+
+- `npm run build` 通过（VitePress 1.6.4，2.40s）
+- 按约定**未跑** `scripts/update_stars.sh`、未核 `stargazers_count`、未改任何 star 数字（star 由每周日的独立任务负责）
+- 外链无新增，未触发体检
+
 ## 2026-11-19 23:00 · 每日时效更新
 
 > 例行日增量：核对 11-18 之后的官方口径。主线是**Google 补上中间档**——Gemini 4 Neon 直接 GA，位置明确「夹在 Hydrogen 与 Carbon 之间」，顺带把 Genie 4 从「10 月发布」推进到「已向 AI Ultra 开放」；工具侧是 Claude Code 与 Antigravity CLI 的连续补丁。
