@@ -4,6 +4,32 @@
 
 ---
 
+## 2026-11-21 23:00 · 每日时效更新
+
+> 例行日增量：核对 11-20 之后的官方口径。模型侧继续静止——OpenAI、Anthropic、Google、DeepSeek 四家的 changelog 最新条目分别停在 11-19、11-17、11-19、11-13，没有新旗舰、没有新弃用。实质变化在工具朝：Claude Code 又出一版（这次有功能不是纯修复）、Antigravity App 支持 MCP Apps。另把昨天「有发布无官价、所以没写」的 GPT-Live-1.1 补上——官方定价页今天已有按分钟单价。
+
+### 新增
+
+- **章节三 / OpenAI 行尾部**：新增语音线 **GPT-Live** 口径——**GPT-Live-1.1（2026-11-19）** 改进多语种下的发音、口音一致性与转写，**按秒计费**，活跃档 **$0.05 / 分钟**、待机档 **$0.02 / 分钟**（与 GPT-Live-1 同价）。依据：OpenAI changelog 11-19 条目（`gpt-live-1.1`，`v1/live/sessions`）+ 官方定价页 GPT-Live 小节（"Active rate / Standby rate: $0.05 / $0.02 per minute"，"bills voice sessions per second"）。**与上次判断的出入**：11-20 记「只有二手来源的价格，不写」——当时定价页尚未列出该模型；今天定价页已给出官方三值，故按一手来源补写
+
+### 变更
+
+- **章节四 / Claude Code 行**：`2.1.329` → **`2.1.330`（2026-11-20）**，前置四件事：① 新增内置画图 mod **easel**——被要求画图、或 MCP 返回指标结果时自动出图（Pro / Max，Team / Enterprise 视地区，macOS 与 Linux），可在 `/config` 关掉自动图表；② **可登录 Anthropic Enterprise Admin Console 管理的组织**，`claude auth login` 后套用组织设置与云厂商 / 网关；③ **定时任务与 `/loop` 最长运行期 7 天 → 30 天**（旧任务仍按 7 天）；④ 自托管 runner 新增 `--start-dir` / `SELF_HOSTED_RUNNER_START_DIR`。修掉压缩超长对话后卡死数分钟、WebFetch 在某些页面卡住或返空、`ExitWorktree` 删掉另一会话正在用的 worktree、多进程同时保存用户设置互相覆盖、`/stats` 按 UTC 而非本地时区统计日活。依据：官方 `CHANGELOG.md` 2.1.330 条目 + `gh api repos/anthropics/claude-code/releases`（v2.1.330，2026-11-20T22:32Z，`prerelease=false`）+ `npm view @anthropic-ai/claude-code version`（2.1.330）
+- **章节四 / Claude Code 2.1.329 段**：补一句 **`max_tokens` 自动重试在 2.1.330 又被加回来了**——2.1.329 撤掉的那条重试只活了一天。依据：2.1.330 条目 "Reverted 2.1.329's removal of the automatic retry when `max_tokens` exceeds a model's or gateway's limit"
+- **章节七 / Antigravity 行**：补 App 版本口径 **2.34.0（2026-11-20）支持 **MCP Apps**（MCP 服务器可把可直接渲染的界面带回对话）、同版把 **Gemini 4 Neon 与 Orchestrator 开放给符合条件的付费消费档**，15 项改进 + 24 项修复。依据：`antigravity.google/docs/changelog`「Antigravity App v2.34.0 · November 20, 2026」条目原文
+
+### 修复
+
+- **章节四 / Codex 默认模型三处下游表述**：11-20 只改了正文（`0.171 起目录默认 gpt-6.2-sol`），漏了同一文件里三处仍写旧默认值——**模型支持矩阵**「默认模型 `gpt-6-astra`」→ **`gpt-6.2-sol`（0.171 起目录默认）**，可切换范围补 `gpt-6.2-astra`（旗舰 $8/$40）；**选型对比表**「`gpt-6-astra` 默认，可切 6.1 Sol / 6.1 Terra / Luna」→「`gpt-6.2-sol` 默认，可切 6.2 Astra / 6.1 Sol / 6.1 Terra / Luna」；**选型建议**「默认 `gpt-6-astra`，建议切 6.1 Sol」→「默认 `gpt-6.2-sol`（$2/$10），最难的任务切 6.2 Astra（$8/$40），视觉 / 电脑操作用 6.1 Terra（$1/$5）」。依据：Codex 0.171.0 release note「Sol as the default catalog selection」+ 官方定价页两档价格；原因：昨日改动只在表格详情单元格内落笔，未回扫同页三处摘要
+
+### 工程
+
+- `npm run build` 通过（VitePress 1.6.4，2.21s）
+- 按约定**未跑** `scripts/update_stars.sh`、未核 `stargazers_count`、未改任何 star 数字（star 由每周日的独立任务负责）
+- 外链抽检 37 条：仅 `api.deepseek.com` 三个端点返 401（需鉴权，属正常）、`arena.ai` / `claude.ai` 返 403、`cursor.directory` 返 429（均为反爬 / 限流），`datawhalechina.github.io/easy-vibe` 一次 000 复检为 200（瞬时超时）。无新增死链
+
+---
+
 ## 2026-11-20 23:00 · 每日时效更新
 
 > 例行日增量：核对 11-19 之后的官方口径。模型侧全线静止（四家旗舰的价格、上下文、弃用表都没动），实质变化集中在工具版本与世界模型的 API 化：Codex 换代并把默认模型写进 release note、OpenClaw 出补丁版、Genie 4 从「订阅者可用」变成「API 可买」。
