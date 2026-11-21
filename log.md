@@ -16,17 +16,19 @@
 
 - **章节四 / Claude Code 行**：`2.1.329` → **`2.1.330`（2026-11-20）**，前置四件事：① 新增内置画图 mod **easel**——被要求画图、或 MCP 返回指标结果时自动出图（Pro / Max，Team / Enterprise 视地区，macOS 与 Linux），可在 `/config` 关掉自动图表；② **可登录 Anthropic Enterprise Admin Console 管理的组织**，`claude auth login` 后套用组织设置与云厂商 / 网关；③ **定时任务与 `/loop` 最长运行期 7 天 → 30 天**（旧任务仍按 7 天）；④ 自托管 runner 新增 `--start-dir` / `SELF_HOSTED_RUNNER_START_DIR`。修掉压缩超长对话后卡死数分钟、WebFetch 在某些页面卡住或返空、`ExitWorktree` 删掉另一会话正在用的 worktree、多进程同时保存用户设置互相覆盖、`/stats` 按 UTC 而非本地时区统计日活。依据：官方 `CHANGELOG.md` 2.1.330 条目 + `gh api repos/anthropics/claude-code/releases`（v2.1.330，2026-11-20T22:32Z，`prerelease=false`）+ `npm view @anthropic-ai/claude-code version`（2.1.330）
 - **章节四 / Claude Code 2.1.329 段**：补一句 **`max_tokens` 自动重试在 2.1.330 又被加回来了**——2.1.329 撤掉的那条重试只活了一天。依据：2.1.330 条目 "Reverted 2.1.329's removal of the automatic retry when `max_tokens` exceeds a model's or gateway's limit"
-- **章节七 / Antigravity 行**：补 App 版本口径 **2.34.0（2026-11-20）支持 **MCP Apps**（MCP 服务器可把可直接渲染的界面带回对话）、同版把 **Gemini 4 Neon 与 Orchestrator 开放给符合条件的付费消费档**，15 项改进 + 24 项修复。依据：`antigravity.google/docs/changelog`「Antigravity App v2.34.0 · November 20, 2026」条目原文
+- **章节七 / Antigravity 行**：补 App 版本口径——**2.34.0（2026-11-20）支持 MCP Apps**（MCP 服务器可把可直接渲染的界面带回对话），同版把 **Gemini 4 Neon 与 Orchestrator 开放给符合条件的付费消费档**，15 项改进 + 24 项修复。依据：`antigravity.google/docs/changelog`「Antigravity App v2.34.0 · November 20, 2026」条目原文
 
 ### 修复
 
 - **章节四 / Codex 默认模型三处下游表述**：11-20 只改了正文（`0.171 起目录默认 gpt-6.2-sol`），漏了同一文件里三处仍写旧默认值——**模型支持矩阵**「默认模型 `gpt-6-astra`」→ **`gpt-6.2-sol`（0.171 起目录默认）**，可切换范围补 `gpt-6.2-astra`（旗舰 $8/$40）；**选型对比表**「`gpt-6-astra` 默认，可切 6.1 Sol / 6.1 Terra / Luna」→「`gpt-6.2-sol` 默认，可切 6.2 Astra / 6.1 Sol / 6.1 Terra / Luna」；**选型建议**「默认 `gpt-6-astra`，建议切 6.1 Sol」→「默认 `gpt-6.2-sol`（$2/$10），最难的任务切 6.2 Astra（$8/$40），视觉 / 电脑操作用 6.1 Terra（$1/$5）」。依据：Codex 0.171.0 release note「Sol as the default catalog selection」+ 官方定价页两档价格；原因：昨日改动只在表格详情单元格内落笔，未回扫同页三处摘要
 
+- **章节十三 / 实战项目行**：外链体检发现 `github.com/langchain-ai/langchain/tree/master/templates` **已 404**——`templates` 模板目录从 LangChain 主仓移除（默认分支仍是 `master`，顶层只剩 `libs` / `openwiki` 等，`libs/` 下也无 templates；旧文档页 `python.langchain.com/docs/concepts/templates` 同时 301 回 overview）。**旧值 → 新值**：`LangChain Templates`（深链）→ **`LangChain 官方仓库`**（根地址，实测 200），说明改为「原 `templates` 目录已移除，旧链接已 404」
+
 ### 工程
 
 - `npm run build` 通过（VitePress 1.6.4，2.21s）
 - 按约定**未跑** `scripts/update_stars.sh`、未核 `stargazers_count`、未改任何 star 数字（star 由每周日的独立任务负责）
-- 外链抽检 37 条：仅 `api.deepseek.com` 三个端点返 401（需鉴权，属正常）、`arena.ai` / `claude.ai` 返 403、`cursor.directory` 返 429（均为反爬 / 限流），`datawhalechina.github.io/easy-vibe` 一次 000 复检为 200（瞬时超时）。无新增死链
+- 外链全量体检 185 条（全书去重）：除 `api.deepseek.com` 三个端点 401（需鉴权）、`arena.ai` / `claude.ai` 403、`cursor.directory` 429（反爬 / 限流）外，**2 处 404**——`langchain/tree/master/templates`（已在「修复」中处理）与 `microsoft/agent-framework`（**未改动**：微软官方文档 `learn.microsoft.com/agent-framework` 与 `Agent-Framework-Samples` 仓库的 homepage 仍指向该地址，同日 `microsoft/autogen` 正常 200，故判为临时不可达或刚发生变更，待次日复查）；`easy-vibe` 一次 000 复检 200，属瞬时超时
 
 ---
 

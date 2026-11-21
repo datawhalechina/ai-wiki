@@ -42,7 +42,7 @@
 | **互动课程** | [Learn Prompting](https://learnprompting.org/) | 开源 Prompt Engineering 课程，从入门到进阶 |
 | **官方文档** | [Anthropic 文档](https://platform.claude.com/docs/en/home) / [OpenAI 文档](https://platform.openai.com/docs) | 模型使用的一手信息，最权威 |
 | **视频教程** | [3Blue1Brown：深度学习](https://www.3blue1brown.com/topics/neural-networks) | 可视化理解 Transformer 等核心概念 |
-| **实战项目** | [LangChain Templates](https://github.com/langchain-ai/langchain/tree/master/templates) | 官方模板，直接 clone 改造 |
+| **实战项目** | [LangChain 官方仓库](https://github.com/langchain-ai/langchain) | 原 `templates` 模板目录已从主仓移除（2026-11 核，`libs/` 下亦无），旧链接 `tree/master/templates` 已 404；仓库根目录仍可作参考实现 |
 
 ## 按需求找资源
 
