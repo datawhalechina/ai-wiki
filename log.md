@@ -4,6 +4,27 @@
 
 ---
 
+## 2026-11-22 23:00 · 每日时效更新
+
+> 例行日增量：核对 11-21 之后的官方口径。**模型与工具版本今日全线静止**——Claude Code 仍 2.1.330、Codex 0.171.0（alpha 0.173 未转正）、OpenClaw 11.6、Antigravity CLI 1.5.12 / App 2.34.0、OpenCode 1.19.6、Pi 0.70.6、DSH 全预发布；OpenAI / Anthropic / Google / DeepSeek 的模型表与弃用表均无新增条目。实质变化在**接口行为**：OpenAI 为 GPT-6.2 补发的迁移指南把几条会静默抬高成本的改动写成了硬要求，此前正文只讲了价格与档位，没讲这些。
+
+### 新增
+
+- **章节三 / 国际表格之后**：新增小节「**OpenAI：迁到 GPT-6.2 的四个硬变化**」，记四条官方要求——① 从 6.2 起，Responses API 在**前缀编辑**（改动较早的 developer 消息或 tool call）、跨模型切换（含降级）、终端用户或组织变更后**丢弃 reasoning items**，质量下滑且重复劳动多烧 token，保持前缀不变才能同时保住推理与 prompt 缓存；② 顶层 `instructions` 改为在 input **之后**追加，可复用指令须写成 input 里的第一条 developer message 才进缓存；③ `temperature` / `top_p` / `logprobs` / `top_logprobs` **不再支持**，Responses 侧还要从 `include` 去掉 `message.output_text.logprobs`；④ effort 推荐起点为新接入 `medium`、原用 `none` / `minimal` 者改 `low`。并补 Astra / Sol 对审核组织支持**零数据留存（ZDR）**、开启后 `store` 视为 `false`、多轮须按序回传含加密 reasoning 的 output items。依据：官方《Using GPT-6.2》迁移指南原文（`developers.openai.com/api/docs/guides/latest-model`）三节 "Prefix edits" / "Changes to the instructions field" / "Unsupported parameters"
+
+### 修复
+
+- **章节四 / DSH 行**：`latest` 口径 **`0.2.2-rc.1` → `0.2.2-rc.5`**，并改为「`latest` 与 `next` 均已指向 rc.5」。原因：同页「DSH 插件」小节 11-18 已写「两个 dist-tag 同时指向 rc.5」，与首表自相矛盾——是上次只改了正文没回扫表格的老毛病。依据：`npm view @deepseek-ai/dsh dist-tags` 实测 `latest: 0.2.2-rc.5`、`next: 0.2.2-rc.5`（另有 `alpha: 0.2.3-alpha.2`，预发布不写）
+
+### 工程
+
+- 外链体检 **186 条**：4xx/5xx 全部为已知反爬或平台侧限流（知乎 403、claude.ai 403、producthunt 403、cursor.directory 429、arena.ai 403），非死链
+- `microsoft/agent-framework` **连续第三日返 404**，同日 Microsoft Learn「Agent Framework」文档页与 Samples 仓库 homepage 仍指向该地址 → 维持「不改链接、继续复查」判断
+- `awesome-dsh-plugin.com/index.json` 与 `cdn.jsdelivr.net/npm/dsh-plugin-catalog/index.json` 今日 404，但 `dsh-market` 仓库 README 仍把这两条列为官方索引源 → 判上游暂不可达，不改
+- `npm run build` 通过（VitePress 1.6.4，3.88s）
+
+---
+
 ## 2026-11-22 20:30 · 每周 star 专项刷新
 
 > 例行周增量，只刷 star 数字，不动版本号 / 价格 / 模型清单。

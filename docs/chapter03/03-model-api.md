@@ -15,6 +15,17 @@
 
 > ⚠️ **上下文窗口的口径**：表中的数值是厂商规格书里的**上限**，实际可用量受输出预留、计费方式与接入渠道影响。同一模型在不同云渠道（如 AWS Bedrock）的标注可能不一致，选型前请以你**实际接入的那个渠道**的文档为准。
 
+### OpenAI：迁到 GPT-6.2 的四个硬变化
+
+6.2 换代不只是换模型名。官方《Using GPT-6.2》迁移指南里有四条会让人不知不觉变贵、变差的改动：
+
+1. **改历史会丢推理**。从 GPT-6.2 起，Responses API 在「前缀编辑」（改动本轮之前较早的 developer 消息或 tool call）、跨模型切换（含降级到更便宜的档）、以及终端用户或组织变更之后，会**丢弃之前的 reasoning items**。模型拿不回推理过程，答案质量会下滑，还会重复前面的工作多烧 token。凡是把「裁掉旧 tool 输出」「每步换一套 system prompt」「中途换模型省钱」写进流水线的 agent 循环都会踩这条——**保持前缀不变**既保住推理，也保住 prompt 缓存命中。
+2. **顶层 `instructions` 排到了 input 之后**。6.2 起它按追加内容处理，想让它进缓存，得把可复用的指令写成 input 里的**第一条 developer message**；顶层 `instructions` 只留给「仅对本请求生效」的临时指导。
+3. **采样参数被取消**。迁到 6.2 要删掉 `temperature`、`top_p`、`logprobs`、`top_logprobs`；Responses 侧还要把 `message.output_text.logprobs` 从 `include` 里去掉。按温度微调风格的旧实验，在 6.2 上只能靠提示词做。
+4. **effort 有推荐起点**。新接入从 `medium` 起；原来跑 `none` 或 `minimal` 的，改用 `low`。
+
+另外，Astra 与 Sol 对通过审核的组织支持**零数据留存（ZDR）**：开启后 Responses 把 `store` 当作 `false`，多轮对话要按序回传包含加密 reasoning 的 output items。
+
 ## 国产主流模型 API
 
 | 模型                                                | 厂商      | 特点                      |
