@@ -10,11 +10,11 @@ CLI（命令行界面）AI 工具是终端中的 AI 编程助手，支持自然�
 
 | 工具                                                         | 厂商      | 特点                                                         |
 | ------------------------------------------------------------ | --------- | ------------------------------------------------------------ |
-| **[Claude Code](https://code.claude.com/docs/zh-CN/overview)** | Anthropic | 终端级深度编码助手，最新 **2.1.330**（2026-11-20）：新增内置画图 mod **easel**——你让它画图、或 MCP 返回指标结果时自动出图（Pro / Max，Team / Enterprise 视地区，macOS 与 Linux），不想要可在 `/config` 关掉自动图表；**接上 Anthropic Enterprise Admin Console 管理的组织**，`claude auth login` 后自动套用组织设置与云厂商 / 网关；**定时任务与 `/loop` 的最长运行期从 7 天放宽到 30 天**（旧任务仍按 7 天）；自托管 runner 新增 `--start-dir` / `SELF_HOSTED_RUNNER_START_DIR`，可让 Claude 在仓库的某个子目录里开工；**把 2.1.329 撤掉的 `max_tokens` 超限自动重试加回来了**。修掉压缩超长对话后卡死数分钟、WebFetch 在某些页面上卡住或返空、`ExitWorktree` 会删掉另一个会话正在用的 worktree、多进程同时保存用户设置互相覆盖、`/stats` 按 UTC 而非本地时区统计日活。前一版 **2.1.329**（11-19，修复为主的补丁，三处新增：**`/tasks` 升级为会话级总览**——一次看清本次对话里的定时任务、`/loop` 唤醒、目标与对话分叉，按 `x` 会在询问后停掉其中一个；**`/mcp` 的服务器页新增 Server message 行**，把远程 HTTP MCP 被拒时返回的 JSON-RPC 错误原文摆出来，不用再翻日志；**`/status` 增 Marketplace auto-update 行**，列出没有自动更新的托管市场及原因。另外 **OpenTelemetry 与 Code Mode 可以同时开**了——脚本里每次工具调用都会发事件（追踪类特性仍要求代价：开着它就关 Code Mode）。最该关注的是修掉一处**会丢配置**的 bug：网络卡顿或文件锁让 `~/.claude.json` 读不到时，保存会把文件清空、有时直接重置成默认值；同批还修了 macOS 上能读不能写 Keychain 导致的反复登出、`/teleport` 选云会话会顶掉当前打开的对话、后台 MCP 任务在慢重连后停滞、以 `application/octet-stream` 发来的 PDF / 图片 / Office 文件被存成 `.bin`，并**撤掉了 2.1.326 在 `max_tokens` 报错处的自动重试**（2.1.330 又恢复）。前一版 **2.1.328**（11-18，144 条修复的补丁：**auto 模式的自动判断扩到 Bedrock / Google Cloud Agent Platform / Microsoft Foundry 与 Claude apps gateway**，交互式会话只要没指定权限模式就直接落在 auto；MCP 工具 schema 以 `anyOf / oneOf / allOf` 开头时不再整段消失，单个坏 schema 只让该工具被跳过、不再拖垮整个会话；自动压缩不再复用旧的系统提示词；修好 zsh 里 `=cmd` 被误当命令路径展开（`echo ====` 报 not found）这类静默失败；`mcp_tool` hook 新增 `"onFailure": "block"`；自托管 runner 增 `--repository-folder` / `--hook-label` / `--metadata` 与两个编排器指标）。前一版 **2.1.327**（11-17）侧重凭证与体检：`claude mcp add-json <name> -` 支持从 **stdin** 读服务器 JSON，令牌不必再落到命令行历史；`/status` 新增一段**体检清单**——列出损坏的 agent / skill / command / output-style 文件、键位冲突、不可用的沙箱、被忽略的权限设置，以及「永远匹配不上」的 hook matcher；`/config` 会标出被其他设置覆盖的行；`/tui classic` 成为非全屏渲染器的正式名，并修了一批会话恢复与 `/export`、`/rewind`、`/plugin` 的静默失败。Stack Overflow 2026 开发者调查中采用率 **65.5%**，为同类最高（Codex CLI 29.5%），155.7K GitHub 星标 |
+| **[Claude Code](https://code.claude.com/docs/zh-CN/overview)** | Anthropic | 终端级深度编码助手，最新 **2.1.330**（2026-11-20）：新增内置画图 mod **easel**——你让它画图、或 MCP 返回指标结果时自动出图（Pro / Max，Team / Enterprise 视地区，macOS 与 Linux），不想要可在 `/config` 关掉自动图表；**接上 Anthropic Enterprise Admin Console 管理的组织**，`claude auth login` 后自动套用组织设置与云厂商 / 网关；**定时任务与 `/loop` 的最长运行期从 7 天放宽到 30 天**（旧任务仍按 7 天）；自托管 runner 新增 `--start-dir` / `SELF_HOSTED_RUNNER_START_DIR`，可让 Claude 在仓库的某个子目录里开工；**把 2.1.329 撤掉的 `max_tokens` 超限自动重试加回来了**。修掉压缩超长对话后卡死数分钟、WebFetch 在某些页面上卡住或返空、`ExitWorktree` 会删掉另一个会话正在用的 worktree、多进程同时保存用户设置互相覆盖、`/stats` 按 UTC 而非本地时区统计日活。前一版 **2.1.329**（11-19，修复为主的补丁，三处新增：**`/tasks` 升级为会话级总览**——一次看清本次对话里的定时任务、`/loop` 唤醒、目标与对话分叉，按 `x` 会在询问后停掉其中一个；**`/mcp` 的服务器页新增 Server message 行**，把远程 HTTP MCP 被拒时返回的 JSON-RPC 错误原文摆出来，不用再翻日志；**`/status` 增 Marketplace auto-update 行**，列出没有自动更新的托管市场及原因。另外 **OpenTelemetry 与 Code Mode 可以同时开**了——脚本里每次工具调用都会发事件（追踪类特性仍要求代价：开着它就关 Code Mode）。最该关注的是修掉一处**会丢配置**的 bug：网络卡顿或文件锁让 `~/.claude.json` 读不到时，保存会把文件清空、有时直接重置成默认值；同批还修了 macOS 上能读不能写 Keychain 导致的反复登出、`/teleport` 选云会话会顶掉当前打开的对话、后台 MCP 任务在慢重连后停滞、以 `application/octet-stream` 发来的 PDF / 图片 / Office 文件被存成 `.bin`，并**撤掉了 2.1.326 在 `max_tokens` 报错处的自动重试**（2.1.330 又恢复）。前一版 **2.1.328**（11-18，144 条修复的补丁：**auto 模式的自动判断扩到 Bedrock / Google Cloud Agent Platform / Microsoft Foundry 与 Claude apps gateway**，交互式会话只要没指定权限模式就直接落在 auto；MCP 工具 schema 以 `anyOf / oneOf / allOf` 开头时不再整段消失，单个坏 schema 只让该工具被跳过、不再拖垮整个会话；自动压缩不再复用旧的系统提示词；修好 zsh 里 `=cmd` 被误当命令路径展开（`echo ====` 报 not found）这类静默失败；`mcp_tool` hook 新增 `"onFailure": "block"`；自托管 runner 增 `--repository-folder` / `--hook-label` / `--metadata` 与两个编排器指标）。前一版 **2.1.327**（11-17）侧重凭证与体检：`claude mcp add-json <name> -` 支持从 **stdin** 读服务器 JSON，令牌不必再落到命令行历史；`/status` 新增一段**体检清单**——列出损坏的 agent / skill / command / output-style 文件、键位冲突、不可用的沙箱、被忽略的权限设置，以及「永远匹配不上」的 hook matcher；`/config` 会标出被其他设置覆盖的行；`/tui classic` 成为非全屏渲染器的正式名，并修了一批会话恢复与 `/export`、`/rewind`、`/plugin` 的静默失败。Stack Overflow 2026 开发者调查中采用率 **65.5%**，为同类最高（Codex CLI 29.5%），156.6K GitHub 星标 |
 | **[Codex CLI](https://openai.com/codex/)**                   | OpenAI    | 最新 **0.171.0**（2026-11-20）：**模型目录正式纳入 `gpt-6.2-sol` / `gpt-6.2-astra`，且 Sol 是目录里的默认项**——这是 6.2 发布后官方第一次把默认值写进 release note；**TUI 工作区默认开启**（侧边可搜的文档预览、图片预览、subagent 转录与主对话并排）；非 Vim 输入模式支持自定义 **undo / redo 快捷键**，附件与大段粘贴一起回滚；新增 `codex exec --remote <ADDR>`（在已有 app server 上起或续非交互会话）、`/rc` 与 `/remote`（管本地 remote control、显示设备配对码）、`/statusline`（自选或自写 MCP 状态行）。修了切会话时草稿 / 排队追问 / 中断输入没跟回原线程、改工作目录会丢权限配置、上一轮迟到的完成事件取消新一轮审批，以及 IdP 不发 refresh token 时的企业 MCP 登录。前一版 **0.170.0**（11-18）：TUI 里的实时语音通话改走 **WebRTC 协商**、OpenTelemetry 导出器支持自动刷新的鉴权头、实验性支持「不同环境下的同名 MCP 服务器共存」；修 MCP OAuth 在取消/登录/登出时的凭证竞态、Cloud 会话断流后的自动重连、Windows 沙箱的文件替换与权限保留。默认模型自 0.153.4 起是 **`gpt-6-astra`**，11-17 起 **`gpt-6.2-astra` / `gpt-6.2-sol` 已可通过 `/model` 选用**，**0.171 起模型目录的默认项换成 `gpt-6.2-sol`**（官方原话 default catalog selection）——但「目录默认」不等于已存的配置会被改写，升级后仍建议用 `/model` 确认自己挂在哪一代。客户端默认挂在 **Low 推理档**防额度超支；**0.165 起接入 GCP Vertex AI 作为内置 provider**（`model_provider = "gcp"`），模型目录加入 **`gpt-6.1-terra`**；**GPT-5.5 已于 2026-10-14 从 ChatGPT 登录会话退役**（API 与 API-key 会话不受影响），官方建议把保存的设置与脚本指向 `gpt-6.1-sol`。0.167 新增 agent 指挥中心（`codex agents --no-daemon`）、跨后端切换保留草稿、10 个 `/presets` 槽位；**0.168 把 provider 选择搬进 TUI**（Sessions → Model providers 选默认）、侧栏会话可拖拽缩放（`leader z`）、支持音频附件与动图；**0.169 扩成多标签侧栏、可按名称 / 提示预览 / 工作目录搜索历史任务、终端内增改自定义 provider（SSH 可走 device code）**，并让 `codex exec` 在不可信目录默认关闭项目配置与 MCP（需显式 `--trust`） |
-| **[OpenCode](https://opencode.ai/)**                         | 开源      | 227.0K GitHub 星标                                            |
-| **[DSH](https://github.com/deepseek-ai/deepseek-harness)**   | DeepSeek  | 281.4K GitHub 星标。开源 Agent 运行时，主打「一切皆插件」——模型、工具、循环、UI 均可替换重组；**当前 `0.2.2-rc`（npm `latest` 为 `0.2.2-rc.1`），仍属开发者预览，官方明示会出现破坏兼容性的变更、不可用于生产**；插件怎么装、索引源加哪个见下文「DSH 插件推荐小结」 |
-| **[Pi](https://github.com/earendil-works/pi)**               | Earendil Works | 122.1K GitHub 星标。极简底座——只保留读/写/改文件与跑命令四个工具；支持单会话内跨供应商接力（Claude 做到一半转给 DeepSeek 继续） |
+| **[OpenCode](https://opencode.ai/)**                         | 开源      | 228.5K GitHub 星标                                            |
+| **[DSH](https://github.com/deepseek-ai/deepseek-harness)**   | DeepSeek  | 285.4K GitHub 星标。开源 Agent 运行时，主打「一切皆插件」——模型、工具、循环、UI 均可替换重组；**当前 `0.2.2-rc`（npm `latest` 为 `0.2.2-rc.1`），仍属开发者预览，官方明示会出现破坏兼容性的变更、不可用于生产**；插件怎么装、索引源加哪个见下文「DSH 插件推荐小结」 |
+| **[Pi](https://github.com/earendil-works/pi)**               | Earendil Works | 123.3K GitHub 星标。极简底座——只保留读/写/改文件与跑命令四个工具；支持单会话内跨供应商接力（Claude 做到一半转给 DeepSeek 继续） |
 | **[Antigravity CLI](https://antigravity.google/)**           | Google    | 命令名 `agy`，Gemini CLI 的继任者，已全面开放（第三方多标注为 preview，**官方未使用 GA 字样**）。**Gemini CLI 已于 2026-06-18 对免费 / Google AI Pro / Google AI Ultra 用户停止服务**，企业版（Code Assist）不受影响。个人档 **$0/月**，无需信用卡 |
 | **[Qoder CLI](https://qoder.com)**                           | Qoder-AI | Agentic Coding Platform，支持 CLI 和 IDE，自主编程模式，CodeReview 能力 |
 | **[CodeBuddy](https://codebuddy.cn/)**                       | 腾讯      | 命令行中用自然语言驱动开发全流程                             |
@@ -40,14 +40,14 @@ CLI 工具最关键的分化点是**能不能换模型**——这直接决定你
 
 | 工具 | 开源 | 模型灵活度 | MCP 支持 | 社区活跃度 | 学习门槛 | 适用场景 |
 |------|------|-----------|---------|-----------|---------|---------|
-| Claude Code | 否 | Claude 系列 | 深度集成 | 极高（155.7K star） | 低 | 深度编码、大型项目重构 |
+| Claude Code | 否 | Claude 系列 | 深度集成 | 极高（156.6K star） | 低 | 深度编码、大型项目重构 |
 | Codex CLI | 开源 | **`gpt-6.2-sol` 默认，可切 6.2 Astra / 6.1 Sol / 6.1 Terra / Luna** | 支持 | 高 | 低 | OpenAI 生态、多模型切换 |
-| OpenCode | 开源 | 多模型自由 | 支持 | 极高（227.0K star） | 中 | 开源优先、社区驱动、自定义工作流 |
+| OpenCode | 开源 | 多模型自由 | 支持 | 极高（228.5K star） | 中 | 开源优先、社区驱动、自定义工作流 |
 | Antigravity CLI | 否 | Gemini + Claude + gpt-oss | 支持 | 中 | 低 | Google 生态、多模态任务、免费档 $0（2026-06 起取代 Gemini CLI） |
 | Qoder CLI | 否 | 多模型支持 | 支持 | 中 | 低 | 自主编程、CodeReview、IDE+CLI 双模式 |
 | CodeBuddy | 否 | 混元+DeepSeek | 支持 | 中 | 低 | 腾讯生态、全流程开发 |
-| DSH | 开源（MIT） | 近 40 家提供方 | 支持 | 高（281.4K star） | 中 | 插件化改造、自定义 agent 运行时（预览版） |
-| Pi | 开源（MIT） | 多供应商（20+） | 支持 | 高（122.1K star） | 中 | 极简底座、自建工作流、跨模型接力 |
+| DSH | 开源（MIT） | 近 40 家提供方 | 支持 | 高（285.4K star） | 中 | 插件化改造、自定义 agent 运行时（预览版） |
+| Pi | 开源（MIT） | 多供应商（20+） | 支持 | 高（123.3K star） | 中 | 极简底座、自建工作流、跨模型接力 |
 
 ## 选型建议
 
@@ -74,9 +74,9 @@ dsh plugin --profile web add dshmarket     # profile 名按你的宿主填（如
 
 | 项目 | 实测 star | 作用 | 怎么用 |
 |------|-----------|------|--------|
-| [dsh-market](https://github.com/dsh-market/dsh-market) | 12.5K star | 可视化插件市场：浏览 / 搜索 / 一键装，同一份目录兼作索引源，另有主题一键切换 | `dsh plugin --profile web add dshmarket`；或把索引 `https://cdn.jsdelivr.net/npm/dsh-plugin-catalog/index.json` 添加进「发现」 |
-| [awesome-dsh-plugin](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin) | 24.7K star | 人工精选清单，按用途分类，适合上手前先扫一遍 | 索引源 `https://awesome-dsh-plugin.com/index.json` |
-| [DSH Desktop](https://github.com/anywhere-labs/dsh-desktop) | 36.1K star | 把桌面端本身也做成插件，补 GUI 与常驻体验 | 见仓库 README（非插件索引，属宿主外壳） |
+| [dsh-market](https://github.com/dsh-market/dsh-market) | 13.2K star | 可视化插件市场：浏览 / 搜索 / 一键装，同一份目录兼作索引源，另有主题一键切换 | `dsh plugin --profile web add dshmarket`；或把索引 `https://cdn.jsdelivr.net/npm/dsh-plugin-catalog/index.json` 添加进「发现」 |
+| [awesome-dsh-plugin](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin) | 25.4K star | 人工精选清单，按用途分类，适合上手前先扫一遍 | 索引源 `https://awesome-dsh-plugin.com/index.json` |
+| [DSH Desktop](https://github.com/anywhere-labs/dsh-desktop) | 36.6K star | 把桌面端本身也做成插件，补 GUI 与常驻体验 | 见仓库 README（非插件索引，属宿主外壳） |
 
 三点实践经验：
 
@@ -111,5 +111,5 @@ claude
 
 | 工具 | 特点 |
 |------|------|
-| **[cc-switch](https://github.com/farion1231/cc-switch)**（154.5K star） | 跨平台桌面应用，一键切换 Claude Code / Codex / OpenCode / OpenClaw / Antigravity CLI，免去终端手动切换的繁琐 |
+| **[cc-switch](https://github.com/farion1231/cc-switch)**（156.3K star） | 跨平台桌面应用，一键切换 Claude Code / Codex / OpenCode / OpenClaw / Antigravity CLI，免去终端手动切换的繁琐 |
 

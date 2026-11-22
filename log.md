@@ -4,6 +4,20 @@
 
 ---
 
+## 2026-11-22 20:30 · 每周 star 专项刷新
+
+> 例行周增量，只刷 star 数字，不动版本号 / 价格 / 模型清单。
+
+### 工程
+
+- `scripts/update_stars.sh --apply` 刷新 **39 处 / 7 个文件**（ch01、ch04、ch05、ch06、ch08、ch09、ch10），清单 51 条 / 41 个仓库，`--check` 全绿（51 条已是最新，退出码 0）
+- 涨幅最大三家：**`deepseek-ai/deepseek-harness` 281.4K → 285.4K**、**`anthropics/skills` 194.9K → 198.7K**、**`ChromeDevTools/chrome-devtools-mcp` 56.6K → 58.8K**；旗舰 `openclaw/openclaw` 394.5K → 395.0K（破 395K）
+- `microsoft/agent-framework` 本周仍返 404（`gh api` 获取失败，跳过该条）。官方文档与 `Agent-Framework-Samples` 仓库 homepage 仍指向该地址，`microsoft/autogen` 同日正常，维持「不改链接、待复查」判断；页面上的 `14.7K star` 未动
+- 清单无新增：本周（11-16 ~ 11-21）没有再出现带 star 的新工具条目，11-21 已把 4 条 DSH 插件纳入
+- `npm run build` 通过（VitePress 1.6.4，2.63s）
+
+---
+
 ## 2026-11-21 23:00 · 每日时效更新
 
 > 例行日增量：核对 11-20 之后的官方口径。模型侧继续静止——OpenAI、Anthropic、Google、DeepSeek 四家的 changelog 最新条目分别停在 11-19、11-17、11-19、11-13，没有新旗舰、没有新弃用。实质变化在工具朝：Claude Code 又出一版（这次有功能不是纯修复）、Antigravity App 支持 MCP Apps。另把昨天「有发布无官价、所以没写」的 GPT-Live-1.1 补上——官方定价页今天已有按分钟单价。
