@@ -4,6 +4,34 @@
 
 ---
 
+## 2026-11-23 23:00 · 每日时效更新
+
+> 例行日增量：核对 11-22 之后的官方口径。今日有两处实质变化——**智谱在晚间静默放出 GLM-5.4**（首个 Loop Transformer 旗舰，但 API 未开放），**OpenClaw 发 v2026.11.7**（纯可靠性版）。其余全线静止。另把连续四天 404 的 `microsoft/agent-framework` 链接改指官方文档。
+
+### 新增
+
+- **章节一 / 最新动态**：新增 **2026-11-23 v2026.11.7** 一行——官方口径 **390 个 PR**，六条 Highlight 全是可靠性（Gateway 重启后接回被中断的回复与子任务结果、自动化失败可由所属会话修复并区分「已恢复 / 主动跳过」、Git 与 npm 更新可穿过 schema 变更与数据库繁忙、慢文件系统期间 Gateway 保持响应、浏览器短码配对、ChatGPT 订阅模型目录直连不必等发版）。Changes 段**再列 #175837 那三条破坏性 SDK 变更**（与 11.5 同一 PR），从 11.5 以下升级者仍需先读；捆绑 Codex runtime **0.169.0 → 0.170.0**（ACP 仍 2.2.2）。依据：`gh api repos/openclaw/openclaw/releases/tags/v2026.11.7`（11-23 01:33Z，"390 in-range PRs"）+ `npm view openclaw dist-tags`（latest 2026.11.7、extended-stable 2026.10.33、beta 2026.11.10-beta.2）
+- **章节三 / 智谱行**：新增 **GLM-5.4**（2026-11-23，首个 Loop Transformer 旗舰：GLM-5 基座里 **28 层循环跑两轮**，门控渐进写回 + 跨轮共享 KV Cache + 复用稀疏注意力索引，约 **750B** 基座拿到「2T–3T 级」智能；1M 上下文 / 128K 输出；GLM-5.x 首个能吃图；非高峰 200 token/s、高峰 70–80 token/s）。**明确标注 API 未开放、无公开 per-token 价格**，目前仅 Coding Plan 与 ZCode / Trae / WorkBuddy / Qoder 等平台可用。依据：智谱官方博客 `zhipuai.cn/zh/research/164`（11-23）+ `docs.z.ai/guides/llm/glm-5.4.md`（Context 1M / Max output 128K / 输入含 Video·Image）+ `z.ai/subscribe` 页面标题已改为 "Powered by GLM-5.4 & GLM-5.3-Flash"
+
+### 变更
+
+- **章节二 / GLM Coding Plan 行**：模型列 **`GLM-5.3` → `GLM-5.4`（11-23 起全量开放）+ GLM-5.3 + GLM-5.3-Flash**，并补「周额度档 V2 / V3 / 团队版的 GLM-5.4 额度提到 5.3 的 **1.5 倍**」。价格列（118 / 538 / 1078 元）未动——官方未宣布调价
+- **章节三 / 选型建议「预算敏感的中文任务」**：补一句说明——GLM-5.4 虽是旗舰但只有 Coding Plan 能用，按 token 计价的场景仍走 GLM-5.3；同页价格对比表内仍留 GLM-5.3（$1.40/$4.40），因 5.4 无 API 无价
+- **章节七 / ZCode**：适配模型 **GLM-5.3-Flash → 补 GLM-5.4 当日同步上线**（官方首发伙伴之一）；工具对比表模型列 **GLM-5.3 → GLM-5.4**
+
+### 修复
+
+- **章节八 / 章节十三**：`Microsoft Agent Framework` 链接由 `github.com/microsoft/agent-framework` 改指官方 Learn 概览页。**与 11-20 ~ 11-22 三天「判临时不可达、不改」的判断有出入**——原因：今天 `git ls-remote` 直接返回 `Repository not found`，GitHub API 也 404（改名会 301 跳转，故不是改名），且 `microsoft/agent-framework-go`、`microsoft/Agent-Framework-Samples` 两个周边仓库同日 200 → 判主仓已不再公开，属真实死链而非限流。官方 Learn 页面仍正常（200）且正文仍在引用该 GitHub 路径，属微软侧文档滞后，故改指文档并在 ch08 行内注明
+
+### 工程
+
+- 外链体检 **186 条**：19 条非 200 中，401（`api.deepseek.com` 三个端点，无 Key）、403（arena.ai、claude.ai、producthunt、知乎 ×5）、521（CSDN 反爬）、429（cursor.directory）均属已知反爬；4 条 `000` 经单条复检全部 200（并发超时，非死链）
+- 核对无变化：Claude Code 2.1.330、Codex 0.171.0（alpha 0.173.0-alpha.4 未转正）、OpenCode 1.19.6、DSH `latest`/`next` 均 0.2.2-rc.5（alpha 0.2.3-alpha.2）、Antigravity CLI 1.5.12 + App 2.34.0、Cursor changelog 停 11-06、OpenClaw extended-stable 2026.10.33
+- 核对无变化（模型侧）：OpenAI changelog 顶部仍是 11-19 的 GPT-Live-1.1、弃用表 6.0 / 6.1 未进名单；Google changelog 顶部仍是 11-19 的 Genie 4 GA；Anthropic release notes 顶部 11-17（linked billing）、四档模型未变；DeepSeek changelog 停 11-13；Kimi 仍 K3.1 Pro；MiniMax 模型发布页停 11-10；Mistral 仍 Large 4
+- `npm run build` 通过（VitePress 1.6.4，2.54s）
+
+---
+
 ## 2026-11-22 23:00 · 每日时效更新
 
 > 例行日增量：核对 11-21 之后的官方口径。**模型与工具版本今日全线静止**——Claude Code 仍 2.1.330、Codex 0.171.0（alpha 0.173 未转正）、OpenClaw 11.6、Antigravity CLI 1.5.12 / App 2.34.0、OpenCode 1.19.6、Pi 0.70.6、DSH 全预发布；OpenAI / Anthropic / Google / DeepSeek 的模型表与弃用表均无新增条目。实质变化在**接口行为**：OpenAI 为 GPT-6.2 补发的迁移指南把几条会静默抬高成本的改动写成了硬要求，此前正文只讲了价格与档位，没讲这些。

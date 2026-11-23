@@ -60,5 +60,5 @@
 - **龙虾生态**：国内 Claw 产品百花齐放，安全机制和 Skills 市场是关注重点
 - **Coding Plan 竞争**：各厂商 Coding Plan 定价和模型覆盖范围快速变化
 - **MCP、Skill 生态**：正在快速演进，每周都有新的 MCP Server、Skill 发布
-- **Agent 框架融合**：微软推出 [Microsoft Agent Framework](https://github.com/microsoft/agent-framework)（**2026-04-02 发布 1.0 GA**），统一 AutoGen 与 Semantic Kernel 的多 Agent 模式，行业正从分散走向统一
+- **Agent 框架融合**：微软推出 [Microsoft Agent Framework](https://learn.microsoft.com/en-us/agent-framework/overview/agent-framework-overview)（**2026-04-02 发布 1.0 GA**），统一 AutoGen 与 Semantic Kernel 的多 Agent 模式，行业正从分散走向统一
 - **GraphRAG 与 Agentic RAG**：下一代 RAG 架构正在成为企业知识管理新标准

@@ -34,7 +34,7 @@
 
 | 工具 | 厂商 | 特点 | 最新情况 |
 | --- | --- | --- | --- |
-| **[ZCode](https://z.ai/)** | 智谱 Z.ai | Agent-first 的 ADE，由 GLM 系列驱动 | 国内名 **Z Code**，2025-12-26 首发；**2026-07-02 Z.ai 发布 ADE 版并登顶 Hacker News**；内核已适配 **GLM-5.3-Flash**；支持 BYOK 接入 GPT / Claude / Gemini 等。**2026-11-03 的 3.17.2 上线 Computer Use / Browser Use / Sites 三个官方插件**，模型配置新增 Kimi K3.1 Pro、MiniMax M3.1 Flash。⚠️ **2026-09-18 就"代码库数据上传"公开致歉并宣布将开源代码库**，企业采用建议等开源后再评估 |
+| **[ZCode](https://z.ai/)** | 智谱 Z.ai | Agent-first 的 ADE，由 GLM 系列驱动 | 国内名 **Z Code**，2025-12-26 首发；**2026-07-02 Z.ai 发布 ADE 版并登顶 Hacker News**；内核已适配 **GLM-5.3-Flash**，**2026-11-23 GLM-5.4 发布当天同步上线**（官方首发伙伴之一）；支持 BYOK 接入 GPT / Claude / Gemini 等。**2026-11-03 的 3.17.2 上线 Computer Use / Browser Use / Sites 三个官方插件**，模型配置新增 Kimi K3.1 Pro、MiniMax M3.1 Flash。⚠️ **2026-09-18 就"代码库数据上传"公开致歉并宣布将开源代码库**，企业采用建议等开源后再评估 |
 | **[JetBrains Air](https://www.jetbrains.com/air/)** | JetBrains | 把 JetBrains 六个月来围绕 agentic 开发的工作整合成一套产品体系 | **2026-09-22 发布**。含 Air in IDEs（IDE 内插件）、Air Teams（团队云端协作）、Air Governance（原 JetBrains Central，治理与成本）、Air Context（语义索引）、Air Gateway（把终端 agent 接进来）。坚持**多供应商**：可接 Claude Agent、Codex、Copilot、OpenCode、Junie，以及任何实现 **ACP**（Agent Client Protocol，JetBrains 与 Zed 共同制定）的 agent |
 | **[Warp](https://www.warp.dev/)** | Warp | 从终端起家的 ADE，配云端编排平台 **Oz** | **2026-04-28 开源**核心产品（65K star），并提出"Open Agentic Development"模式：非技术用户提需求，agent 在公开仓库里实现并提交 PR。Oz 可把 **Claude Code、Codex、Warp Agent 并排跑在同一控制面**（2026-05-19），带跨 harness 持久记忆、自动多 agent 编排、企业级权限与成本上限 |
 | **[Emdash](https://github.com/generalaction/emdash)** | 开源（YC W26，MIT） | 桌面端多 agent 编排，用 **git worktree** 给每个 agent 隔离工作目录 | 可接入 **31+ 种 CLI agent**（Claude Code、Codex、Gemini CLI、OpenCode、Cline、Droid 等），支持 SSH 远程跑长任务（5.8K star） |
@@ -157,7 +157,7 @@
 | Visual Studio 2026 | 传统 IDE | 内置 Copilot Free | GPT-5 / Claude | Profiler / Debugger Agent | 支持 | 优 | .NET / C++ 团队 |
 | Copilot | IDE 插件 | 付费 | GPT-5/Claude | Agent 模式 | 支持 | 良 | VS Code/JetBrains 用户 |
 | CodeBuddy | 全栈 IDE | — | 混元+DeepSeek | Plan-Code-Deploy | 支持 | 优 | 腾讯生态，全流程 |
-| **ZCode** | **ADE** | 免费下载 | GLM-5.3 | Goal 驱动，全流程自主 | 支持 | 优 | 放弃编辑器，把流程交给 agent |
+| **ZCode** | **ADE** | 免费下载 | GLM-5.4 | Goal 驱动，全流程自主 | 支持 | 优 | 放弃编辑器，把流程交给 agent |
 | **JetBrains Air** | **ADE** | 自带订阅可用 | 多供应商 | 多 agent 编排 + 治理 | 支持 | 中 | JetBrains 用户，团队协作 |
 | **Warp** | **ADE** | 免费下载 | 多模型可选 | Oz 云端编排，多 harness 并行 | 支持 | 良 | 终端党，多 agent 混用 |
 
