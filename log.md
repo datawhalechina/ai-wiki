@@ -4,6 +4,36 @@
 
 ---
 
+## 2026-11-24 23:00 · 每日时效更新
+
+> 例行日增量：核对 11-23 之后的官方口径。今日是**工具链集中发版日**——Claude Code、Codex CLI、OpenClaw 三家同日推到新稳定版，Antigravity 的 App 与 CLI 也在 11-23 双双更新（昨日核查时仍是 2.34.0 / 1.5.12）。模型侧全线静止；唯一实质补充是 OpenAI 的**后台补全窗口折扣**此前一直没写进正文。
+
+### 新增
+
+- **章节三 / GPT-6 行**：补 **background 请求的折扣完成窗口**——Astra / Sol 与 6.1 Terra、GPT-6 Luna 可选 **2 小时窗口按标准价 7 折、8 小时窗口 6 折**（Batch 是另一套，按约五折）；并注明官方说明新模型不再支持 Flex processing，该能力只留在受支持的旧模型上直到公测收尾。依据：`developers.openai.com/api/docs/pricing`（原文 "30% below Standard for the 2-hour completion window and 40% below Standard for the 8-hour completion window"）+ 官方 changelog 11-17 同日条目。此前多轮日更只核了模型单价与 Ultrafast，漏掉这条按时间换价的杠杆
+- **章节一 / 最新动态**：新增 **2026-11-24 v2026.11.8** 一行——官方口径 **228 个 in-range PR**，维护版、无新功能；六条 Highlight 全部是隐私安全与可靠性（Signal 一次性查看附件不进 agent 输入、拦截工作区 Azure 跳转、反射型 ClawHub 凭证打码、Windows 命令拒换行注入 / 对话连续性 / 答复不丢 / 自动化收尾 / 升级更轻 / OAuth 与 MCP 登录保持）。并标注该版本挂出二十余条 **doctor 兼容记录、最早移除日均为 2026-11-29**。依据：`gh api repos/openclaw/openclaw/releases/tags/v2026.11.8`（11-24 11:54Z）+ `npm view openclaw dist-tags`（latest 2026.11.8、beta 2026.11.10-beta.3、extended-stable 仍 2026.10.33）
+
+### 变更
+
+- **章节四 / Claude Code**：**2.1.330 → 2.1.331**（2026-11-23，npm 11-23 18:36Z）。要点：**Code Mode 扩到 Amazon Bedrock、Google Cloud Agent Platform、Microsoft Foundry 与 AWS 上的 Claude Platform** 四家托管云的终端会话；`claude doctor` 新增 **API 连通性检查段**；插件清单支持 `optionalDependencies`；追踪跨度补 `gen_ai.usage.*`。三条值得记的修复：异常 MCP 回复会让工具调用**卡住最长 30 分钟**、读卡住的云 / 网络文件时 Esc / Stop 要等一分钟以上、失败的插件更新留下半截目录。并预告 **11-30 起**托管 `extraKnownMarketplaces` 默认自动更新（`"autoUpdate": false` 可关）
+- **章节四 / Codex CLI**：**0.171.0 → 0.172.0**（2026-11-24）。要点：**Tab 补全斜杠命令参数**、thread 链接可直达已存对话与嵌套 agent、agent 指挥中心 `Shift+Up` / `Shift+Down` 跳任务组、**带缓存工具清单的 stdio MCP 改为首次调用才启动**、`config.toml` 可为单个 connected app 工具指定审批复核人、app-server 可选 Amazon Bedrock Runtime。CHANGELOG 侧另有一条与本书口径相关的**文档更正**：捆绑的 `openai-docs` skill 已补 **GPT-6.2 Astra / Sol 迁移指引**，工程上 **Code Mode 宿主连接全部改走 gRPC**，`code_mode_host_grpc` 设置废弃。**模型目录默认项仍为 `gpt-6.2-sol`，未变**
+- **章节七 / Antigravity App**：**2.34.0 → 2.35.0**（2026-11-23）。**本地对话历史改为默认不限量**（不再在 500 条后裁剪），新增内置 **Conversation Management API** 与 conversations skill，全页 HTML artifact 支持 **Cmd+F 页内搜索**，auto 模式下「项目外读文件」自动放行（敏感配置目录除外）、「项目外写文件」改为建议目录范围；20 项改进 + 19 项修复
+- **章节七 / Antigravity CLI**：**1.5.12 → 1.5.15**（2026-11-23；中间还有 1.5.13 / 1.5.14 两次小版本）。要点：`/context` 容量区新增**自动压缩阈值**，`AGY_CLI_AUTO_COMPACT_OVERRIDE` 支持 token 数 / `800K` / `0.5M` / `80%`；`/model` 里 **Orchestrator 的 Planner 与 Executor 默认思考档改为 `high`**（此前取家族最高档）；**本地对话不再只留最近 500 条**，默认全存 `~/.gemini/antigravity-cli/conversations`；Remote Control 浏览器视图的项目选择器与队列卡片重做；修 ACP 会话、`/config` 渲染告警、`/btw` 侧问等 9 处
+
+### 修复
+
+- 无（今日无新增死链）
+
+### 工程
+
+- 外链体检 **186 条**：169 条 200；401（`api.deepseek.com` 三个端点，无 Key）、403（arena.ai、claude.ai、producthunt、知乎 ×5）、521（CSDN 反爬）、429（cursor.directory）均属已知反爬；3 条 `000` 与 2 条 404 经单条复检全部 200（并发超时 + 提取正则把反引号并进了 URL）
+- **昨日判「上游暂不可达」的两条 DSH 社区索引 JSON 今日已恢复 200**（`awesome-dsh-plugin.com/index.json` 与 `cdn.jsdelivr.net/npm/dsh-plugin-catalog/index.json` 均返回合法 format-1 内容）→ 昨日不改的判断成立，无需动正文
+- 核对无变化：OpenCode 1.19.6、DSH `latest` / `next` 均 0.2.2-rc.5、Cursor changelog 停 11-06、OpenClaw extended-stable 2026.10.33；OpenAI changelog 顶部仍是 11-19 的 GPT-Live-1.1、弃用表 6.0 / 6.1 未进名单；Google changelog 顶部仍是 11-19 的 Genie 4 GA；DeepSeek changelog 停 11-13；GLM-5.4 文档仍写「API 待安全评估后开放」、无公开单价；阿里百炼模型列表仍以 `qwen4-max` / `qwen3.7-plus` / `qwen3.8-flash` 领衔；Kimi 仍 K3.1 Pro、Mistral 仍 Large 4
+- **核过但未写入**：Anthropic 11-23 新增两件事——**Claude Opus 4.5 弃用**（`claude-opus-4-5-20251101`，2027-01-22 退役）与 **EFS 企业前沿保障 beta**。未写原因：本书 ch03 的 Anthropic 行只列当前四档（Fable 5.2 / Opus 5.5 / Sonnet 5.5 / Haiku 5.5），Opus 4.5 从未在正文出现，补一条「某个没提过的旧档要退役」只增加噪音；EFS 目前只有 "eligible organizations" 一条措辞，拿不到适用范围与价格，按「无法确证不写」处理
+- `npm run build` 通过（VitePress 1.6.4，2.51s）
+
+---
+
 ## 2026-11-23 23:00 · 每日时效更新
 
 > 例行日增量：核对 11-22 之后的官方口径。今日有两处实质变化——**智谱在晚间静默放出 GLM-5.4**（首个 Loop Transformer 旗舰，但 API 未开放），**OpenClaw 发 v2026.11.7**（纯可靠性版）。其余全线静止。另把连续四天 404 的 `microsoft/agent-framework` 链接改指官方文档。
