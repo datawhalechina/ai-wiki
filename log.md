@@ -4,6 +4,32 @@
 
 ---
 
+## 2026-11-25 23:00 · 每日时效更新
+
+> 例行日增量：核对 11-24 之后的官方口径。今日主线是 **OpenClaw 连发两版（11.9 补丁 + 11.10 功能版）**，以及 Claude Code 2.1.332、Antigravity App 2.35.1 / CLI 1.5.16。模型侧仍无新旗舰；唯一实质补充是 OpenAI 的**门类专用医疗配置**（11-24 上线）。智谱 GLM-5.4 昨天只有博客与侧栏标记，今天官方模型页落地，据此收紧口径并换链接。
+
+### 新增
+
+- **章节一 / 最新动态**：新增 **2026-11-25 v2026.11.10** 一行（稳定版，11-25 05:42Z，官方口径 **7,671 个 PR / 349 位贡献者**，是 11 月这轮里第一个**带新功能**的版本）。三条 Highlight：**Deep Research 默认开启**（多源调研、冲突处并排引原文、未决问题单列 `Unresolved`、跨 Gateway 重启续跑、报告留 7 天、可选 Google 托管研究引擎）；**Knowledge**（需手动把 `plugins.slots.memory` 设为 `"knowledge"`，把对话 / 会议 / 笔记织成关联本地 Markdown vault，带项目 Timeline 与 Git 检查点，可选自动召回**先从 shadow 模式起**）；**浏览器接管**（撞登录墙 / 2FA / 验证码时 Take control，暂停点击与输入，5 分钟无操作自动交回）。另记 Web UI 改版（活动时间线、命令面板、Dashboards 画廊、Labs 里的 Agent Templates 与 OpenClaw ID 远程访问）、自动更新可选 Hourly / Daily / Weekly / cron、启动期数据库迁移改为私有 shadow 副本校验后原子切换、捆绑 Codex app-server 0.172.0。依据：`CHANGELOG/2026.11.10.md` 原文 + `gh api repos/openclaw/openclaw/releases`（prerelease=false）
+- **章节一 / 最新动态**：新增 **2026-11-25 v2026.11.9** 一行（11-25 00:47Z，补丁版）。主修会话与连接层：派生会话（Advisor 评审、`/btw` 追问）不再自写提示缓存检查点、改复用父会话前缀；Tool Search 目录工具在**拒绝 assistant 预填**的 OpenAI 兼容端点不再整轮失败；后台 Claude CLI 用订阅 token 不再报 secret 文件描述符不可用；headed Chrome 后台标签截图不再超时；ACP 排队回复不再截断；自托管 web 工具端点**跨每一跳钉住主机名**
+- **章节三 / GPT-6 行**：补 **门类专用医疗配置**，11-24 上线——`gpt-6.2-astra-healthcare` / `gpt-6.2-sol-healthcare`（连同 6.1 Sol、GPT-6 Astra 共四档），走 Responses API，Web 搜索检索**专门医学资源索引**，费率与基础模型**完全同价**（$8/$40、$2/$10），促销价保到 **2026-12-31**；并提示价目表上同类还有 **Astra for Law** 与 **Rosalind**（同样保价到 12-31）但无 changelog 公告。依据：官方 changelog 11-24 条目 + `developers.openai.com/api/docs/pricing`
+
+### 变更
+
+- **章节四 / Claude Code**：**2.1.331 → 2.1.332**（2026-11-25，npm 11-25 01:32Z）。要点：**MCP 服务器可带技能（beta）**，在 `/` 菜单显示为 `server:skill`；新增 **`PreSkillShellCommand` 钩子**，可在技能 / 命令加载时拒掉其中的内联 shell 命令（旧版遇此配置只弹对话框）；多会话补「Always deliver」与「会话被标记跑在另一模型上」的常驻页脚提示；OpenTelemetry 增 `assistant_response` 事件；启动头显示 **Cyber Verification Program 访问层级**。修复集中在卡死：命名管道无人写入时 Read / `@` 提及 / 压缩挂死（现 20 秒失败）、hook 无休止输出造成卡死与内存失控、本地 MCP 刷屏 stdout 冻住终端且吃 Ctrl+C、SSE MCP 事件流断后换端点回来必须手动重连。另修 `claude auth login` 登录未落盘仍报成功、反复自动压缩失败后回合被「Prompt is too long」掐断、`sonnet` 别名在 Bedrock Mantle 上**错解析到 Haiku 4.5**。**Codex CLI 仍 0.172.0（stable）**，未动
+- **章节七 / Antigravity App**：**2.35.0 → 2.35.1**（2026-11-24）。重启或更新打断对话后**启动时自动接回活跃对话**、agent 回复里的插件面板链接自动在侧栏打开、修后台诊断上传不压缩与无批次上限
+- **章节七 / Antigravity CLI**：**1.5.15 → 1.5.16**（11-24）。**实时步骤清单**（`N/M steps` + 最多七步展开）；**`-r` / `--resume`** 作为 `--conversation` 短别名；开始发现 **`~/.agents/skills`** 里的跨工具 Agent Skills（同名时 `~/.gemini` 优先）；**Auto 模式放宽**——版本受控仓库内、或改动只增不改时，工作区外写改不再逐次询问；思考与工具耗时分开计时、长回合定期刷新额度、全屏模式提示栏钉底
+- **章节三 / GLM-5.4 行**：链接由 `z.ai/blog/glm-5.4` 改为**官方模型页** `docs.z.ai/guides/llm/glm-5.4`；API 口径收紧为官方原文「**安全评估完成后**才提供 Model API」；补官方自承的短板——容易陷进过长的「马拉松式思考」循环，精度更准但吐字量上升。**未改**：1M / 128K、视频 / 图片 / 文本 / 文件输入、750B 基座、200 vs 70–80 t/s，与官方页一致
+
+### 修复
+
+- 无（今日无新增死链）
+
+### 工程
+
+- 外链体检 **186 条**：171 条 200；401（`api.deepseek.com` 三个端点，无 Key）、403（arena.ai、claude.ai、producthunt、知乎 ×5）、521（CSDN 反爬）、429（cursor.directory）均属已知反爬；1 条 `000` 与 2 条 404 经单条复检全部 200（并发超时 + 提取正则把反引号并进了 URL）。**DSH 两条社区索引 JSON 仍 200**，无需再动
+- 回扫确认：`2026.11.8` / `2.1.331` / `2.35.0` / `1.5.15` 在其余章节无残留引用
+
 ## 2026-11-24 23:00 · 每日时效更新
 
 > 例行日增量：核对 11-23 之后的官方口径。今日是**工具链集中发版日**——Claude Code、Codex CLI、OpenClaw 三家同日推到新稳定版，Antigravity 的 App 与 CLI 也在 11-23 双双更新（昨日核查时仍是 2.34.0 / 1.5.12）。模型侧全线静止；唯一实质补充是 OpenAI 的**后台补全窗口折扣**此前一直没写进正文。
