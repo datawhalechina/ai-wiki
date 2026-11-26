@@ -4,6 +4,28 @@
 
 ---
 
+## 2026-11-26 23:00 · 每日时效更新
+
+> 例行日增量：核对 11-25 之后的官方口径。今日是**安静的一天**——模型侧四家官方 changelog 均无新条目（OpenAI 停在 11-24、Google 停在 11-19、Anthropic 停在 11-23、DeepSeek 停在 11-13），CLI 侧 Claude Code 停在 2.1.332、Codex 停在 0.172.0、OpenCode 1.19.6、DSH rc.5、Pi 0.70.6 全部未动。实质变化只有两处：**OpenClaw 的 LTS 线补丁（2026.10.33 → 2026.10.34）** 与 **Antigravity App 2.35.2**。
+
+### 新增
+
+- **章节一 / 最新动态**：新增 **2026-11-26 extended-stable 2026.10.34** 一行（LTS 渠道，11-26 01:37Z，官方口径 **129 个 in-range PR**）。这是本轮 LTS 线第一次接到 6.2——**OpenAI 与 ClawRouter 两条路由都能选 GPT-6.2 Astra / Sol**，并在 API Key 与 Sign in with ChatGPT 的 Responses 路由上启用 system-prompt 缓存；同时**停止提供已退役的 MiniMax M2**（配置里显式选 M2 的需改模型），PDF 文本抽取改用 MiniMax-M3；另修更新与数据库读写并发导致 Gateway 离线、Windows 更新回滚后服务恢复、Telegram 轮询 ID 重置、Discord 断网多账号重连。分发范围仍只含核心 npm 包、官方 npm 插件与 Gateway Docker 镜像，**不含原生应用**。依据：`gh api repos/openclaw/openclaw/releases/tags/v2026.10.34`（prerelease=false）+ `npm view openclaw dist-tags`（`extended-stable` 已指向 2026.10.34，`latest` 仍 2026.11.10）
+
+### 变更
+
+- **章节七 / Antigravity App**：**2.35.1 → 2.35.2**（2026-11-25，官方 changelog `rel-hub-2.35.2`）。**回合运行中也能切换模型**——此前模型选择器在回合进行时被锁死，发 `/btw` 侧问或追问前没法先换模型；现在选择器保持可交互，并用提示说明新模型从何时生效。仅 1 处修复。原 2.35.1 的条目降为「前一版」
+- **章节一 / 最新动态**：11-18 一行与 09-19 一行的「现 extended-stable 为 2026.10.33」同步改为 2026.10.34，并标注 11-26 接班，避免正文与表格两处口径打架
+
+### 修复
+
+- 无（今日无新增死链）
+
+### 工程
+
+- 外链体检 **186 条**：170 条 200；401（`api.deepseek.com` 三端点，无 Key）、403（arena.ai、claude.ai、producthunt、知乎 ×5）、521（CSDN 反爬）、429（cursor.directory）均属已知反爬。4 条并发 `000`（qdrant.tech、qoder.com、v0.dev）单条复检全部 200，系并发超时
+- 回扫确认：`2026.10.33`、`2.35.1` 在其余章节无残留引用；`2026.11.10` 仍为 stable / npm `latest`，未被今日的 LTS 补丁影响
+
 ## 2026-11-25 23:00 · 每日时效更新
 
 > 例行日增量：核对 11-24 之后的官方口径。今日主线是 **OpenClaw 连发两版（11.9 补丁 + 11.10 功能版）**，以及 Claude Code 2.1.332、Antigravity App 2.35.1 / CLI 1.5.16。模型侧仍无新旗舰；唯一实质补充是 OpenAI 的**门类专用医疗配置**（11-24 上线）。智谱 GLM-5.4 昨天只有博客与侧栏标记，今天官方模型页落地，据此收紧口径并换链接。
