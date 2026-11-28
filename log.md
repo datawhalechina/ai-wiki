@@ -4,6 +4,32 @@
 
 ---
 
+## 2026-11-28 23:00 · 每日时效更新
+
+> 例行日增量：核对 11-27 之后的官方口径。**模型侧继续静止**——OpenAI changelog 停在 11-24、Google 停在 11-19、Anthropic 停在 11-23、DeepSeek 停在 11-13；Claude Code 2.1.332、Codex 0.172.0、OpenCode 1.19.6、DSH rc.5、ZCode 4.0.0 全部未动。实质变化两处：**Antigravity App 2.36.0**，以及 **OpenClaw 的 npm 通道位移**（`latest` 移到 2026.11.11、`beta` 移到 2026.12.1-beta.1，后者均无 release note）。
+
+### 新增
+
+- 无（今日无新增条目，改动全部落在既有单元格内）
+
+### 变更
+
+- **章节七 / Antigravity 行**：**App 2.35.2（2026-11-25）→ 2.36.0（2026-11-27）**。2.36.0 五条要点：① 最大化侧栏底部**浮动输入条**——实时状态条显示 agent 进度、未读回复与已存草稿，可直接追问或开始听写而不必退出最大化视图；② **Auto 模式放行「项目外」的安全改动**——其他版本受控仓库内的安全编辑、只新增不覆盖的文件写入不再逐次询问；③ **语音通话的口述上下文带入本地对话**（交接前结束的通话也记住谈过什么）；④ **开始发现 `~/.agents/skills` 的自定义技能**（同名时 `~/.gemini` 优先），与 CLI 1.5.16 的口径对齐；⑤ 组织管理员关掉插件与市场后 Customizations 仍以灰显 + 提示保留入口，远程 agent 的云自动化可直接在桌面端用 Google 登录授权。另有 13 项改进 + 26 项修复，其中值得记的是内置浏览器对 `localhost` / 本地端口强行走 HTTPS 致本地开发服务器打不开、macOS 快捷键默认绑定失效、Orchestrator 规划与执行选同一模型却回退到别的默认模型。依据：官方 changelog 页 `id="rel-hub-2.36.0"`（`data-release-time` 对应 2026-11-27，标题与条目齐全）
+- **章节一 / 2026-11-25（v2026.11.10）行**：删去「当前 stable / npm `latest`」的定语。事实是 **11-28 04:05Z 起 npm `latest` 已指向 2026.11.11**（registry `time` 字段），但官方 releases 页与 `CHANGELOG/` 目录都没有 2026.11.11 的条目（`v2026.11.11` tag 存在、`gh api releases/tags/v2026.11.11` 返 404，`CHANGELOG/2026.11.11.md` 亦 404），无法写出该版改了什么。处理办法：保留 11.10 的发版事实，并在括号内注明通道位移与「官方尚无条目」，不为凑「最新版」去描述一个只有 tag 的版本
+- **章节一 / 2026-11-24（v2026.11.8）行**：`beta` 标签的时间限定再修一次。11-27 写的是「11-25 稳定版落地后 `beta` 已与 `latest` 同指 2026.11.10，预发布通道暂无更新的候选版本」——今天 dist-tags 已变成 `beta` = **2026.12.1-beta.1**、`latest` = **2026.11.11**，原文的「同指」与「暂无候选」都成了假陈述。改为「曾同指 2026.11.10，11-28 两者已分别移到 2026.12.1-beta.1 与 2026.11.11」，把当时的判断明确限定在 11-25 那个时点。依据：`npm view openclaw dist-tags`（`beta` / `latest` / `extended-stable` 三个标签逐一核对）
+- **与上次判断的出入**：11-27 那条「`beta` 与 `latest` 同指 2026.11.10」在写下时是真的（两个 dist-tag 当日确实相同），错在**把「某天两个标签恰好相同」写成了不带时点的常态**——一旦发新版，句子立刻变成假。这次一律加「曾 / 11-28 起」这类时点限定，今后凡写 dist-tag 关系都必须带日期
+
+### 修复
+
+- 无（今日无新增死链）
+
+### 工程
+
+- 外链体检 **186 条**：172 条 200；401（`api.deepseek.com` 三端点，无 Key）、403（arena.ai、claude.ai、producthunt、知乎 ×5）、429（cursor.directory）、521（CSDN 反爬）合计 14 条属已知反爬；1 条并发 `000`（`code.claude.com/docs/zh-CN/overview`）单条复检 200
+- 回扫确认：`2.35.2` / `1.5.16` / `2.1.332` / `0.172.0` / `2026.11.10` 全篇口径一致；ch07 的 Antigravity 版本号只此一处
+- 未写（无法确证）：**OpenClaw 2026.11.11**（见上，无官方条目）；Antigravity「11-30 下线 Argon / 3.8 Flash / gpt-oss-120b / Claude 4.6」——连续第三天只在中文聚合稿出现，官方 changelog（含 2.36.0 全部条目）与模型页仍无对应条目，维持不写；Codex `0.174.0-alpha.9`、DSH `0.2.3-alpha.3`、OpenClaw `2026.12.1-beta.1` 均为预发布，不写
+- 当天核对无变化：Anthropic 四档（Fable 5.2 / Opus 5.5 / Sonnet 5.5 / Haiku 5.5）、OpenAI 6.2 双档与 Healthcare 门类配置、Google 四档价（定价页仍写 Argon / Carbon「$2.00 through November 30, 2026，$4.00 starting December 1」，缓存 $0.10 → $0.20，与正文一致；Neon $3/$15、Hydrogen $1.50/$7.50 未动）、DeepSeek 两档与周边价、阿里 `qwen4-max`（百炼模型页无 Qwen5）、Kimi K3.1 Pro（平台 changelog 最新仍为 10 月 Batch API）、智谱 GLM-5.4（官方页仍写「安全评估完成后开放 Model API」，`glm-5.5` 文档 404）、MiniMax、Cursor（changelog 仍停 11-06）、Pi（tag 到 v1.7.0，正文不标版本）
+
 ## 2026-11-27 23:00 · 每日时效更新
 
 > 例行日增量：核对 11-26 之后的官方口径。**模型侧继续静止**——OpenAI changelog 停在 11-24、Google 停在 11-19、Anthropic 停在 11-23、DeepSeek 停在 11-13，四家模型表逐行核对无变；CLI 侧 Claude Code 2.1.332、Codex 0.172.0、OpenCode 1.19.6、DSH rc.5、OpenClaw stable 2026.11.10 / extended-stable 2026.10.34、Antigravity App 2.35.2 / CLI 1.5.16 全部未动。今日唯一的实质变化在 **ZCode**：官方版本页已连发 3.18.2 → 3.19.1 → **4.0.0**，而正文还停在 11-03 的 3.17.2。
